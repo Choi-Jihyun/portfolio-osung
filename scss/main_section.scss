@@ -1,7 +1,11 @@
 div#main_wrapper {
+  width: 100%;
+  height: auto;
   position: relative;
   left: 0;
   top: 0;
+  border: solid 2px blue;
+  box-sizing: border-box;
   .title {
     width: 100%;
     height: auto;

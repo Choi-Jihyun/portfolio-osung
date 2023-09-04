@@ -1,9 +1,11 @@
 div#basic_information_wrapper {
   width: 100%;
-  height: auto;
+  height: 72rem;
   position: relative;
   left: 0;
   top: 0;
+  border: solid 2px green;
+  box-sizing: border-box;
 }
 div#basic_information_wrapper svg {
   position: absolute;

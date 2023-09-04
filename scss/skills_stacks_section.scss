@@ -1,0 +1,119 @@
+div#skills_and_stacks_wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+  border: solid 2px red;
+  box-sizing: border-box;
+  .title_wrap {
+    width: auto;
+    height: auto;
+    text-align: right;
+    border: solid 2px palevioletred;
+    box-sizing: border-box;
+    p {
+      color: black;
+      font: normal 3rem "Dela Gothic One";
+    }
+  }
+}
+
+// 카테고리 명
+p.skill_category {
+  color: black;
+  font: bold 1.5rem "Noto sans KR";
+  margin-bottom: 1rem;
+}
+
+// 프론트엔드 skill
+div.front_end_skills_wrap {
+  text-align: right;
+  width: 100%;
+  height: 50rem;
+  position: relative;
+  right: 0;
+  top: 0;
+  p.skill_category {
+    padding: 5rem 2rem 0 0;
+    position: relative;
+  }
+  ul.front_end_skill_list {
+    max-width: 55rem;
+    height: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: flex-start;
+    gap: 3rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: solid 2px palevioletred;
+    box-sizing: border-box;
+    li {
+      width: 15rem;
+      height: 15rem;
+      border-radius: 1.75rem;
+      background: linear-gradient(138deg, #003CFF 20%, #013DFE 62%, #F90 96.37%);
+      background-position: 0% 0%;
+      background-size: 150% 150%;
+      // background: #003CFF;
+      box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
+      box-sizing: border-box;
+      
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-content: center;
+      transition: all 0.5s ease;
+      &:hover {
+        box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
+        background-position: 100% 100%;
+      }
+      &:touch-action {
+        box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
+        background-position: 100% 100%;
+      }     
+      p {
+        color: white;
+        font: normal 2.1rem "Noto sans KR";
+        text-align: left;
+        cursor: default;
+      }
+      &:nth-child(4) {
+        p {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+// 나머지 스킬
+div.etc_skills_wrap {
+  max-width: 55rem;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+  border: solid 2px palevioletred;
+  box-sizing: border-box;
+  ul.etc_skill_list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 10rem;
+    li {
+      p.skill_name {
+        color: black;
+        font: normal 1.1rem/2rem "Noto sans KR";
+      }
+    }
+  }
+}

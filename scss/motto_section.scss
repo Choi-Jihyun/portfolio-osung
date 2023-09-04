@@ -1,21 +1,25 @@
 div#motto_wrapper {
   width: 100%;
-  height: auto;
+  height: 50rem;
+  position: relative;
+  border: solid 2px red;
+  box-sizing: border-box;
   position: relative;
   left: 0;
   top: 0;
   div.motto_text {
     width: 47rem;
-    margin: o auto;
+    margin: 0 auto;
     height: auto;
     text-align: center;
     border: solid 2px palevioletred;
     box-sizing: border-box;
     position: relative;
     left: 0;
-    top: 0;
+    top: 27rem;
     z-index: 10;
     p.mt_title {
+      color: #F90;
       font: normal 6.25rem "Dela Gothic One";
     }
     p.mt_text {
@@ -25,17 +29,42 @@ div#motto_wrapper {
   }
 
   div.mt_bg_text {
-    width: 2000px;
+    width: 4500px;
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0rem;
     z-index: 3;
+    
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    animation: bg_text_ani 7s linear infinite;
     p {
+      transform: rotate(-6.547deg);
       -webkit-text-stroke: 1px #FF9900;
       color: transparent;
-      font: normal 18.75rem "Dela Gothic One";
+      font: normal 18.75rem/19rem "Dela Gothic One";
+      float: left;
+    }
+    &:hover {
+      animation-play-state: paused;
     }
   }
+
+  @keyframes bg_text_ani {
+    0% {
+      transform: translateX(0%);
+      top: 29rem;
+    }
+    100% {
+      transform: translateX(-100%);
+      top: 63rem;
+    }
+  }
+
+
+
   div.mt_bg_circle_left {
     width: 49rem;
     height: 49rem;
@@ -45,11 +74,12 @@ div#motto_wrapper {
     background: linear-gradient(to bottom, rgba(0,60,255,1) 0%,rgba(0,60,255,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003cff', endColorstr='#00003cff',GradientType=0 );
     border-radius: 50%;
-    position: relative;
-    left: 0;
-    top: 0;
+    position: absolute;
+    left: -20rem;
+    bottom: -10rem;
+    opacity: 0.2;
     z-index: 1;
-    margin: 24.5rem auto;
+    // margin: 24.5rem auto;
     .l_hole {
         width: 35rem;
         height: 35rem;
@@ -69,9 +99,10 @@ div#motto_wrapper {
     background: linear-gradient(to bottom, rgba(255,153,0,1) 0%,rgba(255,153,0,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9900', endColorstr='#00ff9900',GradientType=0 );
     border-radius: 50%;
-    position: relative;
-    left: 0;
-    top: 0;
+    opacity: 0.5;
+    position: absolute;
+    right: -10rem;
+    bottom: 7rem;
     z-index: 1;
     margin: 14.5rem auto;
     .r_hole {
