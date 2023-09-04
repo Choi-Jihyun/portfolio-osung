@@ -1,0 +1,128 @@
+div#basic_information_wrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  .infos_wrapper {
+    max-width: 1200px;
+    height: 33rem;
+    margin: 0 auto;
+    height: auto;
+
+    display: flex;
+    align-content: center;
+
+    position: relative;
+    left: 0;
+    top: 24rem;
+    z-index: 1;
+
+    div.info {
+      width: 70%;
+      height: 33rem;
+      padding: 3rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+      ul.info_list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: center;
+        gap: 4rem;
+        padding-top: 2rem;
+        li {
+          width: calc(50% - 4rem);
+          p.title {
+            color: white;
+            font: normal 1.5rem "Noto sans KR";
+            position: relative;
+            &::before {
+              content:"";
+              width: 2.2rem;
+              height: 2.2rem;
+              border-radius: 50%;
+              background: #FF9900;
+              position: absolute;
+              left: -1.2rem;
+              top: -0.3rem;
+              z-index: -1;
+            }
+          }
+          p.text {
+            color: white;
+            font: normal 1.2rem "Noto sans KR";
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+    div.my_pic {
+      width: 30vw;
+      height: 44.22vw;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-content: center;
+      img {
+        width: 30vw;
+        height: 44.22vw;
+        object-fit: contain;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .img_blue_cover{
+        width: calc(100% - 4vw);
+        height: calc(44.22vw - 4vw);
+        background: #003CFF;
+        mix-blend-mode: lighten;
+        position: absolute;
+        left: 2vw;
+        top: 2vw;
+        z-index: 3;
+      }
+      .bi_bg_circle_yellow {
+        width: 49rem;
+        height: 49rem;
+        border-radius: 50%;
+        background: rgba(255, 153, 0, 0.2);
+        background: -moz-linear-gradient(top, rgba(255,153,0,0.5) 0%, rgba(255,153,0,0) 100%);
+        background: -webkit-linear-gradient(top, rgba(255,153,0,0.5) 0%,rgba(255,153,0,0) 100%);
+        background: linear-gradient(to bottom, rgba(255,153,0,0.5) 0%,rgba(255,153,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9900', endColorstr='#00ff9900',GradientType=0 );
+        position: absolute;
+        left: 5rem;
+        top: -9rem;
+        z-index: -1;
+      }
+    }
+  }
+  .bi_bg_line_blue {
+    position: relative;
+    left: 0;
+    top: -5rem;
+  }
+  .bi_bg_text_yellow {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 15rem;
+    text-align: center;
+    p {
+      color: rgba(255, 153, 0, 0.20);
+      font: normal 9.375rem "Dela Gothic One";
+    }
+  }
+  
+}
+

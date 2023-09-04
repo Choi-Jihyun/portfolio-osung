@@ -1,0 +1,18 @@
+div#main_wrapper {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+div#main_wrapper .title {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  border: solid 2px palevioletred;
+  box-sizing: border-box;
+}
+div#main_wrapper .title p {
+  font: normal 12.5rem "Permanent Marker";
+  line-height: 13.5625rem;
+  letter-spacing: 1.0625rem;
+  color: #003CFF;
+}
