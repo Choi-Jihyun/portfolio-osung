@@ -1,3 +1,14 @@
+%positionRelative {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+%positionAbsolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
 %basicWrapStyle {
   max-width: 1200px;
@@ -16,7 +27,7 @@
       font: normal 3rem "Dela Gothic One";
     }
     svg {
-      padding-top: 0.2rem;
+      padding-top: 0.3rem;
     }
   }
 }

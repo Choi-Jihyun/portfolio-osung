@@ -4,14 +4,117 @@ div#projects_wrapper {
   max-width: 100%;
   margin: 0 auto;
   height: auto;
-  position: relative;
-  left: 0;
-  top: 0;
+  @extend %positionRelative;
   @extend %basicTitleWrapStyle;
   .title_wrap {
     text-align: left;
     #projects {
-      color: black;
+      color: white;
     }
+  }
+}
+
+div.project_orange_stage_wrapper {
+  width: 100%;
+  height: 46.2rem;  
+  @extend %positionAbsolute;
+  div.project_orange_stage_inner {
+    width: 100%;
+    max-width: 1200px;
+    height: 46.2rem;
+    padding-top: 14rem;
+    margin: 0 auto;
+    border: solid 2px blue;
+    box-sizing: border-box;
+    @extend %positionRelative;
+  }
+}
+
+div.project_view_wrapper {
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+  border: solid 2px palevioletred;
+  box-sizing: border-box;
+  div.project_main_pic {
+    width: 25rem;
+    height: 19rem;
+    background: white;
+    float: left;
+    border: solid 2px green;
+    box-sizing: border-box;
+  }
+  div.project_infos {
+    width: calc(100% - 31rem);
+    height: 17rem;
+    margin: 1rem 3rem;
+    float: left;
+    @extend %positionRelative;
+    .p_name {
+      color: white;
+      font: bold 1.875rem "Noto sans KR";
+    }
+    .p_bodytext {
+      color: white;
+      font: bold 1rem "Noto sans KR";
+      margin-top: 1.3rem;
+    }
+    div.projects_skill {
+      ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: flex-start;
+        gap: 1rem;
+        li {
+          width: auto;
+          height: auto;
+          padding: 3px 20px;
+          margin-top: 1rem;
+          background: rgba(255, 255, 255, 0.1);
+          border: solid 1px rgb(255, 255, 255);
+          border-radius: 2rem;
+          box-sizing: border-box;
+          color: rgb(255, 255, 255);
+          font: normal 1rem "Noto sans KR";
+        }
+      }
+    }
+    div.project_links {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: center;
+        gap: 2rem;
+        
+        
+        li {
+          width: 13rem;
+          height: 2.5rem;
+          margin: 0 auto;
+          background: white;
+          text-align: center;
+          color: black;
+          font: normal 1.2rem/2.5rem "Noto sans KR";
+          transition: all 0.2s ease-out;
+        }
+        a:hover li {
+          background: #003CFF;
+          cursor: pointer;
+          transform: scale(1.05);
+          border-radius: 1rem;
+          color: white;
+        }
+      }
+    }
+    
   }
 }

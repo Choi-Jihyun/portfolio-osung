@@ -69,6 +69,8 @@ div#basic_information_wrapper .infos_wrapper div.info ul.info_list li p.text {
 div#basic_information_wrapper .infos_wrapper div.my_pic {
   width: 30vw;
   height: 44.22vw;
+  max-width: 24.375rem;
+  max-height: 35.9375rem;
   position: absolute;
   right: 0;
   top: 0;
@@ -78,6 +80,8 @@ div#basic_information_wrapper .infos_wrapper div.my_pic {
 div#basic_information_wrapper .infos_wrapper div.my_pic img {
   width: 30vw;
   height: 44.22vw;
+  max-width: 24.375rem;
+  max-height: 35.9375rem;
   -o-object-fit: contain;
      object-fit: contain;
   position: absolute;
@@ -87,12 +91,23 @@ div#basic_information_wrapper .infos_wrapper div.my_pic img {
 div#basic_information_wrapper .infos_wrapper div.my_pic .img_blue_cover {
   width: calc(100% - 4vw);
   height: 40.22vw;
+  max-width: 21.875rem;
+  max-height: 32.75rem;
   background: #003CFF;
   mix-blend-mode: lighten;
   position: absolute;
   left: 2vw;
   top: 2vw;
   z-index: 3;
+}
+@media (min-width: 1400px) {
+  div#basic_information_wrapper .infos_wrapper div.my_pic .img_blue_cover {
+    width: calc(24.375rem - 60px);
+    height: calc(35.9375rem - 60px);
+    max-height: 32.75rem;
+    left: 30px;
+    top: 30px;
+  }
 }
 div#basic_information_wrapper .infos_wrapper div.my_pic .bi_bg_circle_yellow {
   width: 49rem;
