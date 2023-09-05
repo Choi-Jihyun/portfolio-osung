@@ -1,0 +1,17 @@
+@use 'common';
+
+div#projects_wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+  @extend %basicTitleWrapStyle;
+  .title_wrap {
+    text-align: left;
+    #projects {
+      color: black;
+    }
+  }
+}

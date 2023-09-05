@@ -1,0 +1,22 @@
+
+%basicWrapStyle {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+%basicTitleWrapStyle {
+  .title_wrap {
+    width: auto;
+    height: auto;
+    p.subtitle {
+      font: normal 3rem "Dela Gothic One";
+    }
+    svg {
+      padding-top: 0.2rem;
+    }
+  }
+}

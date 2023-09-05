@@ -1,0 +1,25 @@
+div#projects_wrapper .title_wrap {
+  width: auto;
+  height: auto;
+}
+div#projects_wrapper .title_wrap p.subtitle {
+  font: normal 3rem "Dela Gothic One";
+}
+div#projects_wrapper .title_wrap svg {
+  padding-top: 0.2rem;
+}
+
+div#projects_wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+div#projects_wrapper .title_wrap {
+  text-align: left;
+}
+div#projects_wrapper .title_wrap #projects {
+  color: black;
+}

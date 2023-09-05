@@ -5,6 +5,20 @@ div#skills_and_stacks_wrapper {
   position: relative;
   left: 0;
   top: 0;
+}
+
+div#skills_and_stacks_wrapper .title_wrap {
+  width: auto;
+  height: auto;
+}
+div#skills_and_stacks_wrapper .title_wrap p.subtitle {
+  font: normal 3rem "Dela Gothic One";
+}
+div#skills_and_stacks_wrapper .title_wrap svg {
+  padding-top: 0.2rem;
+}
+
+div#skills_and_stacks_wrapper {
   border: solid 2px red;
   box-sizing: border-box;
 }

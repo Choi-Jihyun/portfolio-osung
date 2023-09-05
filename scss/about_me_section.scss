@@ -1,18 +1,91 @@
+@use 'common';
+
 div#about_me_wrapper {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  background: #003CFF;
+  @extend %basicTitleWrapStyle;
+  .title_wrap {
+    width: 18rem;
+    text-align: left;
+    margin-top: 6rem;
+    #aboutme {
+      color: white;
+    }
+  }
+}
+
+div.about_me_inner {
   max-width: 1200px;
+  padding: 1rem 0;
   margin: 0 auto;
   height: auto;
   position: relative;
   left: 0;
   top: 0;
-  border: solid 2px red;
-  box-sizing: border-box;
-  background: #003CFF;
-  // 공통 부분은 style.scss 로 옮김
-  .title_wrap {
-    text-align: left;
-    #aboutme {
+  div.categories_wrapper {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 5rem;
+    p.am_c_title {
       color: white;
+      font: normal 1.875rem "Noto sans KR";
+    }
+    ul.am_category_list {
+      margin-top: 2rem;
+      li {
+        color: white;
+        font: normal 1rem "Noto sans KR";
+        p {
+          font: normal 1.25rem "Noto sans KR";
+          padding-bottom: 1rem;
+          span {
+            font-weight: bold;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 취미 활동
+p.am_c_subtitle {
+  width: 35rem;
+  height: 3.5rem;
+  margin-top: 1rem;
+  color: white;
+  font: normal 1rem/1.7rem "Noto sans KR";
+}
+
+div.interests {
+  padding-bottom: 10rem;
+  p {
+    margin-top: 2.6rem;
+    color: white;
+    font: normal 1.125rem "Noto sans KR";
+  }
+  ul#hobbies_list {
+    margin-top: 2rem;
+    width: 30rem;
+    height: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+
+    li {
+      width: 8rem;
+      padding-bottom: 1.5rem;
+      color: white;
+      font: normal 0.9rem "Noto sans KR";
     }
   }
 }

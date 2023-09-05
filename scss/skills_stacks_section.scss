@@ -1,13 +1,11 @@
+@use 'common';
+
 div#skills_and_stacks_wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: auto;
-  position: relative;
-  left: 0;
-  top: 0;
+  @extend %basicWrapStyle;
+
   border: solid 2px red;
   box-sizing: border-box;
-  // 공통 부분은 style.scss 로 옮김
+  @extend %basicTitleWrapStyle;
   .title_wrap {
     text-align: right;
     #skill {
