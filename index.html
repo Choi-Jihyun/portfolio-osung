@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="/css/motto_section.css">
   <link rel="stylesheet" href="/css/basic_information_section.css">
   <link rel="stylesheet" href="/css/skills_stacks_section.css">
+  <link rel="stylesheet" href="/css/my_projects_section.css">
+  <link rel="stylesheet" href="/css/about_me_section.css">
+  <link rel="stylesheet" href="/css/contact_footer.css">
   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+KR&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
@@ -181,35 +184,134 @@
     <section id="projects">
       <div id="projects_wrapper">
         <h2 class="hidden">My Projects</h2>
-        
-        
-
+        <div class="project_stage_wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="739" viewBox="0 0 1920 739" fill="none">
+            <path d="M0 0.5L1920 290V739H0V0.5Z" fill="#FF9900"/>
+          </svg>
+          <div class="title_wrap">
+            <p class="subtitle" id="projects">Projects</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="280" height="20" viewBox="0 0 280 20" fill="none">
+              <path d="M270 20C275.523 20 280 15.5229 280 10C280 4.47718 275.523 2.4087e-05 270 2.36041e-05L270 20ZM-8.74228e-07 20L270 20L270 2.36041e-05L8.74228e-07 0L-8.74228e-07 20Z" fill="url(#paint0_linear_59_435)"/>
+              <defs>
+                <linearGradient id="paint0_linear_59_435" x1="270" y1="59.9975" x2="-1.58097e-06" y2="59.9975" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#003CFF"/>
+                  <stop offset="1" stop-color="#003CFF" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div>
+              <div class="project_main_pic"></div>
+              <div class="project_infos">
+                <p>App Name</p>
+                <p>주야간보호센터와 관련된 웹 사이트를 제작하였습니다. <br/>
+                  최근 실버사업이 인기가 높은 사회적 분위기를 반영하여 제작했습니다. <br/>
+                  이와 같은 웹 사이트를 소개하는 글을 여기에 적겠습니다.</p>
+                <div class="project_links">
+                  <ul>
+                    <li>
+                      <a>데모 웹사이트</a>
+                    </li>
+                    <li>
+                      <a>GitHub</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="projects_skill">
+                  <ul>
+                    <li>Mobile App</li>
+                    <li>Web</li>
+                    <li>JavaScript</li>
+                    <li>React.js</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects_list_wrapper">
+          <div class="projects_list">
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pj_bg_text">UNSTOPPABLE</div>
       </div>
     </section>
   
     <section id="about_me">
       <div id="about_me_wrapper">
         <h2 class="hidden">About Me</h2>
-        
-        
-
+        <div class="about_me_inner">
+          <div class="title_wrap">
+            <p class="subtitle" id="aboutme">About Me</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="249" height="20" viewBox="0 0 249 20" fill="none">
+              <path d="M239 20C244.523 20 249 15.5229 249 10C249 4.47717 244.523 2.13769e-05 239 2.0894e-05L239 20ZM-8.74228e-07 20L239 20L239 2.0894e-05L8.74228e-07 0L-8.74228e-07 20Z" fill="url(#paint0_linear_59_436)"/>
+              <defs>
+                <linearGradient id="paint0_linear_59_436" x1="239" y1="59.9975" x2="-1.90129e-06" y2="59.9975" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9900"/>
+                  <stop offset="1" stop-color="#FF9900" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="categories_wrapper">
+            <div class="am_category" id="awards">
+              <p class="am_c_title">Awards</p>
+              <ul class="am_category_list" id="awards_list">
+                <li><p><span>2021</span>SW·AI 에듀톤 한국과학창의재단 이사장상</p></li>
+                <li><p><span>2020</span>Microsoft Teams를 활용한 슬기로운 대학생할 공모전 대상</p></li>
+              </ul>
+            </div>
+            <div class="am_category" id="certificates">
+              <p class="am_c_title">Certificates</p>
+              <ul class="am_category_list" id="certificates_list">
+                <li>정교사 자격증</li>
+                <li>SW 코딩자격 2급</li>
+                <li>중국어 HSK 4급</li>
+              </ul>
+            </div>
+            <div class="am_category" id="hobbies">
+              <p class="am_c_title">Hobbies</p>
+              <p>쉴 때는 무엇을 하는지 궁금하신가요? 저는 체육 활동을 좋아해서 시간이 나면 주로 운동을 합니다. 운동을 하면 정신이 맑아지고 삶의 활력이 생기거든요!</p>
+              <div class="interests">
+                <p>Interests</p>
+                <ul class="am_category_list" id="hobbies_list">
+                  <li>Running</li>
+                  <li>Climbing</li>
+                  <li>Swimming</li>
+                  <li>Basketball</li>
+                  <li>Fitness</li>
+                  <li>Table Tennis</li>
+                  <li>Tennis</li>
+                  <li>Bowling</li>
+                  <li>Volleyball</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <footer>
       <div id="footer_wrapper">
-        <h2 class="hidden">contact us</h2>
-
-
+        <h2 class="hidden">contact me</h2>
+        <div class="footer_inner">
+          <p class="f_title">Contact</p>
+          <ul class="sns_list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <p class="f_copyright">© 2023. Choi Ji Hyun. All rights reserved.</p>
+        </div>
       </div>
     </footer>
-  
-
-
-
-
-
-
 
   </div>
 </body>

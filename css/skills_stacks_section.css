@@ -9,15 +9,10 @@ div#skills_and_stacks_wrapper {
   box-sizing: border-box;
 }
 div#skills_and_stacks_wrapper .title_wrap {
-  width: auto;
-  height: auto;
   text-align: right;
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
 }
-div#skills_and_stacks_wrapper .title_wrap p {
+div#skills_and_stacks_wrapper .title_wrap #skill {
   color: black;
-  font: normal 3rem "Dela Gothic One";
 }
 
 p.skill_category {
@@ -70,7 +65,7 @@ div.front_end_skills_wrap ul.front_end_skill_list li {
   transition: all 0.5s ease;
 }
 div.front_end_skills_wrap ul.front_end_skill_list li:hover {
-  box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px 12px 4px rgba(0, 0, 0, 0.35);
   background-position: 100% 100%;
 }
 div.front_end_skills_wrap ul.front_end_skill_list li:touch-action {

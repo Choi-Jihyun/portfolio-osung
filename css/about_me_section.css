@@ -1,0 +1,17 @@
+div#about_me_wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+  border: solid 2px red;
+  box-sizing: border-box;
+  background: #003CFF;
+}
+div#about_me_wrapper .title_wrap {
+  text-align: left;
+}
+div#about_me_wrapper .title_wrap #aboutme {
+  color: white;
+}

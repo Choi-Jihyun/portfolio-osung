@@ -7,15 +7,11 @@ div#skills_and_stacks_wrapper {
   top: 0;
   border: solid 2px red;
   box-sizing: border-box;
+  // 공통 부분은 style.scss 로 옮김
   .title_wrap {
-    width: auto;
-    height: auto;
     text-align: right;
-    border: solid 2px palevioletred;
-    box-sizing: border-box;
-    p {
+    #skill {
       color: black;
-      font: normal 3rem "Dela Gothic One";
     }
   }
 }
@@ -71,7 +67,7 @@ div.front_end_skills_wrap {
       align-content: center;
       transition: all 0.5s ease;
       &:hover {
-        box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
+        box-shadow: 5px 5px 12px 4px rgba(0, 0, 0, 0.35);
         background-position: 100% 100%;
       }
       &:touch-action {

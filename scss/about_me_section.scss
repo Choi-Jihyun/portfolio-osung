@@ -1,0 +1,18 @@
+div#about_me_wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+  border: solid 2px red;
+  box-sizing: border-box;
+  background: #003CFF;
+  // 공통 부분은 style.scss 로 옮김
+  .title_wrap {
+    text-align: left;
+    #aboutme {
+      color: white;
+    }
+  }
+}

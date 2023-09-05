@@ -49,3 +49,13 @@ section {
   left: 0;
   top: 0;
 }
+
+.title_wrap {
+  width: auto;
+  height: auto;
+  border: solid 2px palevioletred;
+  box-sizing: border-box;
+}
+.title_wrap p.subtitle {
+  font: normal 3rem "Dela Gothic One";
+}
