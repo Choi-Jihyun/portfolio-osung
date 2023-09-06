@@ -93,6 +93,7 @@ div#content {
   align-content: center;
 
   p {
+    color: black;
     font: normal 1.5rem/2.5rem "Noto sans KR";
     span {
       cursor: pointer;
@@ -100,11 +101,29 @@ div#content {
     &.cf_email_title {
       margin-bottom: 1rem;
     }
-    &#cf_alertCopy {
+    &.cf_email_text span {
+      transition: all 0.1s ease-out;
+      &:hover {
+        color: #003CFF;
+      }
+    }
+    &.cf_alertCopy {
       color: gray;
       font: normal 1rem "Noto sans KR";
       margin-top: 1rem;
     }
+    &.c_big_font {
+      font: normal 1.8rem "Noto sans KR";
+      padding: 1rem;
+    }
+    &.c_banknum {
+      transition: all 0.1s ease-out;
+      cursor: pointer;
+      &:hover {
+        color: #003CFF;
+      }
+    }
+
   }
 }
 

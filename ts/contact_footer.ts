@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.querySelector('#content') as HTMLElement;
     const closeBtn = document.querySelector('#close') as HTMLElement;
     const cf_emailTexts = document.querySelectorAll(".cf_email");
+    const cf_bankNum = document.querySelector(".c_banknum") as HTMLElement;
     const cf_alertCopy = document.querySelector("#cf_alertCopy") as HTMLElement;
+    const cf_alertCopy2 = document.querySelector("#cf_alertCopy2") as HTMLElement;
     const emailIcon = document.querySelector('#email') as HTMLElement;
     const bankIcon = document.querySelector('#bank') as HTMLElement;
 
@@ -65,6 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    //계좌번호 복사하기
+    cf_bankNum.addEventListener("click", async() => {
+        try {
+            await navigator.clipboard.writeText(cf_bankNum.textContent || '');
+            cf_alertCopy2.style.opacity = "1";
+            cf_alertCopy2.innerText = "계좌번호를 복사했습니다.";
+            setTimeout(() => {
+                cf_alertCopy2.style.opacity = "1";
+                cf_alertCopy2.innerText = "계좌번호를 클릭하여 복사하세요.";
+            }, 2000);
+        } catch (error) {
+            console.error("Failed to copy to clipboard:", error);
+        }
+    });
 
 
 });

@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var content = document.querySelector('#content');
     var closeBtn = document.querySelector('#close');
     var cf_emailTexts = document.querySelectorAll(".cf_email");
+    var cf_bankNum = document.querySelector(".c_banknum");
     var cf_alertCopy = document.querySelector("#cf_alertCopy");
+    var cf_alertCopy2 = document.querySelector("#cf_alertCopy2");
     var emailIcon = document.querySelector('#email');
     var bankIcon = document.querySelector('#bank');
     var emailDiv = null;
@@ -112,4 +114,29 @@ document.addEventListener("DOMContentLoaded", function () {
         var item = cf_emailTexts_1[_i];
         _loop_1(item);
     }
+    //계좌번호 복사하기
+    cf_bankNum.addEventListener("click", function () { return __awaiter(_this, void 0, void 0, function () {
+        var error_2;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, navigator.clipboard.writeText(cf_bankNum.textContent || '')];
+                case 1:
+                    _a.sent();
+                    cf_alertCopy2.style.opacity = "1";
+                    cf_alertCopy2.innerText = "계좌번호를 복사했습니다.";
+                    setTimeout(function () {
+                        cf_alertCopy2.style.opacity = "1";
+                        cf_alertCopy2.innerText = "계좌번호를 클릭하여 복사하세요.";
+                    }, 2000);
+                    return [3 /*break*/, 3];
+                case 2:
+                    error_2 = _a.sent();
+                    console.error("Failed to copy to clipboard:", error_2);
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
+            }
+        });
+    }); });
 });

@@ -91,6 +91,7 @@ div#content {
   align-content: center;
 }
 div#content p {
+  color: black;
   font: normal 1.5rem/2.5rem "Noto sans KR";
 }
 div#content p span {
@@ -99,8 +100,25 @@ div#content p span {
 div#content p.cf_email_title {
   margin-bottom: 1rem;
 }
-div#content p#cf_alertCopy {
+div#content p.cf_email_text span {
+  transition: all 0.1s ease-out;
+}
+div#content p.cf_email_text span:hover {
+  color: #003CFF;
+}
+div#content p.cf_alertCopy {
   color: gray;
   font: normal 1rem "Noto sans KR";
   margin-top: 1rem;
+}
+div#content p.c_big_font {
+  font: normal 1.8rem "Noto sans KR";
+  padding: 1rem;
+}
+div#content p.c_banknum {
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+}
+div#content p.c_banknum:hover {
+  color: #003CFF;
 }
