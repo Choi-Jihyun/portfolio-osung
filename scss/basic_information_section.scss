@@ -162,6 +162,7 @@ div#basic_information_wrapper {
 
 @media screen and (max-width: 1200px) {
   div#basic_information_wrapper {
+    height: 82rem;
     .infos_wrapper {
       div.my_pic {
         top: 30px;
@@ -172,6 +173,7 @@ div#basic_information_wrapper {
 }
 @media screen and (max-width: 1000px) {
   div#basic_information_wrapper {
+    height: 82rem;
     .infos_wrapper {
       div.my_pic {
         top: 70px;
@@ -183,7 +185,7 @@ div#basic_information_wrapper {
 @media screen and (max-width: 768px) {
   div#basic_information_wrapper {
     width: 100%;
-    height: 72rem;
+    height: 92rem;
     position: relative;
     left: 0;
     top: 0;
@@ -321,21 +323,22 @@ div#basic_information_wrapper {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
   div#basic_information_wrapper {
     width: 100%;
-    height: 72rem;
+    height: 110rem;
     position: relative;
     left: 0;
     top: 0;
     svg {
+      width: 7000px;
       position: absolute;
-      left: 0;
+      left: -4000px;
       top: 0;
       z-index: -1;
     }
     .infos_wrapper {
-      max-width: 1200px;
+      width: 100%;
       height: 33rem;
       margin: 0 auto;
       height: auto;
@@ -346,12 +349,15 @@ div#basic_information_wrapper {
       top: 28rem;
       z-index: 1;
       div.info {
-        width: calc(50% - 30px);
+        width: 100%;
+        margin: 0 auto;
         height: 33rem;
         position: absolute;
-        left: 0;
-        top: 0;
+        left: -1.3rem;
+        top: 17rem;
         ul.info_list {
+          width: 80vw;
+          margin: 0 auto;
           display: flex;
           flex-wrap: wrap;
           flex-direction: row;
@@ -359,7 +365,7 @@ div#basic_information_wrapper {
           align-content: center;
           gap: 3rem;
           li {
-            width: 100%;
+            width: 50%;
             &:hover p.title::before {
               transform: scale(1.2);
             }
@@ -403,14 +409,14 @@ div#basic_information_wrapper {
       }
       div.my_pic {
         width: 90vw;
+        margin: 0 auto;
         height: 132.66vw;
         position: absolute;
-        right: 20px;
-        top: 70px;
-        display: flex;
-        align-content: center;
+        left: 5vw;
+        top: -18rem;
         img {
           width: 90vw;
+          margin: 0 auto;
           height: 132.66vw;
           object-fit: contain;
           position: absolute;
@@ -418,12 +424,12 @@ div#basic_information_wrapper {
           top: 0;
         }
         .img_blue_cover{
-          width: calc(90vw - 40px);
+          width: calc(85vw - 30px);
           height: calc(132.66vw - 40px);
           background: #003CFF;
           mix-blend-mode: lighten;
           position: absolute;
-          left: 20px;
+          left: 15px;
           top: 20px;
           z-index: 3;
         }
@@ -438,7 +444,7 @@ div#basic_information_wrapper {
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9900', endColorstr='#00ff9900',GradientType=0 );
           position: absolute;
           left: 5rem;
-          top: -9rem;
+          top: 45rem;
           z-index: -1;
         }
       }
@@ -452,11 +458,11 @@ div#basic_information_wrapper {
       width: 100%;
       height: auto;
       position: relative;
-      top: 15rem;
+      top: 10rem;
       text-align: center;
       p {
         color: rgba(255, 153, 0, 0.20);
-        font: normal 9.375rem "Dela Gothic One";
+        font: normal 20vw/25vw "Dela Gothic One";
       }
     }
   }

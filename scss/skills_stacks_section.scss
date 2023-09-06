@@ -47,8 +47,6 @@ div.front_end_skills_wrap {
     position: absolute;
     right: 0;
     bottom: 0;
-    border: solid 2px palevioletred;
-    box-sizing: border-box;
     li {
       width: 15rem;
       height: 15rem;
@@ -96,8 +94,6 @@ div.etc_skills_wrap {
   position: relative;
   left: 0;
   top: 0;
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
   ul.etc_skill_list {
     display: flex;
     flex-wrap: wrap;
@@ -117,14 +113,12 @@ div.etc_skills_wrap {
 @media screen and (max-width: 768px) {
   div#skills_and_stacks_wrapper {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     height: auto;
     position: relative;
     left: 0;
     top: 0;
-    padding-top: 20rem;
-    border: solid 2px red;
-    box-sizing: border-box;
     .title_wrap {
       width: auto;
       height: auto;
@@ -133,6 +127,7 @@ div.etc_skills_wrap {
         font: normal 3rem "Dela Gothic One";
       }
       svg {
+        margin-left: 3rem;
         padding-top: 0.3rem;
       }
       #skill {
@@ -151,7 +146,7 @@ div.etc_skills_wrap {
   div.front_end_skills_wrap {
     text-align: right;
     width: 100%;
-    height: 50rem;
+    height: 45rem;
     position: relative;
     right: 0;
     top: 0;
@@ -166,29 +161,30 @@ div.etc_skills_wrap {
   }
   ul.front_end_skill_list {
     max-width: 55rem;
-    height: 40rem;
+    width: 100vw;
+    height: 33rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-content: flex-start;
-    gap: 3rem;
+    gap: 0rem;
     position: absolute;
     right: 0;
-    bottom: 0;
-    border: solid 2px palevioletred;
-    box-sizing: border-box;
+    top: 10rem;
     li {
-      width: 15rem;
-      height: 15rem;
+      max-width: 15rem;
+      width: 30vw;
+      max-height: 15rem;
+      height: 30vw;
+      margin-bottom: 1rem;
       border-radius: 1.75rem;
       background: linear-gradient(138deg, #003CFF 20%, #013DFE 62%, #F90 96.37%);
       background-position: 0% 0%;
       background-size: 150% 150%;
       // background: #003CFF;
-      box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
+      box-shadow: 1px 1px px 3px rgba(0, 0, 0, 0.25);
       box-sizing: border-box;
-      
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
@@ -196,7 +192,7 @@ div.etc_skills_wrap {
       align-content: center;
       transition: all 0.5s ease;
       &:hover {
-        box-shadow: 5px 5px 12px 4px rgba(0, 0, 0, 0.35);
+        box-shadow: 3px 3px 6px 4px rgba(0, 0, 0, 0.35);
         background-position: 100% 100%;
       }
       &:touch-action {
@@ -205,13 +201,13 @@ div.etc_skills_wrap {
       }     
       p {
         color: white;
-        font: normal 2.1rem "Noto sans KR";
+        font: normal 5vw "Noto sans KR";
         text-align: left;
         cursor: default;
       }
       &:nth-child(4) {
         p {
-          font-size: 1.8rem;
+          font-size: 4vw;
         }
       }
     }
@@ -225,8 +221,6 @@ div.etc_skills_wrap {
   position: relative;
   left: 0;
   top: 0;
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
   ul.etc_skill_list {
     display: flex;
     flex-wrap: wrap;
