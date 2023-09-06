@@ -17,7 +17,7 @@ div#motto_wrapper div.motto_text {
   box-sizing: border-box;
   position: relative;
   left: 0;
-  top: 27rem;
+  top: 24rem;
   z-index: 10;
 }
 div#motto_wrapper div.motto_text p.mt_title {
@@ -29,35 +29,27 @@ div#motto_wrapper div.motto_text p.mt_text {
   font: 500 1.125rem "Noto sans KR";
 }
 div#motto_wrapper div.mt_bg_text {
-  width: 4500px;
+  width: 310rem;
   position: absolute;
   left: 0;
-  bottom: 0rem;
+  bottom: 23rem;
   z-index: 3;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-  animation: bg_text_ani 7s linear infinite;
+  transform: rotate(-6.547deg);
 }
 div#motto_wrapper div.mt_bg_text p {
-  transform: rotate(-6.547deg);
+  width: 150rem;
+  float: left;
   -webkit-text-stroke: 1px #FF9900;
   color: transparent;
   font: normal 18.75rem/19rem "Dela Gothic One";
-  float: left;
-}
-div#motto_wrapper div.mt_bg_text:hover {
-  animation-play-state: paused;
+  animation: bg_text_ani 7s linear infinite;
 }
 @keyframes bg_text_ani {
   0% {
     transform: translateX(0%);
-    top: 29rem;
   }
   100% {
     transform: translateX(-100%);
-    top: 63rem;
   }
 }
 div#motto_wrapper div.mt_bg_circle_left {

@@ -27,21 +27,6 @@ div#wrapper {
   top: 0;
 }
 
-header div#header_inner div#logo p {
-  font: normal 1.5rem "Permanent Marker";
-  color: #003CFF;
-}
-header div.menu ul.menu_list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-}
-header div.menu ul.menu_list li {
-  font: normal 1rem "Dela Gothic One";
-}
-
 section {
   width: 100%;
   height: auto;

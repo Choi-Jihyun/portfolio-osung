@@ -1,0 +1,58 @@
+header div#header_inner div.menu, header div#header_inner div.menu ul.menu_list {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 1rem;
+  z-index: 100;
+}
+header div#header_inner {
+  width: 39rem;
+  height: 2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+header div#header_inner a {
+  width: 5rem;
+  height: 2rem;
+  float: left;
+}
+header div#header_inner a div#logo p {
+  font: normal 1.5rem/2rem "Permanent Marker";
+  color: #003CFF;
+}
+header div#header_inner div.menu {
+  float: left;
+}
+header div#header_inner div.menu ul.menu_list {
+  width: 30rem;
+  height: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  z-index: 1;
+}
+header div#header_inner div.menu ul.menu_list li {
+  font: normal 1rem "Dela Gothic One";
+  cursor: pointer;
+}
+header div#header_inner div.menu ul.menu_list li.selected {
+  color: white;
+}
+header div#header_inner div.menu svg {
+  position: absolute;
+  left: -2.5rem;
+  top: 0.4rem;
+  z-index: 0;
+}
