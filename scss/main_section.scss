@@ -9,7 +9,7 @@ div#main_wrapper {
   .title {
     width: 100%;
     height: auto;
-    margin-top: 10rem;
+    margin-top: 15rem;
     text-align: center;
     border: solid 2px palevioletred;
     box-sizing: border-box;
@@ -21,3 +21,10 @@ div#main_wrapper {
     }
   }
 }
+
+@media screen and (max-width: 1500px) {
+  div#main_wrapper .title {
+    margin-top: 11rem;
+  }
+}
+

@@ -46,6 +46,9 @@ div#basic_information_wrapper {
         padding-top: 2rem;
         li {
           width: calc(50% - 4rem);
+          &:hover p.title::before {
+            transform: scale(1.2);
+          }
           p.title {
             color: white;
             font: normal 1.5rem "Noto sans KR";
@@ -60,12 +63,26 @@ div#basic_information_wrapper {
               left: -1.2rem;
               top: -0.3rem;
               z-index: -1;
+              transition: all 0.2s ease-out;
             }
           }
           p.text {
             color: white;
             font: normal 1.2rem "Noto sans KR";
             margin-top: 1rem;
+            span {
+              transition: all 0.1s ease-out;
+              &:hover {
+                cursor: pointer;
+                color:aqua;
+              }
+            }
+          }
+          p#alertCopy {
+            color: rgb(255, 255, 255);
+            font: 100 0.8rem "Noto sans KR";
+            margin-top: 1rem;
+            transition: all 0.2s ease-out;
           }
         }
       }
@@ -145,3 +162,21 @@ div#basic_information_wrapper {
   
 }
 
+@media screen and (max-width: 1200px) {
+  div#basic_information_wrapper {
+    .infos_wrapper {
+      div.my_pic {
+        top: 30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  div#basic_information_wrapper {
+    .infos_wrapper {
+      div.my_pic {
+        top: 70px;
+      }
+    }
+  }
+}

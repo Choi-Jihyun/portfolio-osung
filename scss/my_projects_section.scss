@@ -157,3 +157,13 @@ div.projects_list_wrapper {
     }
   }
 }
+
+div.pj_bg_text {
+  color: #9eb4ff;
+  font: 500 20rem "Orbitron";
+  transform: rotate(-90deg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}

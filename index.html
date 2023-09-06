@@ -20,9 +20,10 @@
   <link rel="stylesheet" href="/css/my_projects_section.css">
   <link rel="stylesheet" href="/css/about_me_section.css">
   <link rel="stylesheet" href="/css/contact_footer.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Faster+One&family=Noto+Sans+KR&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Faster+One&family=Noto+Sans+KR&family=Orbitron&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
+  <script src="/ts/dist/basic_information_section.js"></script>
 </head>
 <body>
   <div id="wrapper">
@@ -115,7 +116,15 @@
               </li>
               <li>
                 <p class="title">Contact</p>
-                <p class="text">osungcjh@gmail.com<br/>osungcjh@naver.com</p>
+                <p class="text">
+                  <span class="email" id="email_1">
+                    osungcjh@gmail.com
+                  </span><br/>
+                  <span class="email" id="email_2">
+                    osungcjh@naver.com
+                  </span>
+                </p>
+                <p id="alertCopy"></p>
               </li>
               
             </ul>
@@ -254,8 +263,10 @@
               <li></li>
             </ul>
           </div>
+          <div class="pj_bg_text">
+            <span id="pbt_1">UN</span><span id="pbt_2">STOPP</span><span id="pbt_3">ABLE</span>
+          </div>
         </div>
-        <div class="pj_bg_text">UNSTOPPABLE</div>
       </div>
     </section>
   
