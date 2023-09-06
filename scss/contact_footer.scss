@@ -41,11 +41,11 @@ div.footer_inner {
   }
 }
 
-
+// 모달창
 .modal {
   display: none;
   position: fixed;
-  z-index: 1; 
+  z-index: 1000; 
   left: 0;
   top: 0;
   width: 100%; 
@@ -53,46 +53,58 @@ div.footer_inner {
   overflow: auto; 
   background-color: rgba(0,0,0,0.4);
   transition: all 1s ease-out;
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border-radius : 10px ;
-    width : 50% ;
-    height: 50%;
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: translateY(40%);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius : 10px ;
+  width : 50% ;
+  height: 50%;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  transform: translateY(40%);
 
-    #close i {
-      color: #aaa ;
-      font-size: 2rem ;
-      float: right;
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
-      cursor: pointer;
-      transition: all 0.1s ease-out;
-      &:hover {
-        color: black
-      }
+  #close i {
+    color: #aaa ;
+    font-size: 2rem ;
+    float: right;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    &:hover {
+      color: black
     }
   }
 }
 
+// 모달창 내부 내용
 div#content {
   width: 100%;
   height: 100%;
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-content: center;
+
   p {
-    font: normal 1.5rem "Noto sans KR";
+    font: normal 1.5rem/2.5rem "Noto sans KR";
+    span {
+      cursor: pointer;
+    }
+    &.cf_email_title {
+      margin-bottom: 1rem;
+    }
+    &#cf_alertCopy {
+      color: gray;
+      font: normal 1rem "Noto sans KR";
+      margin-top: 1rem;
+    }
   }
 }
 
