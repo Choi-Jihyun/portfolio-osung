@@ -11,6 +11,10 @@ a {
   position: absolute;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   width: 100%;
   height: auto;
@@ -55,4 +59,15 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track {
   width: 15px;
   background-color: whitesmoke;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
 }
