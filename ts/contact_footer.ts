@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     cf_alertCopy.style.opacity = "1";
                     cf_alertCopy.innerText = "이메일을 클릭하여 복사하세요.";
-                }, 2000);
+                }, 4000);
             } catch (error) {
                 console.error("Failed to copy to clipboard:", error);
             }
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 cf_alertCopy2.style.opacity = "1";
                 cf_alertCopy2.innerText = "계좌번호를 클릭하여 복사하세요.";
-            }, 2000);
+            }, 4000);
         } catch (error) {
             console.error("Failed to copy to clipboard:", error);
         }

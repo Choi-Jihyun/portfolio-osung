@@ -2,9 +2,6 @@ div#motto_wrapper {
   width: 100%;
   height: 50rem;
   position: relative;
-  border: solid 2px red;
-  box-sizing: border-box;
-  position: relative;
   left: 0;
   top: 0;
   div.motto_text {
@@ -12,8 +9,6 @@ div#motto_wrapper {
     margin: 0 auto;
     height: auto;
     text-align: center;
-    border: solid 2px palevioletred;
-    box-sizing: border-box;
     position: relative;
     left: 0;
     top: 24rem;
@@ -107,6 +102,117 @@ div#motto_wrapper {
         top: 5.5rem;
     }
   }
+}
+
+
+@media screen and (max-width: 768px) {
+  div#motto_wrapper {
+    width: 100%;
+    height: 50rem;
+    position: relative;
+    left: 0;
+    top: 0;
+    div.motto_text {
+      width: calc(100% - 60px);
+      margin: 0 auto;
+      height: auto;
+      text-align: center;
+      position: relative;
+      left: 0;
+      top: 26rem;
+      z-index: 10;
+      p.mt_title {
+        color: #F90;
+        font: normal 11vw "Dela Gothic One";
+      }
+      p.mt_text {
+        margin-top: 2rem;
+        text-align: justify;
+        font: 500 1.125rem "Noto sans KR";
+      }
+    }
+  
+    div.mt_bg_text {
+      width: 310rem;
+      position: absolute;
+      left: 0;
+      bottom: 23rem;
+      z-index: 3;
+  
+      transform: rotate(-6.547deg);
+      p {
+        width: 150rem;
+        float: left;
+        -webkit-text-stroke: 1px #FF9900;
+        color: transparent;
+        font: normal 18.75rem/19rem "Dela Gothic One";
+        animation: bg_text_ani 10s linear infinite;
+      }
+    }
+  
+    @keyframes bg_text_ani {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  
+    div.mt_bg_circle_left {
+      width: 49rem;
+      height: 49rem;
+      background: rgba(0,60,255, 0.1);
+      background: -moz-linear-gradient(top, rgba(0,60,255,1) 0%, rgba(0,60,255,0) 100%);
+      background: -webkit-linear-gradient(top, rgba(0,60,255,1) 0%,rgba(0,60,255,0) 100%);
+      background: linear-gradient(to bottom, rgba(0,60,255,1) 0%,rgba(0,60,255,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003cff', endColorstr='#00003cff',GradientType=0 );
+      border-radius: 50%;
+      position: absolute;
+      left: -20rem;
+      bottom: -10rem;
+      opacity: 0.2;
+      z-index: 1;
+      // margin: 24.5rem auto;
+      .l_hole {
+          width: 35rem;
+          height: 35rem;
+          background-color: white;
+          border-radius: 50%;
+          position: absolute;
+          left: 7rem;
+          top: 7rem;
+      }
+    }
+    div.mt_bg_circle_right {
+      width: 29rem;
+      height: 29rem;
+      background: rgba(255, 153, 0, 0.2);
+      background: -moz-linear-gradient(top, rgba(255,153,0,1) 0%, rgba(255,153,0,0) 100%);
+      background: -webkit-linear-gradient(top, rgba(255,153,0,1) 0%,rgba(255,153,0,0) 100%);
+      background: linear-gradient(to bottom, rgba(255,153,0,1) 0%,rgba(255,153,0,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9900', endColorstr='#00ff9900',GradientType=0 );
+      border-radius: 50%;
+      opacity: 0.5;
+      position: absolute;
+      right: -10rem;
+      bottom: 7rem;
+      z-index: 1;
+      margin: 14.5rem auto;
+      .r_hole {
+          width: 18rem;
+          height: 18rem;
+          background-color: white;
+          border-radius: 50%;
+          position: absolute;
+          left: 5.5rem;
+          top: 5.5rem;
+      }
+    }
+  }
+  
+  
+  
 }
 
 

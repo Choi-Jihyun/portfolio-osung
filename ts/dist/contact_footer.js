@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         setTimeout(function () {
                             cf_alertCopy.style.opacity = "1";
                             cf_alertCopy.innerText = "이메일을 클릭하여 복사하세요.";
-                        }, 2000);
+                        }, 4000);
                         return [3 /*break*/, 3];
                     case 2:
                         error_1 = _a.sent();
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     setTimeout(function () {
                         cf_alertCopy2.style.opacity = "1";
                         cf_alertCopy2.innerText = "계좌번호를 클릭하여 복사하세요.";
-                    }, 2000);
+                    }, 4000);
                     return [3 /*break*/, 3];
                 case 2:
                     error_2 = _a.sent();

@@ -122,3 +122,138 @@ div#content p.c_banknum {
 div#content p.c_banknum:hover {
   color: #003CFF;
 }
+
+@media screen and (max-width: 768px) {
+  div#skills_and_stacks_wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+  div.footer_inner {
+    width: 100%;
+    height: 30rem;
+    text-align: center;
+  }
+  div.footer_inner p.f_title {
+    margin-top: 2rem;
+    color: #ff9900;
+    font: normal 5rem "Dela Gothic One";
+  }
+  div.footer_inner ul.sns_list {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+  }
+  div.footer_inner ul.sns_list li {
+    font-size: 2.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+  div.footer_inner ul.sns_list li:hover {
+    transform: scale(1.1);
+  }
+  div.footer_inner p.f_copyright {
+    color: black;
+    font: normal 1rem "Noto sans KR";
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 1s ease-out;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    height: 50%;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    transform: translateY(40%);
+  }
+  .modal-content #close i {
+    color: #aaa;
+    font-size: 2rem;
+    float: right;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+  }
+  .modal-content #close i:hover {
+    color: black;
+  }
+
+  div#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+  }
+  div#content p {
+    color: black;
+    font: normal 1.5rem/2.5rem "Noto sans KR";
+  }
+  div#content p span {
+    cursor: pointer;
+  }
+  div#content p.cf_email_title {
+    margin-bottom: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    transform: translateX(-50%);
+  }
+  div#content p.cf_email_text span {
+    transition: all 0.1s ease-out;
+  }
+  div#content p.cf_email_text span:hover {
+    color: #003CFF;
+  }
+  div#content p.cf_alertCopy {
+    width: 100%;
+    color: gray;
+    font: normal 1rem "Noto sans KR";
+    position: absolute;
+    left: 50%;
+    bottom: 2em;
+    transform: translateX(-50%);
+  }
+  div#content p.c_big_font {
+    font: normal 1.8rem "Noto sans KR";
+    padding: 3rem;
+  }
+  div#content p.c_banknum {
+    transition: all 0.1s ease-out;
+    cursor: pointer;
+  }
+  div#content p.c_banknum:hover {
+    color: #003CFF;
+  }
+}

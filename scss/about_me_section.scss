@@ -4,7 +4,7 @@ div#about_me_wrapper {
   width: 100%;
   margin: 0 auto;
   height: auto;
-  position: relative;
+  @extend %positionRelative;
   background: #003CFF;
   @extend %basicTitleWrapStyle;
   .title_wrap {
@@ -86,6 +86,194 @@ div.interests {
       padding-bottom: 1.5rem;
       color: white;
       font: normal 0.9rem "Noto sans KR";
+    }
+  }
+}
+
+div.am_bgs {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  left: 0;
+  top: 0;
+  div.am_bg_line {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -27rem;
+  }
+  div.am_bg_ball {
+    max-width: 49.5rem;
+    width: 50vw;
+    max-height: 49.5rem;
+    height: 49.5rem;
+    height: 50vw;
+    border-radius: 49.5rem;
+    background: linear-gradient(180deg, rgba(255, 153, 0, 0.50) 0%, rgba(255, 153, 0, 0.00) 96.33%);
+    position: absolute;
+    right: 0;
+    bottom: -7rem;
+  }
+  div.am_bg_circle {
+    max-width: 32.125rem;
+    width: 30vw;
+    max-height: 32.125rem;
+    height: 30vw;
+    border-radius: 32.125rem;
+    border: 1px solid #F90;
+    position: absolute;
+    right: 0;
+    bottom: 23rem;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  div.about_me_inner {
+    padding: 1rem 35px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  div#about_me_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    background: #003CFF;
+
+    .title_wrap {
+      width: 18rem;
+      height: auto;
+      text-align: left;
+      margin-top: 6rem;
+      p.subtitle {
+        font: normal 3rem "Dela Gothic One";
+      }
+      svg {
+        padding-top: 0.3rem;
+      }
+      #aboutme {
+        color: white;
+      }
+    }
+  }
+  
+  div.about_me_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    div.categories_wrapper {
+      margin-top: 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-content: center;
+      gap: 5rem;
+      p.am_c_title {
+        color: white;
+        font: normal 1.875rem "Noto sans KR";
+      }
+      ul.am_category_list {
+        margin-top: 2rem;
+        li {
+          color: white;
+          font: normal 1rem "Noto sans KR";
+          p {
+            font: normal 1.25rem "Noto sans KR";
+            padding-bottom: 1rem;
+            span {
+              font-weight: bold;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // 취미 활동
+  p.am_c_subtitle {
+    width: calc(100% - 30px);
+    height: auto;
+    margin-top: 1rem;
+    color: white;
+    font: normal 1rem/1.7rem "Noto sans KR";
+  }
+  
+  div.interests {
+    padding-bottom: 10rem;
+    p {
+      margin-top: 2.6rem;
+      color: white;
+      font: normal 1.125rem "Noto sans KR";
+    }
+    ul#hobbies_list {
+      margin-top: 2rem;
+      width: 30rem;
+      height: 10rem;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: flex-start;
+  
+      li {
+        width: 8rem;
+        padding-bottom: 1.5rem;
+        color: white;
+        font: normal 0.9rem "Noto sans KR";
+      }
+    }
+  }
+  
+  div.am_bgs {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    div.am_bg_line {
+      width: 100%;
+      position: absolute;
+      left: -20rem;
+      bottom: -3rem;
+      svg {
+        width: 300%;
+        transform: rotate(-35deg);
+      }
+    }
+    div.am_bg_ball {
+      max-width: 49.5rem;
+      width: 50vw;
+      max-height: 49.5rem;
+      height: 49.5rem;
+      height: 50vw;
+      border-radius: 49.5rem;
+      background: linear-gradient(180deg, rgba(255, 153, 0, 0.50) 0%, rgba(255, 153, 0, 0.00) 96.33%);
+      position: absolute;
+      right: 0;
+      bottom: -3rem;
+    }
+    div.am_bg_circle {
+      max-width: 32.125rem;
+      width: 30vw;
+      max-height: 32.125rem;
+      height: 30vw;
+      border-radius: 32.125rem;
+      border: 1px solid #F90;
+      position: absolute;
+      right: 0;
+      bottom: 7rem;
     }
   }
 }

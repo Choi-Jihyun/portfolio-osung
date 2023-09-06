@@ -169,6 +169,7 @@ div.am_bgs div.am_bg_circle {
   div#about_me_wrapper .title_wrap #aboutme {
     color: white;
   }
+
   div.about_me_inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -205,6 +206,7 @@ div.am_bgs div.am_bg_circle {
     font-weight: bold;
     margin-right: 10px;
   }
+
   p.am_c_subtitle {
     width: calc(100% - 30px);
     height: auto;
@@ -212,6 +214,7 @@ div.am_bgs div.am_bg_circle {
     color: white;
     font: normal 1rem/1.7rem "Noto sans KR";
   }
+
   div.interests {
     padding-bottom: 10rem;
   }
@@ -236,6 +239,7 @@ div.am_bgs div.am_bg_circle {
     color: white;
     font: normal 0.9rem "Noto sans KR";
   }
+
   div.am_bgs {
     width: 100%;
     height: auto;
