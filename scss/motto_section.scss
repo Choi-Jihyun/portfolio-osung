@@ -42,18 +42,16 @@ div#motto_wrapper {
       -webkit-text-stroke: 1px #FF9900;
       color: transparent;
       font: normal 18.75rem/19rem "Dela Gothic One";
-      animation: bg_text_ani 7s linear infinite;
+      animation: bg_text_ani 10s linear infinite;
     }
   }
 
   @keyframes bg_text_ani {
     0% {
       transform: translateX(0%);
-      // top: 29rem;
     }
     100% {
       transform: translateX(-100%);
-      // top: 63rem;
     }
   }
 

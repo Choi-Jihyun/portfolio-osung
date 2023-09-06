@@ -30,8 +30,13 @@ div.front_end_skills_wrap {
   right: 0;
   top: 0;
   p.skill_category {
-    padding: 5rem 2rem 0 0;
+    padding: 5rem 3.5rem 0 0;
     position: relative;
+  }
+  svg {
+    position: relative;
+    right: 1.5rem;
+    top: -2.4rem;
   }
   ul.front_end_skill_list {
     max-width: 55rem;

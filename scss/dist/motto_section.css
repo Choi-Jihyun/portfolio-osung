@@ -56,7 +56,9 @@ div#motto_wrapper div.mt_bg_circle_left {
   width: 49rem;
   height: 49rem;
   background: rgba(0, 60, 255, 0.1);
-  background: linear-gradient(to bottom, rgb(0, 60, 255) 0%, rgba(0, 60, 255, 0) 100%);
+  background: -moz-linear-gradient(top, #003cff 0%, rgba(0, 60, 255, 0) 100%);
+  background: -webkit-linear-gradient(top, #003cff 0%, rgba(0, 60, 255, 0) 100%);
+  background: linear-gradient(to bottom, #003cff 0%, rgba(0, 60, 255, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#003cff", endColorstr="#00003cff",GradientType=0 );
   border-radius: 50%;
   position: absolute;
@@ -78,7 +80,9 @@ div#motto_wrapper div.mt_bg_circle_right {
   width: 29rem;
   height: 29rem;
   background: rgba(255, 153, 0, 0.2);
-  background: linear-gradient(to bottom, rgb(255, 153, 0) 0%, rgba(255, 153, 0, 0) 100%);
+  background: -moz-linear-gradient(top, #ff9900 0%, rgba(255, 153, 0, 0) 100%);
+  background: -webkit-linear-gradient(top, #ff9900 0%, rgba(255, 153, 0, 0) 100%);
+  background: linear-gradient(to bottom, #ff9900 0%, rgba(255, 153, 0, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ff9900", endColorstr="#00ff9900",GradientType=0 );
   border-radius: 50%;
   opacity: 0.5;

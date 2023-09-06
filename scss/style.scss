@@ -35,3 +35,26 @@ section {
   left: 0;
   top: 0;
 }
+
+// 스크롤바 커스텀
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+html::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: #003cff;
+  border-radius: 10px;
+  border: 1px solid whitesmoke;
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar-track {
+  width: 15px;
+  background-color: whitesmoke;
+}

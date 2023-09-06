@@ -159,11 +159,19 @@ div.projects_list_wrapper {
 }
 
 div.pj_bg_text {
-  color: #9eb4ff;
   font: 500 20rem "Orbitron";
   transform: rotate(-90deg);
   position: absolute;
   left: 0;
-  top: 0;
+  top: 12rem;
   z-index: 1;
+  #pbt_3 {
+    color: #003CFF;
+  }
+  #pbt_2 {
+    color: #FF9900;
+  }
+  #pbt_1 {
+    color: whitesmoke;
+  }
 }
