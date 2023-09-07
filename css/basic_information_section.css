@@ -197,11 +197,12 @@ div#basic_information_wrapper .bi_bg_text_yellow p {
     z-index: 1;
   }
   div#basic_information_wrapper .infos_wrapper div.info {
-    width: calc(50% - 30px);
+    width: calc(60% - 30px);
     height: 33rem;
+    padding: 30px;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 4rem;
   }
   div#basic_information_wrapper .infos_wrapper div.info ul.info_list {
     display: flex;
@@ -209,10 +210,11 @@ div#basic_information_wrapper .bi_bg_text_yellow p {
     flex-direction: row;
     justify-content: flex-start;
     align-content: center;
-    gap: 3rem;
+    gap: 0rem;
   }
   div#basic_information_wrapper .infos_wrapper div.info ul.info_list li {
-    width: 100%;
+    width: 47%;
+    margin-bottom: 6rem;
   }
   div#basic_information_wrapper .infos_wrapper div.info ul.info_list li:hover p.title::before {
     transform: scale(1.2);
@@ -340,22 +342,26 @@ div#basic_information_wrapper .bi_bg_text_yellow p {
     width: 100%;
     margin: 0 auto;
     height: 33rem;
+    padding: 0px;
     position: absolute;
-    left: -1.3rem;
-    top: 17rem;
+    left: 0rem;
+    top: 27rem;
   }
   div#basic_information_wrapper .infos_wrapper div.info ul.info_list {
-    width: 80vw;
+    padding: 30;
+    width: calc(100% - 30px);
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
     align-content: center;
-    gap: 3rem;
+    gap: 0rem;
+    margin-left: 50px;
   }
   div#basic_information_wrapper .infos_wrapper div.info ul.info_list li {
     width: 50%;
+    margin-bottom: 6rem;
   }
   div#basic_information_wrapper .infos_wrapper div.info ul.info_list li:hover p.title::before {
     transform: scale(1.2);
@@ -401,7 +407,7 @@ div#basic_information_wrapper .bi_bg_text_yellow p {
     height: 132.66vw;
     position: absolute;
     left: 5vw;
-    top: -18rem;
+    top: -13rem;
   }
   div#basic_information_wrapper .infos_wrapper div.my_pic img {
     width: 90vw;

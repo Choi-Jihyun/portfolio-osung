@@ -115,8 +115,19 @@ div.etc_skills_wrap ul.etc_skill_list li p.skill_name {
   font: normal 1.1rem/2rem "Noto sans KR";
 }
 
+@media screen and (max-width: 1260px) {
+  div#skills_and_stacks_wrapper {
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+  div.front_end_skills_wrap ul.front_end_skill_list {
+    width: calc(100vw - 60px);
+    gap: 2rem;
+  }
+}
 @media screen and (max-width: 768px) {
   div#skills_and_stacks_wrapper {
+    padding: 0;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -163,15 +174,14 @@ div.etc_skills_wrap ul.etc_skill_list li p.skill_name {
     top: -2.4rem;
   }
   div.front_end_skills_wrap ul.front_end_skill_list {
-    max-width: 55rem;
-    width: 100vw;
+    width: calc(100% - 7px);
     height: 33rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-content: flex-start;
-    gap: 0rem;
+    gap: 3%;
     position: absolute;
     right: 0;
     top: 10rem;
@@ -205,12 +215,12 @@ div.etc_skills_wrap ul.etc_skill_list li p.skill_name {
   }
   div.front_end_skills_wrap ul.front_end_skill_list li p {
     color: white;
-    font: normal 5vw "Noto sans KR";
+    font: normal 4vw "Noto sans KR";
     text-align: left;
     cursor: default;
   }
   div.front_end_skills_wrap ul.front_end_skill_list li:nth-child(4) p {
-    font-size: 4vw;
+    font-size: 3.4vw;
   }
   div.etc_skills_wrap {
     max-width: 55rem;
@@ -218,6 +228,7 @@ div.etc_skills_wrap ul.etc_skill_list li p.skill_name {
     position: relative;
     left: 0;
     top: 0;
+    padding: 0 30px;
   }
   div.etc_skills_wrap ul.etc_skill_list {
     display: flex;
@@ -225,7 +236,11 @@ div.etc_skills_wrap ul.etc_skill_list li p.skill_name {
     flex-direction: row;
     justify-content: flex-start;
     align-content: center;
-    gap: 10rem;
+    gap: 1rem;
+  }
+  div.etc_skills_wrap ul.etc_skill_list li {
+    width: 45%;
+    margin-bottom: 70px;
   }
   div.etc_skills_wrap ul.etc_skill_list li p.skill_name {
     color: black;
