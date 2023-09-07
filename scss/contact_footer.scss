@@ -26,6 +26,8 @@ div.footer_inner {
     flex-direction: row;
     justify-content: space-around;
     align-content: center;
+    position: relative;
+    z-index: 10;
     li {
       font-size: 3rem;
       cursor: pointer;

@@ -289,3 +289,18 @@ div.am_bgs div.am_bg_circle {
     width: 220px;
   }
 }
+.am_bg_svg {
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+  animation: am_bg_svg_ani 3s ease-out forwards;
+  position: relative;
+}
+
+@keyframes am_bg_svg_ani {
+  0% {
+    stroke-dashoffset: 5000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

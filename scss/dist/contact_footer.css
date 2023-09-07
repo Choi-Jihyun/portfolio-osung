@@ -27,6 +27,8 @@ div.footer_inner ul.sns_list {
   flex-direction: row;
   justify-content: space-around;
   align-content: center;
+  position: relative;
+  z-index: 10;
 }
 div.footer_inner ul.sns_list li {
   font-size: 3rem;

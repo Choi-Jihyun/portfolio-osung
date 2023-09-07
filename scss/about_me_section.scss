@@ -296,3 +296,19 @@ div.am_bgs {
     }
   }
 }
+
+.am_bg_svg {
+  stroke-dasharray: 5000; 
+  stroke-dashoffset: 5000; 
+  animation: am_bg_svg_ani 3s ease-out forwards; 
+  position: relative;
+}
+
+@keyframes am_bg_svg_ani {
+  0% {
+    stroke-dashoffset: 5000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
