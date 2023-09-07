@@ -282,3 +282,14 @@ div.am_bgs div.am_bg_circle {
     bottom: 7rem;
   }
 }
+@media screen and (max-width: 425px) {
+  div#about_me_wrapper .title_wrap {
+    width: 18rem;
+    height: auto;
+    text-align: left;
+    margin-top: 6rem;
+  }
+  div#about_me_wrapper .title_wrap svg {
+    width: 220px;
+  }
+}
