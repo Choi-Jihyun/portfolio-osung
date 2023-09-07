@@ -286,7 +286,6 @@
           
         </div>
         <div class="projects_list_wrapper">
-          <div><button class="swiper-button-prev swiper-button-disabled">왼쪽 버튼</button></div>
           <div class="projects_list">
             <swiper-container class="mySwiper" pagination="true" pagination-type="progressbar" navigation="true" slides-per-view="3.4" free-mode="true" space-between="50">
               <swiper-slide>Slide 1</swiper-slide>
@@ -297,8 +296,7 @@
               <swiper-slide>Slide 6</swiper-slide>
             </swiper-container>
           
-            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
-
+            
           </div>
           <div class="pj_bg_text">
             <span id="pbt_1">UN</span><span id="pbt_2">STOPP</span><span id="pbt_3">ABLE</span>
@@ -422,5 +420,21 @@
     </footer>
 
   </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var swiper = new Swiper('.mySwiper', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.mySwiper .pagination',
+          type: 'progressbar',
+        },
+      });
+    });
+  </script>
 </body>
 </html>

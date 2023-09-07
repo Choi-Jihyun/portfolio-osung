@@ -1,3 +1,4 @@
+@charset "UTF-8";
 swiper-container {
   width: 1600px;
   height: calc(20rem + 10px);
@@ -29,4 +30,15 @@ swiper-slide img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #F90;
+  top: 50%;
+  left: -50px;
+}
+
+.swiper-pagination-progressbar-fill {
+  background-color: #F90; /* 원하는 색상으로 변경하세요. */
 }

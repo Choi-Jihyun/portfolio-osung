@@ -30,3 +30,14 @@ swiper-slide img {
   object-fit: cover;
 }
 
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #F90; // 색상을 #F90으로 설정
+  top: 50%; // 예시로 중앙에 위치하게 설정, 원하는 위치값으로 조정하세요.
+  left: -50px;
+}
+
+.swiper-pagination-progressbar-fill {
+  background-color: #F90; /* 원하는 색상으로 변경하세요. */
+}
