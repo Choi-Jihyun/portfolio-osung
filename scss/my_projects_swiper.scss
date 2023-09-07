@@ -1,0 +1,32 @@
+swiper-container {
+  width: 1600px;
+  height: calc(20rem + 10px);
+  border: solid 2px palevioletred;
+  box-sizing: border-box;
+}
+
+swiper-slide {
+  margin-top: 10px;
+  width: 25rem;
+  height: 19rem;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 16px 5px rgba(0, 0, 0, 0.20);
+  &.selected {
+    border: 10px solid #F90;
+    transform: translateY(-10px);
+    box-shadow: none;
+  }
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+

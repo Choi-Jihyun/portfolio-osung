@@ -52,8 +52,12 @@ div.project_orange_stage_wrapper div.project_orange_stage_inner {
   height: 46.2rem;
   padding-top: 14rem;
   margin: 0 auto;
-  border: solid 2px blue;
   box-sizing: border-box;
+}
+@media screen and (max-width: 1260px) {
+  div.project_orange_stage_wrapper div.project_orange_stage_inner {
+    padding: 0 30px;
+  }
 }
 
 div.project_view_wrapper {
@@ -124,7 +128,8 @@ div.project_view_wrapper div.project_infos div.project_links ul {
   flex-direction: row;
   justify-content: flex-start;
   align-content: center;
-  gap: 2rem;
+  border: solid 2px palevioletred;
+  box-sizing: border-box;
 }
 div.project_view_wrapper div.project_infos div.project_links ul li {
   width: 13rem;
@@ -135,12 +140,15 @@ div.project_view_wrapper div.project_infos div.project_links ul li {
   color: black;
   font: normal 1.2rem/2.5rem "Noto sans KR";
   transition: all 0.2s ease-out;
+  border-radius: 1rem;
+}
+div.project_view_wrapper div.project_infos div.project_links ul a:first-child {
+  margin-right: 2rem;
 }
 div.project_view_wrapper div.project_infos div.project_links ul a:hover li {
   background: #003CFF;
   cursor: pointer;
   transform: scale(1.05);
-  border-radius: 1rem;
   color: white;
 }
 
@@ -151,28 +159,6 @@ div.projects_list_wrapper {
 div.projects_list_wrapper div.projects_list {
   width: 100%;
   height: 40rem;
-}
-div.projects_list_wrapper div.projects_list ul {
-  width: 2000px;
-  height: auto;
-  margin-top: 4.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-content: center;
-  gap: 4rem;
-}
-div.projects_list_wrapper div.projects_list ul li {
-  width: 25rem;
-  height: 19rem;
-  background: #FFF;
-  box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.15);
-}
-div.projects_list_wrapper div.projects_list ul li.selected {
-  border: 10px solid #F90;
-  transform: translateY(-10px);
-  box-shadow: none;
 }
 
 div.pj_bg_text {
