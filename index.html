@@ -231,8 +231,9 @@
             </li>
           </ul>
         </div>
-        
-
+        <div class="ss_bg">
+          <img src="/images/bg_circle_circle.png" />
+        </div>
       </div>
     </section>
   
@@ -275,8 +276,8 @@
                 </div>
                 <div class="project_links">
                   <ul>
-                    <a><li>데모 웹사이트</li></a>
-                    <a><li>GitHub</li></a>
+                    <a><li><i class="fa-solid fa-globe"></i> 데모 웹사이트</li></a>
+                    <a><li><i class="fa-brands fa-github"></i> GitHub</li></a>
                   </ul>
                 </div>
                 
@@ -286,22 +287,24 @@
           
         </div>
         <div class="projects_list_wrapper">
-          <div class="projects_list">
-            <swiper-container class="mySwiper" pagination="true" pagination-type="progressbar" navigation="true" slides-per-view="3.4" free-mode="true" space-between="50">
-              <swiper-slide>Slide 1</swiper-slide>
-              <swiper-slide class="selected">Slide 2</swiper-slide>
-              <swiper-slide>Slide 3</swiper-slide>
-              <swiper-slide>Slide 4</swiper-slide>
-              <swiper-slide>Slide 5</swiper-slide>
-              <swiper-slide>Slide 6</swiper-slide>
-            </swiper-container>
-          
-            
+          <div class="projects_list_container">
+            <ul class="project_list">
+              <li class="selected"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
           </div>
+        </div>
+        <div class="list_navigation">
+          <div class="button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+          <div class="button-next"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+          
+
           <div class="pj_bg_text">
             <span id="pbt_1">UN</span><span id="pbt_2">STOPP</span><span id="pbt_3">ABLE</span>
           </div>
-        </div>
       </div>
     </section>
   
@@ -420,21 +423,5 @@
     </footer>
 
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var swiper = new Swiper('.mySwiper', {
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.mySwiper .pagination',
-          type: 'progressbar',
-        },
-      });
-    });
-  </script>
 </body>
 </html>

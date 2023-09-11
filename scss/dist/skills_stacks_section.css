@@ -115,6 +115,19 @@ div.etc_skills_wrap ul.etc_skill_list li p.skill_name {
   font: normal 1.1rem/2rem "Noto sans KR";
 }
 
+div.ss_bg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: -22rem;
+  top: 0;
+  z-index: -1;
+}
+div.ss_bg img {
+  width: 35rem;
+  height: 35rem;
+}
+
 @media screen and (max-width: 1260px) {
   div#skills_and_stacks_wrapper {
     padding: 0 30px;
