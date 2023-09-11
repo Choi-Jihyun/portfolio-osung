@@ -1,4 +1,4 @@
-div#projects_wrapper, div.project_orange_stage_wrapper div.project_orange_stage_inner, div.project_view_wrapper div.project_infos {
+div#projects_wrapper, div.project_orange_stage_wrapper div.project_orange_stage_inner, div.project_infos {
   position: relative;
   left: 0;
   top: 0;
@@ -56,7 +56,12 @@ div.project_orange_stage_wrapper div.project_orange_stage_inner {
 }
 @media screen and (max-width: 1260px) {
   div.project_orange_stage_wrapper div.project_orange_stage_inner {
-    padding: 0 30px;
+    padding: 12rem 30px 0 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  div.project_orange_stage_wrapper div.project_orange_stage_inner {
+    padding: 8rem 30px 0 30px;
   }
 }
 
@@ -65,35 +70,65 @@ div.project_view_wrapper {
   height: auto;
   margin-top: 3rem;
 }
-div.project_view_wrapper div.project_main_pic {
+@media screen and (max-width: 768px) {
+  div.project_view_wrapper {
+    margin-top: 4rem;
+  }
+}
+
+ul.project_info_list > li {
+  transition: all 2s ease-out;
+  display: none;
+}
+ul.project_info_list > li.selected {
+  display: block;
+}
+
+div.project_main_pic {
   width: 31rem;
   height: 19rem;
   background: white;
   float: left;
 }
-div.project_view_wrapper div.project_main_pic img {
+@media screen and (max-width: 768px) {
+  div.project_main_pic {
+    width: 100%;
+    height: auto;
+  }
+}
+div.project_main_pic img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-div.project_view_wrapper div.project_infos {
+
+div.project_infos {
   width: calc(100% - 34rem);
   height: 17rem;
   margin-left: 3rem;
   margin-top: 1rem;
   float: left;
 }
-div.project_view_wrapper div.project_infos .p_name {
+@media screen and (max-width: 768px) {
+  div.project_infos {
+    width: 100%;
+    height: 21rem;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+}
+div.project_infos .p_name {
   color: white;
   font: bold 1.875rem "Noto sans KR";
 }
-div.project_view_wrapper div.project_infos .p_bodytext {
+div.project_infos .p_bodytext {
   color: white;
   font: bold 1rem "Noto sans KR";
   margin-top: 1.3rem;
+  text-align: justify;
 }
-div.project_view_wrapper div.project_infos div.projects_skill ul {
+div.project_infos div.projects_skill ul {
   width: 100%;
   height: auto;
   display: flex;
@@ -101,13 +136,13 @@ div.project_view_wrapper div.project_infos div.projects_skill ul {
   flex-direction: row;
   justify-content: flex-start;
   align-content: flex-start;
-  gap: 1rem;
+  margin-top: 1rem;
 }
-div.project_view_wrapper div.project_infos div.projects_skill ul li {
+div.project_infos div.projects_skill ul li {
   width: auto;
   height: auto;
-  padding: 3px 20px;
-  margin-top: 1rem;
+  padding: 2px 14px;
+  margin-bottom: 0.5rem;
   background: rgba(255, 255, 255, 0.1);
   border: solid 1px rgb(255, 255, 255);
   border-radius: 2rem;
@@ -115,23 +150,33 @@ div.project_view_wrapper div.project_infos div.projects_skill ul li {
   color: rgb(255, 255, 255);
   font: normal 1rem "Noto sans KR";
   transition: all 0.1s ease-out;
+  margin-right: 0.7rem;
 }
-div.project_view_wrapper div.project_infos div.projects_skill ul li:hover {
+div.project_infos div.projects_skill ul li:last-child {
+  margin-right: 0rem;
+}
+div.project_infos div.projects_skill ul li:hover {
   background: rgba(255, 255, 255, 0.3);
 }
-div.project_view_wrapper div.project_infos div.project_links {
+div.project_infos div.project_links {
+  width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
 }
-div.project_view_wrapper div.project_infos div.project_links ul {
+div.project_infos div.project_links ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
   align-content: center;
 }
-div.project_view_wrapper div.project_infos div.project_links ul li {
+@media screen and (max-width: 768px) {
+  div.project_infos div.project_links ul {
+    justify-content: center;
+  }
+}
+div.project_infos div.project_links ul li {
   width: auto;
   height: 2.5rem;
   padding: 0 2rem;
@@ -143,10 +188,18 @@ div.project_view_wrapper div.project_infos div.project_links ul li {
   transition: all 0.2s ease-out;
   border-radius: 1rem;
 }
-div.project_view_wrapper div.project_infos div.project_links ul a:first-child {
+div.project_infos div.project_links ul li i {
+  padding-right: 6px;
+}
+div.project_infos div.project_links ul a:first-child {
   margin-right: 2rem;
 }
-div.project_view_wrapper div.project_infos div.project_links ul a:hover li {
+@media screen and (max-width: 768px) {
+  div.project_infos div.project_links ul a:first-child {
+    margin-right: 1rem;
+  }
+}
+div.project_infos div.project_links ul a:hover li {
   background: #003CFF;
   cursor: pointer;
   transform: scale(1.05);
@@ -160,7 +213,7 @@ div.projects_list_wrapper div.projects_list_container {
 }
 
 ul.project_list {
-  width: 108rem;
+  width: 162rem;
   height: 30rem;
   margin-top: 4.5rem;
   position: relative;
@@ -173,18 +226,25 @@ ul.project_list {
   justify-content: flex-start;
   align-content: flex-start;
 }
+@media screen and (max-width: 768px) {
+  ul.project_list {
+    margin-left: calc(50vw - 12.5rem);
+  }
+}
 ul.project_list li {
   width: 25rem;
   height: 15.45rem;
   box-shadow: 4px 4px 16px 5px rgba(0, 0, 0, 0.2);
   margin-right: 2rem;
   filter: brightness(0.5) grayscale(0.9);
+  opacity: 0.8;
   cursor: pointer;
-  transition: all 0.2s ease-out;
+  transition: all 0.4s ease-out;
 }
 ul.project_list li.selected {
   box-shadow: 0 0 0 5px #FF9900 inset;
   filter: brightness(1) grayscale(0);
+  opacity: 1;
 }
 ul.project_list li:nth-child(1) {
   background: url("/images/project_list_01.png") center center no-repeat;
@@ -202,26 +262,61 @@ ul.project_list li:nth-child(4) {
   background: url("/images/project_list_04.png") center center no-repeat;
   background-size: contain;
 }
+ul.project_list li:nth-child(5) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  background: #dadada;
+  background-size: contain;
+}
+ul.project_list li:nth-child(6) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  background: #dadada;
+  background-size: contain;
+}
 
 div.list_navigation {
   width: 100vw;
-  height: 5rem;
+  height: 0;
   position: absolute;
   left: 0;
   top: 56rem;
   z-index: 10;
 }
+@media screen and (max-width: 768px) {
+  div.list_navigation {
+    top: 71.5rem;
+  }
+}
 div.list_navigation .button-prev {
+  height: 5rem;
   position: absolute;
   left: 30px;
   top: 0;
   z-index: 10;
 }
+@media screen and (max-width: 768px) {
+  div.list_navigation .button-prev {
+    left: 10px;
+  }
+}
 div.list_navigation .button-next {
+  height: 5rem;
   position: absolute;
   right: 40px;
   top: 0;
   z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  div.list_navigation .button-next {
+    right: 10px;
+  }
 }
 div.list_navigation i {
   font-size: 5rem;

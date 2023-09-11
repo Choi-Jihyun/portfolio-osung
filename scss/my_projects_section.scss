@@ -26,8 +26,12 @@ div.project_orange_stage_wrapper {
     margin: 0 auto;
     @extend %positionRelative;
     @media screen and (max-width: 1260px) {
-      padding: 0 30px;
+      padding: 12rem 30px 0 30px;
     }
+    @media screen and (max-width: 768px) {
+      padding: 8rem 30px 0 30px;
+    }
+    
     
     box-sizing: border-box;
   }
@@ -37,93 +41,136 @@ div.project_view_wrapper {
   width: 100%;
   height: auto;
   margin-top: 3rem;
-  div.project_main_pic {
-    width: 31rem;
-    height: 19rem;
-    background: white;
-    float: left;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+  @media screen and (max-width: 768px) {
+    margin-top: 4rem;
   }
-  div.project_infos {
-    width: calc(100% - 34rem);
-    height: 17rem;
-    margin-left: 3rem;
-    margin-top: 1rem;
-    float: left;
-    @extend %positionRelative;
-    .p_name {
-      color: white;
-      font: bold 1.875rem "Noto sans KR";
+  
+}
+
+ul.project_info_list {
+  & > li {
+    transition: all 2s ease-out;
+    display: none;
+    &.selected {
+      display: block;
     }
-    .p_bodytext {
-      color: white;
-      font: bold 1rem "Noto sans KR";
-      margin-top: 1.3rem;
-    }
-    div.projects_skill {
-      ul {
-        width: 100%;
+  }
+}
+
+div.project_main_pic {
+  width: 31rem;
+  height: 19rem;
+  background: white;
+  float: left;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+div.project_infos {
+  width: calc(100% - 34rem);
+  height: 17rem;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  float: left;
+  @extend %positionRelative;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 21rem;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  
+  .p_name {
+    color: white;
+    font: bold 1.875rem "Noto sans KR";
+  }
+  .p_bodytext {
+    color: white;
+    font: bold 1rem "Noto sans KR";
+    margin-top: 1.3rem;
+    text-align: justify;
+  }
+  div.projects_skill {
+    ul {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-content: flex-start;
+      margin-top: 1rem;
+      li {
+        width: auto;
         height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-content: flex-start;
-        gap: 1rem;
-        li {
-          width: auto;
-          height: auto;
-          padding: 3px 20px;
-          margin-top: 1rem;
-          background: rgba(255, 255, 255, 0.1);
-          border: solid 1px rgb(255, 255, 255);
-          border-radius: 2rem;
-          box-sizing: border-box;
-          color: rgb(255, 255, 255);
-          font: normal 1rem "Noto sans KR";
-          transition: all 0.1s ease-out;
-          &:hover {
-            background: rgba(255, 255, 255, 0.3);
-          }
+        padding: 2px 14px;
+        margin-bottom: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: solid 1px rgb(255, 255, 255);
+        border-radius: 2rem;
+        box-sizing: border-box;
+        color: rgb(255, 255, 255);
+        font: normal 1rem "Noto sans KR";
+        transition: all 0.1s ease-out;
+        margin-right: 0.7rem;
+        &:last-child {
+          margin-right: 0rem;
+        }
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
         }
       }
     }
-    div.project_links {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-content: center;
-        li {
-          width: auto;
-          height: 2.5rem;
-          padding: 0 2rem;
-          margin: 0 auto;
-          background: white;
-          text-align: center;
-          color: black;
-          font: normal 1.2rem/2.5rem "Noto sans KR";
-          transition: all 0.2s ease-out;
-          border-radius: 1rem;
+  }
+  div.project_links {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-content: center;
+      @media screen and (max-width: 768px) {
+        justify-content: center;
+      }
+      li {
+        width: auto;
+        height: 2.5rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+        background: white;
+        text-align: center;
+        color: black;
+        font: normal 1.2rem/2.5rem "Noto sans KR";
+        transition: all 0.2s ease-out;
+        border-radius: 1rem;
+        i {
+          padding-right: 6px;
         }
-        a:first-child {
-          margin-right: 2rem;
+      }
+      a:first-child {
+        margin-right: 2rem;
+        @media screen and (max-width: 768px) {
+          margin-right: 1rem; 
         }
-        a:hover li {
-          background: #003CFF;
-          cursor: pointer;
-          transform: scale(1.05);
-          color: white;
-        }
+      }
+      a:hover li {
+        background: #003CFF;
+        cursor: pointer;
+        transform: scale(1.05);
+        color: white;
       }
     }
   }
@@ -140,7 +187,7 @@ div.projects_list_wrapper {
 }
 
 ul.project_list {
-  width: 27*4rem; // list의 개수만큼 곱함
+  width: 27*6rem; // list의 개수만큼 곱함
   height: 30rem;
   margin-top: 4.5rem;
   position: relative;
@@ -152,17 +199,23 @@ ul.project_list {
   flex-direction: row;
   justify-content: flex-start;
   align-content: flex-start;
+  @media screen and (max-width: 768px) {
+    margin-left: calc(50vw - 12.5rem);
+  }
+  
   li {
     width: 25rem;
     height: 15.45rem;
     box-shadow: 4px 4px 16px 5px rgba(0, 0, 0, 0.20);
     margin-right: 2rem;
     filter: brightness(0.5) grayscale(0.9);
+    opacity: 0.8;
     cursor: pointer;
-    transition: all 0.2s ease-out;
+    transition: all 0.4s ease-out;
     &.selected {
       box-shadow: 0 0 0 5px #FF9900 inset; 
       filter: brightness(1) grayscale(0);
+      opacity: 1;
     }
     &:nth-child(1) {
       background: url('/images/project_list_01.png') center center no-repeat;
@@ -180,27 +233,57 @@ ul.project_list {
       background: url('/images/project_list_04.png') center center no-repeat;
       background-size: contain;
     }
+    &:nth-child(5) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+      align-content: center;
+      background: #dadada;
+      background-size: contain;
+    }
+    &:nth-child(6) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+      align-content: center;
+      background: #dadada;
+      background-size: contain;
+    }
   }
 }
 
 div.list_navigation {
   width: 100vw;
-  height: 5rem;
+  height: 0;
   position: absolute;
   left: 0;
   top: 56rem;
   z-index: 10;
+  @media screen and (max-width: 768px) {
+    top: 71.5rem;
+  }
+  
   .button-prev {
+    height: 5rem;
     position: absolute;
     left: 30px;
     top: 0;
     z-index: 10;
+    @media screen and (max-width: 768px) {
+      left: 10px;
+    }
   }
   .button-next {
+    height: 5rem;
     position: absolute;
     right: 40px;
     top: 0;
     z-index: 10;
+    @media screen and (max-width: 768px) {
+      right: 10px;
+    }
   }
   i {
     font-size: 5rem;

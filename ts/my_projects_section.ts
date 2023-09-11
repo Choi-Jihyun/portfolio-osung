@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projectListWrapper = document.querySelector('.project_list')
+  const projectViewLi = document.querySelectorAll('.project_info_list > li')
   const projectLi = document.querySelectorAll('.project_list > li')
   const nextBtn = document.querySelector('.button-next');
   const prevBtn = document.querySelector('.button-prev');
@@ -8,14 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let slideNum: number = 0
   let selectedSlide = projectLi[0];
 
-  nextBtn?.addEventListener('click', goNextProject);
-  prevBtn?.addEventListener('click', goPrevProject);
+  nextBtn?.addEventListener('click', slideNextProject);
+  prevBtn?.addEventListener('click', slidePrevProject);
   for (const item of projectLi){
     item.addEventListener('click', goThisProject);
   }
   gsap.set(prevBtn?.children, {color: inactiveColor})
 
-  function goNextProject () {
+  function slideNextProject () {
     gsap.set(prevBtn?.children, {color: '#FF9900'})
     if (slideNum < projectLi.length - 1) {
       projectLi[slideNum].classList.remove('selected')
@@ -26,9 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slideNum == projectLi.length - 1) {
       gsap.set(nextBtn?.children, {color: inactiveColor})
     }
+    showProjectView()
   }
   
-  function goPrevProject () {
+  function slidePrevProject () {
     gsap.set(nextBtn?.children, {color: '#FF9900'})
     if (slideNum > 0) {
       projectLi[slideNum].classList.remove('selected')
@@ -39,12 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slideNum == 0) {
       gsap.set(prevBtn?.children, {color: inactiveColor})
     }
+    showProjectView()
   }
 
   function goThisProject () {
     slideNum = getIndex(this);
     console.log('slideNum: ', slideNum);
     activateDot(slideNum)
+    showProjectView()
   }
 
   function getIndex(thisMenu){
@@ -72,6 +76,13 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(nextBtn?.children, {color: activeColor})
       gsap.set(prevBtn?.children, {color: activeColor})
     }
+  }
+
+  function showProjectView () {
+    for (const item of projectViewLi) {
+      item.classList.remove('selected');
+    }
+    projectViewLi[slideNum].classList.add('selected');
   }
 
 });

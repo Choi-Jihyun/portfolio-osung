@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var projectListWrapper = document.querySelector('.project_list');
+    var projectViewLi = document.querySelectorAll('.project_info_list > li');
     var projectLi = document.querySelectorAll('.project_list > li');
     var nextBtn = document.querySelector('.button-next');
     var prevBtn = document.querySelector('.button-prev');
@@ -7,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var activeColor = '#FF9900';
     var slideNum = 0;
     var selectedSlide = projectLi[0];
-    nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.addEventListener('click', goNextProject);
-    prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.addEventListener('click', goPrevProject);
+    nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.addEventListener('click', slideNextProject);
+    prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.addEventListener('click', slidePrevProject);
     for (var _i = 0, projectLi_1 = projectLi; _i < projectLi_1.length; _i++) {
         var item = projectLi_1[_i];
         item.addEventListener('click', goThisProject);
     }
     gsap.set(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { color: inactiveColor });
-    function goNextProject() {
+    function slideNextProject() {
         gsap.set(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { color: '#FF9900' });
         if (slideNum < projectLi.length - 1) {
             projectLi[slideNum].classList.remove('selected');
@@ -25,8 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (slideNum == projectLi.length - 1) {
             gsap.set(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { color: inactiveColor });
         }
+        showProjectView();
     }
-    function goPrevProject() {
+    function slidePrevProject() {
         gsap.set(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { color: '#FF9900' });
         if (slideNum > 0) {
             projectLi[slideNum].classList.remove('selected');
@@ -37,11 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (slideNum == 0) {
             gsap.set(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { color: inactiveColor });
         }
+        showProjectView();
     }
     function goThisProject() {
         slideNum = getIndex(this);
         console.log('slideNum: ', slideNum);
         activateDot(slideNum);
+        showProjectView();
     }
     function getIndex(thisMenu) {
         var selectedIndex = 0;
@@ -70,5 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
             gsap.set(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { color: activeColor });
             gsap.set(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { color: activeColor });
         }
+    }
+    function showProjectView() {
+        for (var _i = 0, projectViewLi_1 = projectViewLi; _i < projectViewLi_1.length; _i++) {
+            var item = projectViewLi_1[_i];
+            item.classList.remove('selected');
+        }
+        projectViewLi[slideNum].classList.add('selected');
     }
 });
