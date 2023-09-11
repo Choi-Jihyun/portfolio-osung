@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Faster+One&family=Noto+Sans+KR&family=Orbitron&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
+  <script src="/ts/dist/header.js"></script>
   <script src="/ts/dist/basic_information_section.js"></script>
   <script src="/ts/dist/my_projects_section.js"></script>
   <script src="/ts/dist/contact_footer.js"></script>
@@ -33,16 +34,16 @@
     <header>
       <h1 class="hidden">OSUNG portfolio</h1>
       <div id="header_inner">
-        <a href="#main">
+        <a>
           <div id="logo">
             <p id="logo_title">osung</p>
           </div>
         </a>
         <div class="menu">
           <ul class="menu_list">
-            <li class="selected">Skills & Stacks</li>
-            <li>Projects</li>
-            <li>About Me</li>
+            <li data-target="skills_and_stacks">Skills & Stacks</li>
+            <li data-target="projects">Projects</li>
+            <li data-target="about_me">About Me</li>
           </ul>
           <svg xmlns="http://www.w3.org/2000/svg" width="194" height="20" viewBox="0 0 194 20" fill="none">
             <path d="M184 20C189.523 20 194 15.5228 194 9.99998C194 4.47714 189.523 -1.65686e-05 184 -1.60858e-05L184 20ZM8.74228e-07 20L184 20L184 -1.60858e-05L-8.74228e-07 0L8.74228e-07 20Z" fill="url(#paint0_linear_59_439)"/>

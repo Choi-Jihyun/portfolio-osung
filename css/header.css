@@ -16,6 +16,7 @@ header div#header_inner {
   align-content: center;
 }
 header div#header_inner a {
+  cursor: pointer;
   width: 5rem;
   height: 2rem;
   float: left;

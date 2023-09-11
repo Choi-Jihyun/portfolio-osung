@@ -17,6 +17,7 @@ header {
     justify-content: space-between;
     align-content: center;
     a {
+      cursor: pointer;
       width: 5rem;
       height: 2rem;
       float: left;
@@ -48,7 +49,6 @@ header {
           font: normal 1rem "Dela Gothic One";
           cursor: pointer;
           &.selected {
-
             color: white;
           }
         }
@@ -112,7 +112,6 @@ header {
             font: normal 1rem "Dela Gothic One";
             cursor: pointer;
             &.selected {
-  
               color: white;
             }
           }
