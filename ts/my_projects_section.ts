@@ -3,13 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectLi = document.querySelectorAll('.project_list > li')
   const nextBtn = document.querySelector('.button-next');
   const prevBtn = document.querySelector('.button-prev');
-  let slideNum: number = 0
   const inactiveColor: string = '#cccccc';
   const activeColor: string = '#FF9900';
+  let slideNum: number = 0
+  let selectedSlide = projectLi[0];
 
   nextBtn?.addEventListener('click', goNextProject);
   prevBtn?.addEventListener('click', goPrevProject);
-
+  for (const item of projectLi){
+    item.addEventListener('click', goThisProject);
+  }
   gsap.set(prevBtn?.children, {color: inactiveColor})
 
   function goNextProject () {
@@ -17,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slideNum < projectLi.length - 1) {
       projectLi[slideNum].classList.remove('selected')
       slideNum ++;
-      gsap.to(projectListWrapper, {left: `-${28 * slideNum}rem`});
+      gsap.to(projectListWrapper, {left: `-${27 * slideNum}rem`});
       projectLi[slideNum].classList.add('selected')
     }
     if (slideNum == projectLi.length - 1) {
@@ -30,11 +33,45 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slideNum > 0) {
       projectLi[slideNum].classList.remove('selected')
       slideNum --;
-      gsap.to(projectListWrapper, {left: `-${28 * slideNum}rem`});
+      gsap.to(projectListWrapper, {left: `-${27 * slideNum}rem`});
       projectLi[slideNum].classList.add('selected')
     }
     if (slideNum == 0) {
       gsap.set(prevBtn?.children, {color: inactiveColor})
     }
   }
+
+  function goThisProject () {
+    slideNum = getIndex(this);
+    console.log('slideNum: ', slideNum);
+    activateDot(slideNum)
+  }
+
+  function getIndex(thisMenu){
+    let selectedIndex = 0;
+    while((thisMenu = thisMenu.previousElementSibling)!=null){
+      selectedIndex++;
+    }
+    return selectedIndex;
+  }
+
+  function activateDot(index){
+    for (const item of projectLi) {
+      item.classList.remove('selected');
+    }
+    selectedSlide=projectLi[index];
+    selectedSlide.classList.add('selected');
+    gsap.to(projectListWrapper, {left: `-${27 * slideNum}rem`});
+    if (slideNum == 0) {
+      gsap.set(nextBtn?.children, {color: activeColor})
+      gsap.set(prevBtn?.children, {color: inactiveColor})
+    } else if (slideNum == projectLi.length - 1) {
+      gsap.set(prevBtn?.children, {color: activeColor})
+      gsap.set(nextBtn?.children, {color: inactiveColor})
+    } else {
+      gsap.set(nextBtn?.children, {color: activeColor})
+      gsap.set(prevBtn?.children, {color: activeColor})
+    }
+  }
+
 });

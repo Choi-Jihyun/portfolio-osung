@@ -159,7 +159,7 @@ div.projects_list_wrapper div.projects_list_container {
 }
 
 ul.project_list {
-  width: 112rem;
+  width: 108rem;
   height: 30rem;
   margin-top: 4.5rem;
   position: relative;
@@ -176,7 +176,7 @@ ul.project_list li {
   width: 25rem;
   height: 15.45rem;
   box-shadow: 4px 4px 16px 5px rgba(0, 0, 0, 0.2);
-  margin-right: 3rem;
+  margin-right: 2rem;
   filter: brightness(0.5) grayscale(0.9);
   cursor: pointer;
   transition: all 0.2s ease-out;
