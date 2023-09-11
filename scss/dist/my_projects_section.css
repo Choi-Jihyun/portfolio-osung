@@ -64,8 +64,6 @@ div.project_view_wrapper {
   width: 100%;
   height: auto;
   margin-top: 3rem;
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
 }
 div.project_view_wrapper div.project_main_pic {
   width: 31rem;
@@ -83,8 +81,6 @@ div.project_view_wrapper div.project_infos {
   height: 17rem;
   margin-left: 3rem;
   margin-top: 1rem;
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
   float: left;
 }
 div.project_view_wrapper div.project_infos .p_name {
@@ -156,10 +152,6 @@ div.project_view_wrapper div.project_infos div.project_links ul a:hover li {
   color: white;
 }
 
-div.projects_list_wrapper {
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
-}
 div.projects_list_wrapper div.projects_list_container {
   width: 100%;
   height: auto;
@@ -187,25 +179,26 @@ ul.project_list li {
   margin-right: 3rem;
   filter: brightness(0.5) grayscale(0.9);
   cursor: pointer;
+  transition: all 0.2s ease-out;
 }
 ul.project_list li.selected {
-  box-shadow: 0 0 0 10px #FF9900 inset;
+  box-shadow: 0 0 0 5px #FF9900 inset;
   filter: brightness(1) grayscale(0);
 }
 ul.project_list li:nth-child(1) {
-  background: url("/images/project-01-main.png") center center no-repeat;
+  background: url("/images/project_list_01.png") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(2) {
-  background: url("/images/project-02-main.png") center center no-repeat;
+  background: url("/images/project_list_02.png") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(3) {
-  background: url("/images/project-03-main.png") center center no-repeat;
+  background: url("/images/project_list_03.png") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(4) {
-  background: url("/images/project-04-main.png") center center no-repeat;
+  background: url("/images/project_list_04.png") center center no-repeat;
   background-size: contain;
 }
 
@@ -216,8 +209,6 @@ div.list_navigation {
   left: 0;
   top: 56rem;
   z-index: 10;
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
 }
 div.list_navigation .button-prev {
   position: absolute;
@@ -235,6 +226,7 @@ div.list_navigation i {
   font-size: 5rem;
   color: #FF9900;
   cursor: pointer;
+  transition: all 0.2s ease-out;
 }
 
 div.pj_bg_text {
