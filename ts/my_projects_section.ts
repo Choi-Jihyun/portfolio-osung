@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const projectListWrapper = document.querySelector('.project_list') as HTMLElement;
-  const projectViewLi = document.querySelectorAll('.project_info_list > li') as NodeListOf<HTMLElement>;
-  const projectLi = document.querySelectorAll('.project_list > li') as NodeListOf<HTMLElement>;
-  const nextBtn = document.querySelector('.button-next') as HTMLElement; 
-  const prevBtn = document.querySelector('.button-prev') as HTMLElement;
+  const body = document.querySelector('body');
+  const projectListWrapper = document.querySelector('.project_list');
+  const projectViewWrapper = document.querySelector('.project_info_list')
+  const projectViewLi = document.querySelectorAll('.project_info_list > li');
+  const projectLi = document.querySelectorAll('.project_list > li');
+  const nextBtn = document.querySelector('.button-next'); 
+  const prevBtn = document.querySelector('.button-prev');
   const inactiveColor: string = '#cccccc';
   const activeColor: string = '#FF9900';
   let slideNum: number = 0
@@ -58,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return selectedIndex;
   }
 
+
   function activateSlide(index){
     for (const item of projectLi) {
       item.classList.remove('selected');
@@ -77,17 +80,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function showProjectView () {
-    for (const item of projectViewLi) {
-      item.classList.remove('selected');
-    }
-    projectViewLi[slideNum].classList.add('selected');
+  
+  function showProjectView() {
+    axios.get(`./project_content/project_overview0${slideNum + 1}.html`).then((response) => { 
+      if (projectViewWrapper) {
+        projectViewWrapper.innerHTML = response.data;
+      }
+    }).catch((error) => {
+      console.error(`Failed to load project overview:`, error);
+    });
   }
 
+  // function showProjectView () {
+  //   for (let i = 0; i < projectViewLi.length; i++) {
+  //     const item = projectViewLi[i];
+  //     item.classList.remove('selected');
+      
+  //     if (i === slideNum) {
+  //       item.classList.add('selected');
+  //       loadProjectOverview(`./project_content/project_overview0${i + 1}.html`, item);
+  //     }
+  //   }
+  // }
 
-  const grayLayer=document.createElement('div');
+
+
+  // function showProjectView () {
+  //   for (const item of projectViewLi) {
+  //     item.classList.remove('selected');
+  //   }
+  //   projectViewLi[slideNum].classList.add('selected');
+  // }
+
+
+  const grayLayer = document.createElement('div');
   grayLayer.id='grayLayer';
-  const overLayer=document.createElement('div');
+  const overLayer = document.createElement('div');
   overLayer.id='overLayer';
 
   const projectMainImg = document.querySelectorAll('.project_main_pic > img') as NodeListOf<HTMLElement>; 
@@ -102,11 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
       hideImg();
     }
   });
-  
+
   
   function showImg() {
     if (grayLayer && overLayer) {
-      const body = document.querySelector('body');
       if (body) {
         body.style.overflowY = 'hidden'; 
         body.append(grayLayer);
@@ -125,17 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     overLayer.innerHTML = ""
-    // 클릭한 이미지 메뉴 순번과 같은 이미지 번호의 큰이미지 생성하여 overLayer에 바로 넣어줌 
-    // 중요) innerHTML 속성값으로 바로 넣어준다. (안에 있는 요소는 모두 지우고 새로운 요소를 넣어줌)
   }
 
   function hideImg() {
     gsap.set(overLayer, {display:'none'});
     gsap.to(grayLayer,{opacity:0, duration:.3, ease:'power1.out', onComplete:()=>{
       grayLayer.style.display='none';  
-      const body = document.querySelector('body');
       if (body) {
-        body.style.overflowY = 'auto'; // 세로 스크롤을 다시 활성화
+        body.style.overflowY = 'auto';
       }
     }})
   }

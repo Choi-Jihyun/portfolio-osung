@@ -59,7 +59,7 @@ html::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-track {
   width: 15px;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.5);
 }
 
 @media screen and (max-width: 1024px) {

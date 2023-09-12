@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    var body = document.querySelector('body');
     var projectListWrapper = document.querySelector('.project_list');
+    var projectViewWrapper = document.querySelector('.project_info_list');
     var projectViewLi = document.querySelectorAll('.project_info_list > li');
     var projectLi = document.querySelectorAll('.project_list > li');
     var nextBtn = document.querySelector('.button-next');
@@ -75,12 +77,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     function showProjectView() {
-        for (var _i = 0, projectViewLi_1 = projectViewLi; _i < projectViewLi_1.length; _i++) {
-            var item = projectViewLi_1[_i];
-            item.classList.remove('selected');
-        }
-        projectViewLi[slideNum].classList.add('selected');
+        axios.get("./project_content/project_overview0" + (slideNum + 1) + ".html").then(function (response) {
+            if (projectViewWrapper) {
+                projectViewWrapper.innerHTML = response.data;
+            }
+        })["catch"](function (error) {
+            console.error("Failed to load project overview:", error);
+        });
     }
+    // function showProjectView () {
+    //   for (let i = 0; i < projectViewLi.length; i++) {
+    //     const item = projectViewLi[i];
+    //     item.classList.remove('selected');
+    //     if (i === slideNum) {
+    //       item.classList.add('selected');
+    //       loadProjectOverview(`./project_content/project_overview0${i + 1}.html`, item);
+    //     }
+    //   }
+    // }
+    // function showProjectView () {
+    //   for (const item of projectViewLi) {
+    //     item.classList.remove('selected');
+    //   }
+    //   projectViewLi[slideNum].classList.add('selected');
+    // }
     var grayLayer = document.createElement('div');
     grayLayer.id = 'grayLayer';
     var overLayer = document.createElement('div');
@@ -98,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     function showImg() {
         if (grayLayer && overLayer) {
-            var body = document.querySelector('body');
             if (body) {
                 body.style.overflowY = 'hidden';
                 body.append(grayLayer);
@@ -114,16 +133,13 @@ document.addEventListener("DOMContentLoaded", function () {
             selectedIndex++;
         }
         overLayer.innerHTML = "";
-        // 클릭한 이미지 메뉴 순번과 같은 이미지 번호의 큰이미지 생성하여 overLayer에 바로 넣어줌 
-        // 중요) innerHTML 속성값으로 바로 넣어준다. (안에 있는 요소는 모두 지우고 새로운 요소를 넣어줌)
     }
     function hideImg() {
         gsap.set(overLayer, { display: 'none' });
         gsap.to(grayLayer, { opacity: 0, duration: .3, ease: 'power1.out', onComplete: function () {
                 grayLayer.style.display = 'none';
-                var body = document.querySelector('body');
                 if (body) {
-                    body.style.overflowY = 'auto'; // 세로 스크롤을 다시 활성화
+                    body.style.overflowY = 'auto';
                 }
             } });
     }
