@@ -11,12 +11,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
   window.addEventListener('scroll', highlightSection);
 
-  moveSvg();
-  function moveSvg() {
-    gsap.to(headerSvg, { left: '10rem', transform:' scaleX(0.7)' });
-    gsap.to(headerSvgColors,{ delay: 0.2, fill:"#003CFF" });
-  }
-
   function scrollToTop(event: Event) {
     event.preventDefault(); // Prevent the default anchor behavior
 

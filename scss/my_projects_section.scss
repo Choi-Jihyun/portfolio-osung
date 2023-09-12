@@ -50,10 +50,10 @@ div.project_view_wrapper {
 ul.project_info_list {
   & > li {
     transition: all 2s ease-out;
-    display: none;
-    &.selected {
-      display: block;
-    }
+    // display: none;
+    // &.selected {
+    //   display: block;
+    // }
   }
 }
 

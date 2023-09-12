@@ -48,8 +48,23 @@ header {
         li {
           font: normal 1rem "Dela Gothic One";
           cursor: pointer;
+          position: relative;
+          left: 0;
+          top: 0;
+          transition: all 0.2s ease-out;
           &.selected {
             color: white;
+          }
+          .svg_line {
+            width: 200px;
+            height: 20px;
+            border: solid 2px palevioletred;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto;
+            background: url('/images/headermenu-svg-01.png');
           }
         }
       }

@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.querySelector('body');
+  const grayLayer = document.querySelector("#gray_layer");
+  const overLayer = document.querySelector("#over_layer");
   const projectListWrapper = document.querySelector('.project_list');
   const projectViewWrapper = document.querySelector('.project_info_list')
-  const projectViewLi = document.querySelectorAll('.project_info_list > li');
   const projectLi = document.querySelectorAll('.project_list > li');
   const nextBtn = document.querySelector('.button-next'); 
   const prevBtn = document.querySelector('.button-prev');
@@ -11,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let slideNum: number = 0
   let selectedSlide = projectLi[0];
 
+  init();
+  function init (): void {
+    showProjectView();
+  }
   nextBtn?.addEventListener('click', slideNextProject);
   prevBtn?.addEventListener('click', slidePrevProject);
   for (const item of projectLi){
@@ -52,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showProjectView()
   }
 
-  function getIndex(thisMenu){
+  function getIndex(thisMenu:any){
     let selectedIndex = 0;
     while((thisMenu = thisMenu.previousElementSibling)!=null){
       selectedIndex++;
@@ -61,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  function activateSlide(index){
+  function activateSlide(index:number){
     for (const item of projectLi) {
       item.classList.remove('selected');
     }
@@ -80,51 +85,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  
-  function showProjectView() {
-    axios.get(`./project_content/project_overview0${slideNum + 1}.html`).then((response) => { 
-      if (projectViewWrapper) {
+
+  function showProjectView():void {
+    if (projectViewWrapper) {
+      projectViewWrapper.innerHTML = '';
+
+      axios.get(`./project_content/project_overview0${slideNum + 1}.html`).then((response) => { 
         projectViewWrapper.innerHTML = response.data;
-      }
-    }).catch((error) => {
-      console.error(`Failed to load project overview:`, error);
-    });
+      }).catch((error: any) => {
+        console.error(`error:`, error);
+      });
+    }
   }
 
-  // function showProjectView () {
-  //   for (let i = 0; i < projectViewLi.length; i++) {
-  //     const item = projectViewLi[i];
-  //     item.classList.remove('selected');
-      
-  //     if (i === slideNum) {
-  //       item.classList.add('selected');
-  //       loadProjectOverview(`./project_content/project_overview0${i + 1}.html`, item);
-  //     }
-  //   }
-  // }
-
-
-
-  // function showProjectView () {
-  //   for (const item of projectViewLi) {
-  //     item.classList.remove('selected');
-  //   }
-  //   projectViewLi[slideNum].classList.add('selected');
-  // }
-
-
-  const grayLayer = document.createElement('div');
-  grayLayer.id='grayLayer';
-  const overLayer = document.createElement('div');
-  overLayer.id='overLayer';
 
   const projectMainImg = document.querySelectorAll('.project_main_pic > img') as NodeListOf<HTMLElement>; 
 
   for(const item of projectMainImg){ 
     item.addEventListener('click', showImg);
   }
-  
-  grayLayer.addEventListener('click', hideImg); 
+  if (grayLayer) {
+    grayLayer.addEventListener('click', hideImg); 
+  }
   document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
       hideImg();
@@ -133,12 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   function showImg() {
-    if (grayLayer && overLayer) {
-      if (body) {
-        body.style.overflowY = 'hidden'; 
-        body.append(grayLayer);
-        body.append(overLayer);
-      }
+    if (body) {
+      body.style.overflowY = 'hidden'; 
     }
     gsap.set(grayLayer, { display:'block' })
     gsap.to(grayLayer,{ opacity: 0.9, duration: 0.3, ease: 'porwer1.out' });
@@ -150,14 +128,17 @@ document.addEventListener("DOMContentLoaded", () => {
     while((checkMenu=checkMenu.previousElementSibling)!=null){ // 클릭한 이미지 메뉴의 순번구함 
       selectedIndex++;
     }
-
-    overLayer.innerHTML = ""
+    if (overLayer) {
+      overLayer.innerHTML = ""
+    }
   }
 
   function hideImg() {
     gsap.set(overLayer, {display:'none'});
-    gsap.to(grayLayer,{opacity:0, duration:.3, ease:'power1.out', onComplete:()=>{
-      grayLayer.style.display='none';  
+    gsap.to(grayLayer, {opacity:0, duration:.3, ease:'power1.out', onComplete:()=>{
+      if (grayLayer instanceof HTMLElement) {
+        grayLayer.style.display='none';  
+      }
       if (body) {
         body.style.overflowY = 'auto';
       }

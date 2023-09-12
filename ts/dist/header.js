@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         menuItem.addEventListener('click', scrollToSection);
     });
     window.addEventListener('scroll', highlightSection);
-    moveSvg();
-    function moveSvg() {
-        gsap.to(headerSvg, { left: '10rem', transform: ' scaleX(0.7)' });
-        gsap.to(headerSvgColors, { delay: 0.2, fill: "#003CFF" });
-    }
     function scrollToTop(event) {
         event.preventDefault(); // Prevent the default anchor behavior
         window.scrollTo({

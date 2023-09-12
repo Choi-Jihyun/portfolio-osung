@@ -47,9 +47,24 @@ header div#header_inner div.menu ul.menu_list {
 header div#header_inner div.menu ul.menu_list li {
   font: normal 1rem "Dela Gothic One";
   cursor: pointer;
+  position: relative;
+  left: 0;
+  top: 0;
+  transition: all 0.2s ease-out;
 }
 header div#header_inner div.menu ul.menu_list li.selected {
   color: white;
+}
+header div#header_inner div.menu ul.menu_list li .svg_line {
+  width: 200px;
+  height: 20px;
+  border: solid 2px palevioletred;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  background: url("/images/headermenu-svg-01.png");
 }
 header div#header_inner div.menu svg {
   position: absolute;
