@@ -36,8 +36,45 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var _this = this;
 document.addEventListener("DOMContentLoaded", function () {
+    var body = document.querySelector('body');
     var emailTexts = document.querySelectorAll(".email");
     var alertCopy = document.getElementById("alertCopy");
+    var infoLi = document.querySelectorAll(".info_list > li");
+    var blueCover = document.querySelector(".img_blue_cover");
+    var myPic = document.querySelector(".my_pic");
+    var infoLiObserver = new IntersectionObserver(function (e) {
+        e.forEach(function (item) {
+            if (item.target instanceof HTMLElement) {
+                if (item.isIntersecting) {
+                    item.target.style.opacity = '1';
+                    item.target.style.top = '0px';
+                }
+                else {
+                    item.target.style.opacity = '0';
+                    item.target.style.top = '-100px';
+                }
+            }
+        });
+    });
+    for (var _i = 0, infoLi_1 = infoLi; _i < infoLi_1.length; _i++) {
+        var item = infoLi_1[_i];
+        infoLiObserver.observe(item);
+    }
+    var blueCoverObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.target instanceof HTMLElement) {
+                if (entry.isIntersecting) {
+                    entry.target.style.height = '40.22vw';
+                    entry.target.style.top = '1.3vw';
+                }
+                else {
+                    entry.target.style.height = '0';
+                    entry.target.style.top = '10vw';
+                }
+            }
+        });
+    });
+    blueCoverObserver.observe(blueCover);
     if (!alertCopy) {
         console.error('Unable to find element with id "alertCopy".');
         return;
@@ -68,8 +105,30 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }); });
     };
-    for (var _i = 0, emailTexts_1 = emailTexts; _i < emailTexts_1.length; _i++) {
-        var item = emailTexts_1[_i];
+    for (var _a = 0, emailTexts_1 = emailTexts; _a < emailTexts_1.length; _a++) {
+        var item = emailTexts_1[_a];
         _loop_1(item);
+    }
+    if (myPic) {
+        myPic.addEventListener('mousemove', heartAni);
+    }
+    function heartAni(e) {
+        var heart = document.createElement('span');
+        heart.classList.add('heart');
+        if (heart instanceof HTMLElement) {
+            var x = e.offsetX;
+            var y = e.offsetY;
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+            var size = Math.random() * 80;
+            heart.style.width = 20 + size + 'px';
+            heart.style.height = 20 + size + 'px';
+            var transformValue = Math.random() * 360;
+            heart.style.transform = 'rotate(' + transformValue + 'deg)';
+            myPic === null || myPic === void 0 ? void 0 : myPic.appendChild(heart);
+            setTimeout(function () {
+                heart.remove();
+            }, 1000);
+        }
     }
 });

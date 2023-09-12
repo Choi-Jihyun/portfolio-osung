@@ -76,10 +76,6 @@ div.project_view_wrapper {
   }
 }
 
-ul.project_info_list > li {
-  transition: all 2s ease-out;
-}
-
 div.project_main_pic {
   width: 31rem;
   height: 19rem;

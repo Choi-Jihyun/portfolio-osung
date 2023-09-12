@@ -43,6 +43,10 @@ div#basic_information_wrapper {
         gap: 4rem;
         padding-top: 2rem;
         li {
+          transition: all 1s ease-out;
+          position: relative;
+          left: 0;
+          top: 0;          
           width: calc(50% - 4rem);
           &:hover p.title::before {
             transform: scale(1.2);
@@ -95,6 +99,7 @@ div#basic_information_wrapper {
       top: 0;
       display: flex;
       align-content: center;
+      // overflow: hidden;
       img {
         width: 30vw;
         height: 44.22vw;
@@ -116,7 +121,7 @@ div#basic_information_wrapper {
         left: 2vw;
         top: 2vw;
         z-index: 3;
-
+        transition: all 1s linear;
         @media (min-width: #{$max_width}) {
           width: calc(24.375rem - 60px);
           height: calc(35.9375rem - 60px);
@@ -139,6 +144,7 @@ div#basic_information_wrapper {
         top: -9rem;
         z-index: -1;
       }
+      
     }
   }
   .bi_bg_line_blue {
@@ -159,6 +165,42 @@ div#basic_information_wrapper {
   }
   
 }
+
+// 하트 애니메이션
+span.heart {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+  animation: fadeInOut 1s linear infinite;
+}
+@keyframes fadeInOut {
+  0%,100%{
+    opacity: 0;
+  }
+  20%, 80%{
+    opacity: 1;
+  }
+}
+span.heart::before {
+  // content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  // background: url('/images/jihyun_picture.png');
+  content: '\2665';
+  color: red;
+  background-size: cover;
+  animation: moveShape 1s linear infinite;
+}
+@keyframes moveShape{
+  0%{
+    transform: translate(0) rotate(0deg);
+  }
+  100%{
+    transform: translate(300px) rotate(0deg);
+  }
+}
+
 
 @media screen and (max-width: 1200px) {
   div#basic_information_wrapper {

@@ -50,11 +50,13 @@ div.front_end_skills_wrap {
     li {
       width: 15rem;
       height: 15rem;
+      position: relative;
+      left: 0;
+      top: 0;
       border-radius: 1.75rem;
       background: linear-gradient(138deg, #003CFF 20%, #013DFE 62%, #F90 96.37%);
       background-position: 0% 0%;
       background-size: 150% 150%;
-      // background: #003CFF;
       box-shadow: 4px 4px 12px 3px rgba(0, 0, 0, 0.25);
       box-sizing: border-box;
       
@@ -102,6 +104,7 @@ div.etc_skills_wrap {
     align-content: center;
     gap: 10rem;
     li {
+      transition: all 2s ease-out;
       p.skill_name {
         color: black;
         font: normal 1.1rem/2rem "Noto sans KR";

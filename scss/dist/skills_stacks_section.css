@@ -64,6 +64,9 @@ div.front_end_skills_wrap ul.front_end_skill_list {
 div.front_end_skills_wrap ul.front_end_skill_list li {
   width: 15rem;
   height: 15rem;
+  position: relative;
+  left: 0;
+  top: 0;
   border-radius: 1.75rem;
   background: linear-gradient(138deg, #003CFF 20%, #013DFE 62%, #F90 96.37%);
   background-position: 0% 0%;
@@ -109,6 +112,9 @@ div.etc_skills_wrap ul.etc_skill_list {
   justify-content: flex-start;
   align-content: center;
   gap: 10rem;
+}
+div.etc_skills_wrap ul.etc_skill_list li {
+  transition: all 2s ease-out;
 }
 div.etc_skills_wrap ul.etc_skill_list li p.skill_name {
   color: black;

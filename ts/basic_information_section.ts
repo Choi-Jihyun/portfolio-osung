@@ -1,6 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const body = document.querySelector('body');
   const emailTexts = document.querySelectorAll(".email");
   const alertCopy = document.getElementById("alertCopy");
+  const infoLi = document.querySelectorAll(".info_list > li");
+  const blueCover = document.querySelector(".img_blue_cover");
+  const myPic = document.querySelector(".my_pic");
+
+  let infoLiObserver = new IntersectionObserver((e) => {
+    e.forEach((item) => {
+      if (item.target instanceof HTMLElement) {
+        if (item.isIntersecting) {
+          item.target.style.opacity = '1';
+          item.target.style.top = '0px';
+        } else {
+          item.target.style.opacity = '0';
+          item.target.style.top = '-100px';
+        }
+      }
+    })
+  });
+
+  for (const item of infoLi) {
+    infoLiObserver.observe(item);
+  }
+
+  let blueCoverObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.target instanceof HTMLElement) {
+        if (entry.isIntersecting) {
+          entry.target.style.height = '40.22vw';
+          entry.target.style.top = '1.3vw';
+        } else {
+          entry.target.style.height = '0';
+          entry.target.style.top = '10vw';
+        }
+      }
+    });
+  });
+
+  blueCoverObserver.observe(blueCover as HTMLElement);
+
 
   if (!alertCopy) {
     console.error('Unable to find element with id "alertCopy".');
@@ -22,4 +61,35 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+
+  if (myPic) {
+    myPic.addEventListener('mousemove', heartAni)
+  }
+
+  function heartAni (e: any) {
+    let heart = document.createElement('span');
+    heart.classList.add('heart')
+    
+    if (heart instanceof HTMLElement) {
+      let x = e.offsetX;
+      let y = e.offsetY;
+      heart.style.left = x+'px';
+      heart.style.top = y+'px';
+      
+      let size = Math.random() * 80;
+      heart.style.width = 20 + size + 'px';
+      heart.style.height = 20 + size + 'px';
+      
+      let transformValue = Math.random() * 360;
+      heart.style.transform = 'rotate('+ transformValue +'deg)';
+      
+      myPic?.appendChild(heart);
+
+      setTimeout(function(){
+        heart.remove();
+      }, 1000)
+    }
+  }
+
 });
