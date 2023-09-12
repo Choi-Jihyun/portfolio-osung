@@ -89,6 +89,9 @@ div.project_main_pic {
   height: 19rem;
   background: white;
   float: left;
+  position: relative;
+  left: 0;
+  top: 0;
 }
 @media screen and (max-width: 768px) {
   div.project_main_pic {
@@ -99,7 +102,27 @@ div.project_main_pic {
 div.project_main_pic img {
   width: 100%;
   height: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
   object-fit: cover;
+  display: block;
+  transition: all 0.2s ease-out;
+}
+div.project_main_pic img:hover {
+  filter: blur(1px);
+  cursor: pointer;
+}
+div.project_main_pic img:hover .mouseover {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(/images/more.png) center center no-repeat;
+  background-size: contain;
+  opacity: 0.9;
 }
 
 div.project_infos {
@@ -340,4 +363,24 @@ div.pj_bg_text #pbt_2 {
 }
 div.pj_bg_text #pbt_1 {
   color: whitesmoke;
+}
+
+#grayLayer {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+#overLayer {
+  width: 70vw;
+  height: 70vh;
+  background: white;
+  position: fixed;
+  left: 15vw;
+  top: 15vh;
+  z-index: 101;
 }

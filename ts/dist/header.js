@@ -2,12 +2,18 @@ document.addEventListener('DOMContentLoaded', function () {
     var osungLogo = document.querySelector("#logo");
     var menuLists = document.querySelectorAll(".menu_list > li");
     var headerSvg = document.querySelector(".menu > svg");
+    var headerSvgColors = document.querySelectorAll(".menu > svg > path");
     var sections = document.querySelectorAll('section');
     osungLogo === null || osungLogo === void 0 ? void 0 : osungLogo.addEventListener('click', scrollToTop);
     menuLists.forEach(function (menuItem) {
         menuItem.addEventListener('click', scrollToSection);
     });
     window.addEventListener('scroll', highlightSection);
+    moveSvg();
+    function moveSvg() {
+        gsap.to(headerSvg, { left: '10rem', transform: ' scaleX(0.7)' });
+        gsap.to(headerSvgColors, { delay: 0.2, fill: "#003CFF" });
+    }
     function scrollToTop(event) {
         event.preventDefault(); // Prevent the default anchor behavior
         window.scrollTo({
