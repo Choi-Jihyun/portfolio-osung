@@ -24,21 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
     infoLiObserver.observe(item);
   }
 
-  let blueCoverObserver = new IntersectionObserver((entries) => {
+  let myPicObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.target instanceof HTMLElement) {
         if (entry.isIntersecting) {
-          entry.target.style.height = '40.22vw';
-          entry.target.style.top = '1.3vw';
+          entry.target.style.opacity = '1';
+          entry.target.style.top = '0';
         } else {
-          entry.target.style.height = '0';
-          entry.target.style.top = '10vw';
+          entry.target.style.opacity = '0';
+          entry.target.style.top = '-100px';
         }
       }
     });
   });
 
-  blueCoverObserver.observe(blueCover as HTMLElement);
+  myPicObserver.observe(myPic as HTMLElement);
 
 
   if (!alertCopy) {
@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (myPic) {
     myPic.addEventListener('mousemove', heartAni)
+    myPic.addEventListener('touchmove', heartAni)
   }
 
   function heartAni (e: any) {

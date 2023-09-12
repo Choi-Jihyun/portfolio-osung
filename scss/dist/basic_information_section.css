@@ -96,6 +96,8 @@ div#basic_information_wrapper .infos_wrapper div.my_pic {
   top: 0;
   display: flex;
   align-content: center;
+  overflow: hidden;
+  transition: all 1s ease-out;
 }
 div#basic_information_wrapper .infos_wrapper div.my_pic img {
   width: 30vw;

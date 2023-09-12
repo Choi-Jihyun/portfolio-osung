@@ -99,7 +99,8 @@ div#basic_information_wrapper {
       top: 0;
       display: flex;
       align-content: center;
-      // overflow: hidden;
+      overflow: hidden;
+      transition: all 1s ease-out;
       img {
         width: 30vw;
         height: 44.22vw;

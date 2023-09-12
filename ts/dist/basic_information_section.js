@@ -60,21 +60,21 @@ document.addEventListener("DOMContentLoaded", function () {
         var item = infoLi_1[_i];
         infoLiObserver.observe(item);
     }
-    var blueCoverObserver = new IntersectionObserver(function (entries) {
+    var myPicObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.target instanceof HTMLElement) {
                 if (entry.isIntersecting) {
-                    entry.target.style.height = '40.22vw';
-                    entry.target.style.top = '1.3vw';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.top = '0';
                 }
                 else {
-                    entry.target.style.height = '0';
-                    entry.target.style.top = '10vw';
+                    entry.target.style.opacity = '0';
+                    entry.target.style.top = '-100px';
                 }
             }
         });
     });
-    blueCoverObserver.observe(blueCover);
+    myPicObserver.observe(myPic);
     if (!alertCopy) {
         console.error('Unable to find element with id "alertCopy".');
         return;
@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (myPic) {
         myPic.addEventListener('mousemove', heartAni);
+        myPic.addEventListener('touchmove', heartAni);
     }
     function heartAni(e) {
         var heart = document.createElement('span');
