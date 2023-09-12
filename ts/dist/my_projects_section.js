@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var projectListWrapper = document.querySelector('.project_list');
     var projectViewWrapper = document.querySelector('.project_info_list');
     var projectLi = document.querySelectorAll('.project_list > li');
+    var projectMainImg = document.querySelectorAll('.project_main_pic > img');
     var nextBtn = document.querySelector('.button-next');
     var prevBtn = document.querySelector('.button-prev');
     var inactiveColor = '#cccccc';
     var activeColor = '#FF9900';
     var slideNum = 0;
+    var previousSlideNum = null;
     var selectedSlide = projectLi[0];
     init();
     function init() {
@@ -82,16 +84,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     function showProjectView() {
+        if (previousSlideNum === slideNum) {
+            return;
+        }
         if (projectViewWrapper) {
             projectViewWrapper.innerHTML = '';
             axios.get("./project_content/project_overview0" + (slideNum + 1) + ".html").then(function (response) {
                 projectViewWrapper.innerHTML = response.data;
+                previousSlideNum = slideNum;
             })["catch"](function (error) {
                 console.error("error:", error);
             });
         }
     }
-    var projectMainImg = document.querySelectorAll('.project_main_pic > img');
     for (var _a = 0, projectMainImg_1 = projectMainImg; _a < projectMainImg_1.length; _a++) {
         var item = projectMainImg_1[_a];
         item.addEventListener('click', showImg);

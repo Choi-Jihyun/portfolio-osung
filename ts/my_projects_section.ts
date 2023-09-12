@@ -5,17 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectListWrapper = document.querySelector('.project_list');
   const projectViewWrapper = document.querySelector('.project_info_list')
   const projectLi = document.querySelectorAll('.project_list > li');
+  const projectMainImg = document.querySelectorAll('.project_main_pic > img') as NodeListOf<HTMLElement>; 
   const nextBtn = document.querySelector('.button-next'); 
   const prevBtn = document.querySelector('.button-prev');
   const inactiveColor: string = '#cccccc';
   const activeColor: string = '#FF9900';
   let slideNum: number = 0
+  let previousSlideNum: number | null = null;
   let selectedSlide = projectLi[0];
 
   init();
   function init (): void {
     showProjectView();
   }
+
   nextBtn?.addEventListener('click', slideNextProject);
   prevBtn?.addEventListener('click', slidePrevProject);
   for (const item of projectLi){
@@ -65,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return selectedIndex;
   }
 
-
   function activateSlide(index:number){
     for (const item of projectLi) {
       item.classList.remove('selected');
@@ -87,19 +89,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function showProjectView():void {
+    if (previousSlideNum === slideNum) {
+      return;
+    }
     if (projectViewWrapper) {
       projectViewWrapper.innerHTML = '';
 
       axios.get(`./project_content/project_overview0${slideNum + 1}.html`).then((response) => { 
         projectViewWrapper.innerHTML = response.data;
+        previousSlideNum = slideNum;
       }).catch((error: any) => {
         console.error(`error:`, error);
       });
     }
   }
 
-
-  const projectMainImg = document.querySelectorAll('.project_main_pic > img') as NodeListOf<HTMLElement>; 
 
   for(const item of projectMainImg){ 
     item.addEventListener('click', showImg);
