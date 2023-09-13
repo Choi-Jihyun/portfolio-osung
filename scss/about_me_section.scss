@@ -45,11 +45,18 @@ div.about_me_inner {
         p {
           font: normal 1.25rem "Noto sans KR";
           padding-bottom: 1rem;
-          span {
+          span {  
             font-weight: bold;
             margin-right: 10px;
           }
         }
+      }
+    }
+    #awards_list {
+      li {
+        position: relative;
+        left: 40px;
+        top: 0;
       }
     }
   }

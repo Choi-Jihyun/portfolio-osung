@@ -67,6 +67,11 @@ div.about_me_inner div.categories_wrapper ul.am_category_list li p span {
   font-weight: bold;
   margin-right: 10px;
 }
+div.about_me_inner div.categories_wrapper #awards_list li {
+  position: relative;
+  left: 40px;
+  top: 0;
+}
 
 p.am_c_subtitle {
   width: 35rem;
