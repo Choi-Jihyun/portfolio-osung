@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     initEvent();
     function init() {
         showProjectView();
-        showProjectDetail();
         gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { display: 'none', opacity: '0' });
     }
     function initEvent() {
@@ -115,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function showDetails() {
         console.log('showDetails');
+        showProjectDetail();
         if (body) {
             body.style.overflowY = 'hidden';
         }
@@ -161,6 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     function showProjectDetail() {
+        if (body) {
+            body.style.overflowY = 'hidden';
+        }
         if (swiperInner) {
             swiperInner.innerHTML = '';
             axios.get("./project_content/project_details/project_detail0" + (slideNum + 1) + ".html").then(function (response) {
@@ -173,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     mousewheel: {
                         invert: false
                     },
-                    // autoHeight: true,
+                    autoHeight: true,
                     pagination: {
                         el: '.detail-slider__pagination',
                         clickable: true

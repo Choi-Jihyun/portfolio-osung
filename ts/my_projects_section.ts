@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function init (): void {
     showProjectView();
-    showProjectDetail();
     gsap.to(prevBtn?.children, {display: 'none', opacity: '0'})
   }
 
@@ -123,6 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showDetails() {
     console.log('showDetails');
+    showProjectDetail();
+
     if (body) {
       body.style.overflowY = 'hidden'; 
     }
@@ -174,6 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showProjectDetail () {
+    if (body) {
+      body.style.overflowY = 'hidden'; 
+    }
     if (swiperInner) {
       swiperInner.innerHTML = '';
       axios.get(`./project_content/project_details/project_detail0${slideNum + 1}.html`).then((response) => { 
@@ -187,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
           mousewheel: {
             invert: false,
           },
-          // autoHeight: true,
+          autoHeight: true,
           pagination: {
             el: '.detail-slider__pagination',
             clickable: true,
