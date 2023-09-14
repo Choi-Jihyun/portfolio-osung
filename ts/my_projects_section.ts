@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector('.button-next'); 
   const prevBtn = document.querySelector('.button-prev');
   const olCloseBtn = document.querySelector("#ol_close_btn");
-  const swiperInner = document.querySelector(".swiper-inner");
+  const swiperInner = document.querySelector(".axios_swiper_wrapper");
   let slideNum: number = 0
   let previousSlideNum: number | null = null;
   let selectedSlide = projectLi[0];
@@ -176,6 +176,20 @@ document.addEventListener("DOMContentLoaded", () => {
         axios.get(`./project_content/project_details/project_detail0${slideNum + 1}.html`).then((response) => { 
           swiperInner.innerHTML = response.data;
           previousSlideNum = slideNum;
+
+          var swiper = new Swiper('.detail-slider > div', {
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true,
+            mousewheel: {
+              invert: false,
+            },
+            // autoHeight: true,
+            pagination: {
+              el: '.detail-slider__pagination',
+              clickable: true,
+            }
+          });
         }).catch((error: any) => {
           console.error(`error:`, error);
         });

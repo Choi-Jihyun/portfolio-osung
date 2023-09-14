@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var nextBtn = document.querySelector('.button-next');
     var prevBtn = document.querySelector('.button-prev');
     var olCloseBtn = document.querySelector("#ol_close_btn");
-    var swiperInner = document.querySelector(".swiper-inner");
+    var swiperInner = document.querySelector(".axios_swiper_wrapper");
     var slideNum = 0;
     var previousSlideNum = null;
     var selectedSlide = projectLi[0];
@@ -163,6 +163,19 @@ document.addEventListener("DOMContentLoaded", function () {
             axios.get("./project_content/project_details/project_detail0" + (slideNum + 1) + ".html").then(function (response) {
                 swiperInner.innerHTML = response.data;
                 previousSlideNum = slideNum;
+                var swiper = new Swiper('.detail-slider > div', {
+                    spaceBetween: 30,
+                    effect: 'fade',
+                    loop: true,
+                    mousewheel: {
+                        invert: false
+                    },
+                    // autoHeight: true,
+                    pagination: {
+                        el: '.detail-slider__pagination',
+                        clickable: true
+                    }
+                });
             })["catch"](function (error) {
                 console.error("error:", error);
             });
