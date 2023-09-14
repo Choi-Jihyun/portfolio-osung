@@ -173,26 +173,32 @@ document.addEventListener("DOMContentLoaded", () => {
   function showProjectDetail () {
     if (swiperInner) {
       swiperInner.innerHTML = '';
-        axios.get(`./project_content/project_details/project_detail0${slideNum + 1}.html`).then((response) => { 
-          swiperInner.innerHTML = response.data;
-          previousSlideNum = slideNum;
+      axios.get(`./project_content/project_details/project_detail0${slideNum + 1}.html`).then((response) => { 
+        swiperInner.innerHTML = response.data;
+        previousSlideNum = slideNum;
 
-          var swiper = new Swiper('.detail-slider > div', {
-            spaceBetween: 30,
-            effect: 'fade',
-            loop: true,
-            mousewheel: {
-              invert: false,
-            },
-            // autoHeight: true,
-            pagination: {
-              el: '.detail-slider__pagination',
-              clickable: true,
-            }
-          });
-        }).catch((error: any) => {
-          console.error(`error:`, error);
+        var swiper = new Swiper('.detail-slider > div', {
+          spaceBetween: 30,
+          effect: 'fade',
+          loop: true,
+          mousewheel: {
+            invert: false,
+          },
+          // autoHeight: true,
+          pagination: {
+            el: '.detail-slider__pagination',
+            clickable: true,
+          }
         });
+      }).catch((error: any) => {
+        console.error(`error:`, error);
+      });
+    }
+  }
+
+  function hideProjectDetail () {
+    if (swiperInner) {
+      swiperInner.innerHTML = '';
     }
   }
 

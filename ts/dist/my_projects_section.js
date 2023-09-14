@@ -181,4 +181,9 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
+    function hideProjectDetail() {
+        if (swiperInner) {
+            swiperInner.innerHTML = '';
+        }
+    }
 });
