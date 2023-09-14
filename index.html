@@ -29,9 +29,26 @@
   <script src="/ts/dist/my_projects_section.js"></script>
   <script src="/ts/dist/about_me_section.js"></script>
   <script src="/ts/dist/contact_footer.js"></script>
+  <!-- <script src="/ts/dist/scrollbar.js"></script> -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js'></script>
+  <script>
+    var swiper = new Swiper('.blog-slider', {
+      spaceBetween: 30,
+      effect: 'fade',
+      loop: true,
+      mousewheel: {
+        invert: false,
+      },
+      // autoHeight: true,
+      pagination: {
+        el: '.blog-slider__pagination',
+        clickable: true,
+      }
+    });
+  </script>
+
 </head>
 <body>
   <div id="wrapper">
@@ -49,15 +66,7 @@
             <li data-target="projects">Projects</li>
             <li data-target="about_me">About Me</li>
           </ul>
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="194" height="20" viewBox="0 0 194 20" fill="none">
-            <path d="M184 20C189.523 20 194 15.5228 194 9.99998C194 4.47714 189.523 -1.65686e-05 184 -1.60858e-05L184 20ZM8.74228e-07 20L184 20L184 -1.60858e-05L-8.74228e-07 0L8.74228e-07 20Z" fill="url(#paint0_linear_59_439)"/>
-            <defs>
-              <linearGradient id="paint0_linear_59_439" x1="184" y1="59.9975" x2="6.27222e-06" y2="59.9975" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#FF9900"/>
-                <stop offset="1" stop-color="#FF9900" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-          </svg> -->
+          <!-- svg 자리 -->
         </div>
       </div>
     </header>
@@ -270,7 +279,6 @@
               </div>
             </div>
           </div>
-          
         </div>
         <div class="projects_list_wrapper">
           <div class="projects_list_container">
@@ -288,7 +296,55 @@
           <div class="button-prev"><i class="fa-solid fa-chevron-left"></i></div>
           <div class="button-next"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
-          
+
+        <div id="over_layer" style="display: none">
+          <div id="detail_content_wrapper">
+            <button id="ol_close_btn"><i class="fa-solid fa-xmark"></i></button>
+            <div id="detail_content">
+              <div class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+                  <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                      
+                      <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759872/kuldar-kalvik-799168-unsplash.webp" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                      <span class="blog-slider__code">26 December 2019</span>
+                      <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+                      <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
+                      <a href="#" class="blog-slider__button">READ MORE</a>
+                    </div>
+                  </div>
+                  <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                      <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                      <span class="blog-slider__code">26 December 2019</span>
+                      <div class="blog-slider__title">Lorem Ipsum Dolor2</div>
+                      <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+                      <a href="#" class="blog-slider__button">READ MORE</a>
+                    </div>
+                  </div>
+                  
+                  <div class="blog-slider__item swiper-slide">
+                    <div class="blog-slider__img">
+                      <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/alessandro-capuzzi-799180-unsplash.webp" alt="">
+                    </div>
+                    <div class="blog-slider__content">
+                      <span class="blog-slider__code">26 December 2019</span>
+                      <div class="blog-slider__title">Lorem Ipsum Dolor</div>
+                      <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
+                      <a href="#" class="blog-slider__button">READ MORE</a>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="blog-slider__pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
           <!-- <div class="pj_bg_text">
             <span id="pbt_1">UN</span><span id="pbt_2">STOPP</span><span id="pbt_3">ABLE</span>
@@ -413,7 +469,7 @@
       </div>
     </footer>
     <div id="gray_layer" style="display: none"></div>
-    <div id="over_layer" style="display: none"></div>
+    
   </div>
 </body>
 </html>

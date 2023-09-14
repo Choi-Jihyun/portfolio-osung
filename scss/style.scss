@@ -44,6 +44,7 @@ section {
 
 // 스크롤바 커스텀
 html::-webkit-scrollbar {
+  display: none;
   width: 12px;
   background-color: transparent;
   position: fixed;
@@ -64,6 +65,7 @@ html::-webkit-scrollbar-track {
   width: 15px;
   background-color: rgba(245, 245, 245, 0.5);
 }
+
 
 @media screen and (max-width: 1024px) {
   html {

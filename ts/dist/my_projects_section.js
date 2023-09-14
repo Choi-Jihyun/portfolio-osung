@@ -26,12 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
             var item = projectLi_1[_i];
             item.addEventListener('click', goThisProject);
         }
+        // projectView?.addEventListener('click', showDetails);
         if (grayLayer) {
-            grayLayer.addEventListener('click', hideImg);
+            grayLayer.addEventListener('click', hideDetails);
         }
         document.addEventListener('keydown', function (event) {
             if (event.key === "Escape") {
-                hideImg();
+                hideDetails();
             }
         });
     }
@@ -113,26 +114,19 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
-    function showImg() {
-        console.log('showimg');
+    function showDetails() {
+        console.log('showDetails');
         if (body) {
             body.style.overflowY = 'hidden';
         }
         gsap.set(grayLayer, { display: 'block' });
-        gsap.to(grayLayer, { opacity: 0.9, duration: 0.3, ease: 'porwer1.out' });
+        gsap.to(grayLayer, { opacity: 0.9, duration: 0.5, ease: 'porwer1.out' });
         gsap.set(overLayer, { display: 'block' });
-        var checkMenu = this; // 클릭한 이미지메뉴를 순번을 체크할 checkMenu에 대입 
-        var selectedIndex = 0; // 클릭한 이미지 순번을 대입할 변수 
-        while ((checkMenu = checkMenu.previousElementSibling) != null) { // 클릭한 이미지 메뉴의 순번구함 
-            selectedIndex++;
-        }
-        if (overLayer) {
-            overLayer.innerHTML = "";
-        }
+        console.log('slideNum: ', slideNum);
     }
-    function hideImg() {
+    function hideDetails() {
         gsap.set(overLayer, { display: 'none' });
-        gsap.to(grayLayer, { opacity: 0, duration: .3, ease: 'power1.out', onComplete: function () {
+        gsap.to(grayLayer, { opacity: 0, duration: .1, ease: 'power1.out', onComplete: function () {
                 if (grayLayer instanceof HTMLElement) {
                     grayLayer.style.display = 'none';
                 }
@@ -142,30 +136,26 @@ document.addEventListener("DOMContentLoaded", function () {
             } });
     }
     function hoverDetail() {
-        if (isHoverOnView === false) {
-            console.log('hoverDetail');
-            var mouseoverDiv_1 = document.querySelector('.mouseover');
-            if (mouseoverDiv_1) {
-                mouseoverDiv_1.innerHTML = "<img src='/images/more_detail.png' alt='자세히 보기'>";
-                gsap.set(mouseoverDiv_1, { opacity: 0, display: 'block', onComplete: function () {
-                        gsap.to(mouseoverDiv_1, { opacity: 1, duration: 0.5, onComplete: function () {
-                                isHoverOnView = true;
-                            } });
-                    } });
-            }
+        var mouseoverDiv = document.querySelector('.mouseover');
+        if (mouseoverDiv) {
+            mouseoverDiv.addEventListener('click', showDetails);
+            isHoverOnView = true;
+            mouseoverDiv.innerHTML = "<img src='/images/more_detail.png' alt='자세히 보기'>";
+            gsap.set(mouseoverDiv, { opacity: 0, display: 'block', onComplete: function () {
+                    gsap.to(mouseoverDiv, { opacity: 1, duration: 0.3, onComplete: function () {
+                            isHoverOnView = true;
+                        } });
+                } });
         }
     }
     function leaveHoverDetail() {
-        if (isHoverOnView === true) {
-            console.log('leavehoverDetail');
-            var mouseoverDiv_2 = document.querySelector('.mouseover');
-            if (mouseoverDiv_2) {
-                gsap.to(mouseoverDiv_2, { opacity: 0, duration: 0.5, onComplete: function () {
-                        gsap.set(mouseoverDiv_2, { display: 'none' });
-                        mouseoverDiv_2.innerHTML = "";
-                        isHoverOnView = false;
-                    } });
-            }
+        var mouseoverDiv = document.querySelector('.mouseover');
+        if (mouseoverDiv) {
+            gsap.to(mouseoverDiv, { opacity: 0, duration: 0.1, onComplete: function () {
+                    gsap.set(mouseoverDiv, { display: 'none', opacity: 0 });
+                    mouseoverDiv.innerHTML = "";
+                    isHoverOnView = false;
+                } });
         }
     }
 });

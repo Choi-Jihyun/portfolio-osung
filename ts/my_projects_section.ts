@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let previousSlideNum: number | null = null;
   let selectedSlide = projectLi[0];
   let isHoverOnView: boolean = false;
+  
 
   init();
   initEvent();
@@ -28,11 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const item of projectLi){
       item.addEventListener('click', goThisProject);
     }
+
+    // projectView?.addEventListener('click', showDetails);
     if (grayLayer) {
-      grayLayer.addEventListener('click', hideImg); 
+      grayLayer.addEventListener('click', hideDetails); 
     }
     document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") { hideImg() }
+      if (event.key === "Escape") { hideDetails() }
     });
   
   }
@@ -110,7 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (projectView) {
       projectView.innerHTML = '';
-
       axios.get(`./project_content/project_overview0${slideNum + 1}.html`).then((response) => { 
         projectView.innerHTML = response.data;
         previousSlideNum = slideNum;
@@ -120,29 +122,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function showImg() {
-    console.log('showimg');
+  function showDetails() {
+    console.log('showDetails');
     if (body) {
       body.style.overflowY = 'hidden'; 
     }
     gsap.set(grayLayer, { display:'block' })
-    gsap.to(grayLayer,{ opacity: 0.9, duration: 0.3, ease: 'porwer1.out' });
+    gsap.to(grayLayer,{ opacity: 0.9, duration: 0.5, ease: 'porwer1.out' });
     gsap.set(overLayer, { display: 'block' });
 
-    let checkMenu = this; // 클릭한 이미지메뉴를 순번을 체크할 checkMenu에 대입 
-    let selectedIndex = 0; // 클릭한 이미지 순번을 대입할 변수 
+    console.log('slideNum: ', slideNum);
 
-    while((checkMenu=checkMenu.previousElementSibling)!=null){ // 클릭한 이미지 메뉴의 순번구함 
-      selectedIndex++;
-    }
-    if (overLayer) {
-      overLayer.innerHTML = ""
-    }
+
   }
 
-  function hideImg() {
+  function hideDetails() {
     gsap.set(overLayer, {display:'none'});
-    gsap.to(grayLayer, {opacity:0, duration:.3, ease:'power1.out', onComplete:()=>{
+    gsap.to(grayLayer, {opacity:0, duration:.1, ease:'power1.out', onComplete:()=>{
       if (grayLayer instanceof HTMLElement) {
         grayLayer.style.display='none';  
       }
@@ -153,30 +149,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function hoverDetail () {
-    if(isHoverOnView === false) {
-      console.log('hoverDetail');
-      const mouseoverDiv = document.querySelector('.mouseover');
-      if (mouseoverDiv) {
-        mouseoverDiv.innerHTML = "<img src='/images/more_detail.png' alt='자세히 보기'>";
-        gsap.set(mouseoverDiv, { opacity: 0, display: 'block', onComplete: ()=> { 
-          gsap.to(mouseoverDiv, { opacity: 1, duration: 0.5, onComplete: ()=> { 
-            isHoverOnView = true;
-          }});
-        }})
-      }
-    } 
+    const mouseoverDiv = document.querySelector('.mouseover');
+    if (mouseoverDiv) {
+      mouseoverDiv.addEventListener('click', showDetails)
+      isHoverOnView = true;
+      mouseoverDiv.innerHTML = "<img src='/images/more_detail.png' alt='자세히 보기'>";
+      gsap.set(mouseoverDiv, { opacity: 0, display: 'block', onComplete: ()=> { 
+        gsap.to(mouseoverDiv, { opacity: 1, duration: 0.3, onComplete: ()=> { 
+          isHoverOnView = true;
+        }});
+      }})
+    }
   }
+
   function leaveHoverDetail () {
-    if(isHoverOnView === true) {
-      console.log('leavehoverDetail');
       const mouseoverDiv = document.querySelector('.mouseover');
       if (mouseoverDiv) {
-        gsap.to(mouseoverDiv, { opacity: 0, duration: 0.5, onComplete: ()=> {
-          gsap.set(mouseoverDiv, { display: 'none' })
+        gsap.to(mouseoverDiv, { opacity: 0, duration: 0.1, onComplete: ()=> {
+          gsap.set(mouseoverDiv, { display: 'none', opacity: 0})
           mouseoverDiv.innerHTML = "";
           isHoverOnView = false;
         }}); 
       }
-    }
   }
+
+
+
 });

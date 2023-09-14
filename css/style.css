@@ -41,6 +41,7 @@ section {
 }
 
 html::-webkit-scrollbar {
+  display: none;
   width: 12px;
   background-color: transparent;
   position: fixed;
