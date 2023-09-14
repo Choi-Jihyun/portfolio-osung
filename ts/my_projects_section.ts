@@ -7,10 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectLi = document.querySelectorAll('.project_list > li');
   const nextBtn = document.querySelector('.button-next'); 
   const prevBtn = document.querySelector('.button-prev');
+  const olCloseBtn = document.querySelector("#ol_close_btn");
+  const swiperInner = document.querySelector(".swiper-inner");
   let slideNum: number = 0
   let previousSlideNum: number | null = null;
   let selectedSlide = projectLi[0];
   let isHoverOnView: boolean = false;
+  
   
 
   init();
@@ -18,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function init (): void {
     showProjectView();
+    showProjectDetail();
     gsap.to(prevBtn?.children, {display: 'none', opacity: '0'})
   }
 
@@ -29,15 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const item of projectLi){
       item.addEventListener('click', goThisProject);
     }
-
-    // projectView?.addEventListener('click', showDetails);
-    if (grayLayer) {
-      grayLayer.addEventListener('click', hideDetails); 
-    }
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") { hideDetails() }
-    });
-  
+    grayLayer?.addEventListener('click', hideDetails); 
+    olCloseBtn?.addEventListener('click', hideDetails); 
+    document.addEventListener('keydown', (event)=> {if (event.key === "Escape") { hideDetails() }});
+    
   }
 
 
@@ -132,8 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.set(overLayer, { display: 'block' });
 
     console.log('slideNum: ', slideNum);
-
-
   }
 
   function hideDetails() {
@@ -171,6 +168,18 @@ document.addEventListener("DOMContentLoaded", () => {
           isHoverOnView = false;
         }}); 
       }
+  }
+
+  function showProjectDetail () {
+    if (swiperInner) {
+      swiperInner.innerHTML = '';
+        axios.get(`./project_content/project_details/project_detail0${slideNum + 1}.html`).then((response) => { 
+          swiperInner.innerHTML = response.data;
+          previousSlideNum = slideNum;
+        }).catch((error: any) => {
+          console.error(`error:`, error);
+        });
+    }
   }
 
 

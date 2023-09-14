@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var projectLi = document.querySelectorAll('.project_list > li');
     var nextBtn = document.querySelector('.button-next');
     var prevBtn = document.querySelector('.button-prev');
+    var olCloseBtn = document.querySelector("#ol_close_btn");
+    var swiperInner = document.querySelector(".swiper-inner");
     var slideNum = 0;
     var previousSlideNum = null;
     var selectedSlide = projectLi[0];
@@ -15,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initEvent();
     function init() {
         showProjectView();
+        showProjectDetail();
         gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { display: 'none', opacity: '0' });
     }
     function initEvent() {
@@ -26,15 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
             var item = projectLi_1[_i];
             item.addEventListener('click', goThisProject);
         }
-        // projectView?.addEventListener('click', showDetails);
-        if (grayLayer) {
-            grayLayer.addEventListener('click', hideDetails);
-        }
-        document.addEventListener('keydown', function (event) {
-            if (event.key === "Escape") {
-                hideDetails();
-            }
-        });
+        grayLayer === null || grayLayer === void 0 ? void 0 : grayLayer.addEventListener('click', hideDetails);
+        olCloseBtn === null || olCloseBtn === void 0 ? void 0 : olCloseBtn.addEventListener('click', hideDetails);
+        document.addEventListener('keydown', function (event) { if (event.key === "Escape") {
+            hideDetails();
+        } });
     }
     function slideNextProject() {
         gsap.set(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { display: 'block' });
@@ -156,6 +155,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     mouseoverDiv.innerHTML = "";
                     isHoverOnView = false;
                 } });
+        }
+    }
+    function showProjectDetail() {
+        if (swiperInner) {
+            swiperInner.innerHTML = '';
+            axios.get("./project_content/project_details/project_detail0" + (slideNum + 1) + ".html").then(function (response) {
+                swiperInner.innerHTML = response.data;
+                previousSlideNum = slideNum;
+            })["catch"](function (error) {
+                console.error("error:", error);
+            });
         }
     }
 });

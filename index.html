@@ -33,21 +33,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js'></script>
-  <script>
-    var swiper = new Swiper('.blog-slider', {
-      spaceBetween: 30,
-      effect: 'fade',
-      loop: true,
-      mousewheel: {
-        invert: false,
-      },
-      // autoHeight: true,
-      pagination: {
-        el: '.blog-slider__pagination',
-        clickable: true,
-      }
-    });
-  </script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.css'/>
 
 </head>
 <body>
@@ -297,50 +283,64 @@
           <div class="button-next"><i class="fa-solid fa-chevron-right"></i></div>
         </div>
 
-        <div id="over_layer" style="display: none">
+        <div id="over_layer" style="display: block">
           <div id="detail_content_wrapper">
-            <button id="ol_close_btn"><i class="fa-solid fa-xmark"></i></button>
             <div id="detail_content">
-              <div class="blog-slider">
-                <div class="blog-slider__wrp swiper-wrapper">
-                  <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                      
-                      <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759872/kuldar-kalvik-799168-unsplash.webp" alt="">
+              <div class="detail-slider">
+                <button id="ol_close_btn"><i class="fa-solid fa-xmark"></i></button>
+                <a href="#" class="detail-slider__button">READ MORE</a>
+                <div class="detail-slider__wrp swiper-wrapper">
+
+
+                  <div class="detail-slider__item swiper-slide">
+                    <div class="detail-slider__img">
+                      <img src="/images/projects/detail_01_01.png" alt="">
                     </div>
-                    <div class="blog-slider__content">
-                      <span class="blog-slider__code">26 December 2019</span>
-                      <div class="blog-slider__title">Lorem Ipsum Dolor</div>
-                      <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi? </div>
-                      <a href="#" class="blog-slider__button">READ MORE</a>
-                    </div>
-                  </div>
-                  <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                      <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
-                    </div>
-                    <div class="blog-slider__content">
-                      <span class="blog-slider__code">26 December 2019</span>
-                      <div class="blog-slider__title">Lorem Ipsum Dolor2</div>
-                      <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-                      <a href="#" class="blog-slider__button">READ MORE</a>
+                    <div class="detail-slider__content">
+                      <span class="detail-slider__code">osung-jihyun</span>
+                      <div class="detail-slider__title">기획 의도</div>
+                      <div class="detail-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
                     </div>
                   </div>
-                  
-                  <div class="blog-slider__item swiper-slide">
-                    <div class="blog-slider__img">
-                      <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/alessandro-capuzzi-799180-unsplash.webp" alt="">
+                
+                  <div class="detail-slider__item swiper-slide">
+                    <div class="detail-slider__img">
+                      <img src="/images/projects/detail_01_02.png" alt="">
                     </div>
-                    <div class="blog-slider__content">
-                      <span class="blog-slider__code">26 December 2019</span>
-                      <div class="blog-slider__title">Lorem Ipsum Dolor</div>
-                      <div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
-                      <a href="#" class="blog-slider__button">READ MORE</a>
+                    <div class="detail-slider__content">
+                      <span class="detail-slider__code">osung-jihyun</span>
+                      <div class="detail-slider__title">반응형, 적응형</div>
+                      <div class="detail-slider__text">반응형 하드코딩은 부트스트랩과 같은 반응형 라이브러리를 사용하지 않고 진행했습니다. 이는 더욱 특화된 반응형 웹사이트를 제작하기 위해서입니다. 
+                        또한, 적응형 웹사이트를 구현한 경험이 어려웠지만, 사용자들의 다양한 기기와 화면 크기에 맞춰 최상의 경험을 제공하기 위해 적응형을 채택했습니다.</div>
                     </div>
                   </div>
-                  
+                
+                  <div class="detail-slider__item swiper-slide">
+                    <div class="detail-slider__img">
+                      <img src="/images/projects/detail_01_03.png" alt="">
+                    </div>
+                    <div class="detail-slider__content">
+                      <span class="detail-slider__code">osung-jihyun</span>
+                      <div class="detail-slider__title">시멘틱 마크업, 웹접근성</div>
+                      <div class="detail-slider__text">시멘틱 마크업에도 많은 신경을 썼는데, 이는 코딩의 최적화와 웹사이트의 구조를 명확히 하기 위해서입니다. 
+                        또한, 병원의 특성상 다양한 환자가 있습니다. 그 중에는 시각 장애인도 포함되는데 이러한 사람들도 웹 사이트를 편리하게 사용할 수 있을 수 있도록 웹 접근성에 신경썼습니다.</div>
+                    </div>
+                  </div>
+                
+                  <div class="detail-slider__item swiper-slide">
+                    <div class="detail-slider__img">
+                      <img src="/images/projects/detail_01_03.png" alt="">
+                    </div>
+                    <div class="detail-slider__content">
+                      <span class="detail-slider__code">osung-jihyun</span>
+                      <div class="detail-slider__title">자바스크립트</div>
+                      <div class="detail-slider__text">자바스크립트를 활용하여 네비게이션 슬라이드 컨텐츠, 메뉴 바, 스크롤 기능을 구현했습니다. 이를 통해 사용자들이 웹사이트를 보다 쉽고 편리하게 탐색할 수 있도록 하였습니다.</div>
+                    </div>
+                  </div>
+                
                 </div>
-                <div class="blog-slider__pagination"></div>
+                <div class="detail-slider__pagination"></div>
+
               </div>
             </div>
           </div>
@@ -468,8 +468,25 @@
         </div>
       </div>
     </footer>
-    <div id="gray_layer" style="display: none"></div>
+    <div id="gray_layer" style="display: block"></div>
     
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.detail-slider', {
+      spaceBetween: 30,
+      effect: 'fade',
+      loop: true,
+      mousewheel: {
+        invert: false,
+      },
+      // autoHeight: true,
+      pagination: {
+        el: '.detail-slider__pagination',
+        clickable: true,
+      }
+    });
+  </script>
 </body>
 </html>
