@@ -462,7 +462,7 @@ span.heart::before {
         height: 132.66vw;
         position: absolute;
         left: 5vw;
-        top: -13rem;
+        top: -13rem !important;
         img {
           width: 90vw;
           margin: 0 auto;

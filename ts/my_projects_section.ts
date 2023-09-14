@@ -143,6 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
         body.style.overflowY = 'auto';
       }
     }})
+    // if (swiperInner) {
+    //   swiperInner.innerHTML = '';
+    // }
   }
 
   function hoverDetail () {
@@ -197,9 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function hideProjectDetail () {
-    if (swiperInner) {
-      swiperInner.innerHTML = '';
-    }
+    
   }
 
 

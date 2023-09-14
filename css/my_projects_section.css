@@ -515,8 +515,8 @@ button#ol_close_btn i {
 @media screen and (max-width: 576px) {
   .detail-slider {
     top: 0.5rem;
-    min-height: 390px;
-    height: 390px;
+    min-height: 450px;
+    height: 450px;
   }
 }
 .detail-slider__item {

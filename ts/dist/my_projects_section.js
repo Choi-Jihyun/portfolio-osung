@@ -133,6 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     body.style.overflowY = 'auto';
                 }
             } });
+        // if (swiperInner) {
+        //   swiperInner.innerHTML = '';
+        // }
     }
     function hoverDetail() {
         var mouseoverDiv = document.querySelector('.mouseover');
@@ -182,8 +185,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     function hideProjectDetail() {
-        if (swiperInner) {
-            swiperInner.innerHTML = '';
-        }
     }
 });
