@@ -11,8 +11,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
         start: 'top 70%',
         end: 'bottom 70%',
         scrub: 2, 
+    },
+    onComplete: ()=>{
+      gsap.to(certificates, {opacity: 1, duration: 0.3, ease: "power1.out"})
     }
-  })
+  });
   gsap.to(awardsList[1], {
     left: 0, 
     opacity: 1,
@@ -22,11 +25,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         start: 'top 65%',
         end: 'bottom 65%',
         scrub: 2, 
-    },
-    onComplete: ()=>{
-      gsap.to(certificates, {opacity: 1, duration: 0.6, ease: "power1.out"})
     }
-  })
+  });
   gsap.to(awardsList[2], {
     left: 0, 
     opacity: 1,
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         end: 'bottom 60%',
         scrub: 2, 
     }
-  })
+  });
   gsap.to(awardsList[3], {
     left: 0, 
     opacity: 1,
@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         end: 'bottom 55%',
         scrub: 2, 
     }
-  })
-
+  });
 
 })

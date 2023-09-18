@@ -5,6 +5,7 @@ div#skills_and_stacks_wrapper {
   @extend %basicTitleWrapStyle;
   .title_wrap {
     text-align: right;
+    padding-top: 7rem;
     #skill {
       color: black;
     }
@@ -132,9 +133,31 @@ div.ss_bg {
   left: -22rem;
   top: 0;
   z-index: -1;
-  img {
-    width: 35rem;
-    height: 35rem;
+  @media screen and (max-width: 425px) {
+    top: -20rem;
+  }
+  
+  img.ss_bg_circle {
+    width: 41.6875rem;
+    height: 65.5rem;
+    position: absolute;
+  }
+  img.ss_bg_text {
+    width: 52.8125rem;
+    height: 23.0625rem;
+    position: absolute;
+    left: 7rem;
+    top: 10rem;
+    @media screen and (max-width: 1600px) {
+      left: 10rem;
+    }
+    @media screen and (max-width: 1400px) {
+      left: 14rem;
+    }
+    @media screen and (max-width: 425px) {
+      left: 17rem;
+    }
+    
   }
 }
 
@@ -167,6 +190,7 @@ div.ss_bg {
       width: auto;
       height: auto;
       text-align: right;
+      padding-top: 1rem;
       p.subtitle {
         font: normal 3rem "Dela Gothic One";
       }

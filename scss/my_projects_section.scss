@@ -457,8 +457,6 @@ button#ol_close_btn {
   left: 0;
   top: 0;
   z-index: 1000;
-  border: solid 2px palevioletred;
-  box-sizing: border-box;
 }
 .detail-slider {
   overflow-x:unset;
@@ -583,8 +581,7 @@ button#ol_close_btn {
 
   &__content {
     padding-right: 25px;
-    border: solid 2px palevioletred;
-    box-sizing: border-box;
+    // borderbox
     margin-top: 40px;
     @media screen and (max-width: 768px) {
       margin-top: -80px;
