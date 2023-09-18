@@ -101,6 +101,10 @@ div#content p span {
 }
 div#content p.cf_email_title {
   margin-bottom: 1rem;
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  transform: translateX(-50%);
 }
 div#content p.cf_email_text span {
   transition: all 0.1s ease-out;
@@ -112,6 +116,10 @@ div#content p.cf_alertCopy {
   color: gray;
   font: normal 1rem "Noto sans KR";
   margin-top: 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
 }
 div#content p.c_big_font {
   font: normal 1.8rem "Noto sans KR";
@@ -244,7 +252,7 @@ div#content p.c_banknum:hover {
     font: normal 1rem "Noto sans KR";
     position: absolute;
     left: 50%;
-    bottom: 2em;
+    bottom: 2rem;
     transform: translateX(-50%);
   }
   div#content p.c_big_font {

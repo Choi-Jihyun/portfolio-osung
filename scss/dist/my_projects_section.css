@@ -294,21 +294,11 @@ ul.project_list li:nth-child(4) {
   background-size: contain;
 }
 ul.project_list li:nth-child(5) {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-  background: #dadada;
+  background: url("/images/project_list_05.png") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(6) {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-  background: #dadada;
+  background: url("/images/project_list_06.png") center center no-repeat;
   background-size: contain;
 }
 
