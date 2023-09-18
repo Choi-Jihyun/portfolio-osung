@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // menuLists.forEach((menuItem) => {
                 //     menuItem.classList.remove('selected');
                 // });
-                event.target.classList.add('selected');
+                // (event.target as HTMLElement).classList.add('selected');
             }
         }
     }

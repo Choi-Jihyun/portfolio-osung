@@ -22,7 +22,7 @@ header div#header_inner a {
   float: left;
 }
 header div#header_inner a div#logo p {
-  font: normal 1.5rem/2rem "Permanent Marker";
+  font: normal 1.5rem/2rem "faster one";
   color: #003CFF;
 }
 header div#header_inner div.menu {
@@ -50,26 +50,23 @@ header div#header_inner div.menu ul.menu_list li {
   position: relative;
   left: 0;
   top: 0;
+  z-index: 10;
   transition: all 0.2s ease-out;
+}
+header div#header_inner div.menu ul.menu_list li img {
+  display: none;
+  position: absolute;
+  right: 2.5rem;
+  top: 0.1rem;
+  z-index: -1;
+  transition: all 0.3s ease-out;
 }
 header div#header_inner div.menu ul.menu_list li.selected {
   color: white;
 }
-header div#header_inner div.menu ul.menu_list li .svg_line {
-  width: 200px;
-  height: 20px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-  background: url("/images/headermenu-svg-01.png");
-}
-header div#header_inner div.menu svg {
-  position: absolute;
-  left: -2.5rem;
-  top: 0.4rem;
-  z-index: 0;
+header div#header_inner div.menu ul.menu_list li.selected img {
+  display: block;
+  right: -0.5rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -123,12 +120,5 @@ header div#header_inner div.menu svg {
   }
   header div#header_inner div.menu ul.menu_list li.selected {
     color: white;
-  }
-  header div#header_inner div.menu svg {
-    width: 55%;
-    position: absolute;
-    left: -12%;
-    top: 0.2rem;
-    z-index: 0;
   }
 }

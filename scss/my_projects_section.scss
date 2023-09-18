@@ -323,21 +323,23 @@ div.list_navigation {
 }
 
 div.pj_bg_text {
-  font: 500 20rem "Orbitron";
+  color: #1E53FF;
+  font: 500 14rem "dela gothic one";
+  opacity: 0.15;
   transform: rotate(-90deg);
   position: absolute;
-  left: 0;
-  top: 12rem;
+  left: 46rem;
+  top: 0rem;
   z-index: 1;
-  #pbt_3 {
-    color: #003CFF;
-  }
-  #pbt_2 {
-    color: #FF9900;
-  }
-  #pbt_1 {
-    color: whitesmoke;
-  }
+  // #pbt_3 {
+  //   color: #003CFF;
+  // }
+  // #pbt_2 {
+  //   color: #FF9900;
+  // }
+  // #pbt_1 {
+  //   color: whitesmoke;
+  // }
 }
 
 #gray_layer {

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         // menuLists.forEach((menuItem) => {
         //     menuItem.classList.remove('selected');
         // });
-        (event.target as HTMLElement).classList.add('selected');
+        // (event.target as HTMLElement).classList.add('selected');
       }
     }
   }

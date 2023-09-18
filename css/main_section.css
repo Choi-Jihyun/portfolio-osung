@@ -86,25 +86,21 @@ div#main_wrapper div.bg_blues svg:nth-child(3) {
 }
 div.running_osung_wrapper {
   position: absolute;
-  top: 15px;
-}
-
-.me {
-  background-image: url("/images/running.png");
-  background-repeat: no-repeat;
-  display: block;
-  width: 300px;
-  height: 500px;
-  transition: all 0.5s ease-out;
-}
-
-div.running_osung_wrapper {
-  position: absolute;
-  top: 15px;
+  top: 0rem;
   animation-name: moving;
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+@media screen and (max-width: 768px) {
+  div.running_osung_wrapper {
+    top: 13rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  div.running_osung_wrapper {
+    animation-duration: 2s;
+  }
 }
 div.running_osung_wrapper .me {
   background-image: url("/images/running.png");
@@ -118,6 +114,11 @@ div.running_osung_wrapper .me {
   animation-timing-function: steps(1);
   background-position-y: 0;
   zoom: 0.5;
+}
+@media screen and (max-width: 768px) {
+  div.running_osung_wrapper .me {
+    animation-duration: 0.6s;
+  }
 }
 
 @keyframes moving {
