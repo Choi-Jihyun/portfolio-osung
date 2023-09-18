@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     window.addEventListener('scroll', highlightSection);
     function scrollToTop(event) {
-        event.preventDefault(); // Prevent the default anchor behavior
+        event.preventDefault();
         window.scrollTo({
             top: 0,
             behavior: 'smooth'

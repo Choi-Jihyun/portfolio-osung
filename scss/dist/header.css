@@ -22,8 +22,9 @@ header div#header_inner a {
   float: left;
 }
 header div#header_inner a div#logo p {
-  font: normal 1.5rem/2rem "faster one";
   color: #003CFF;
+  font: normal 1.5rem/1.9rem "faster one";
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 header div#header_inner div.menu {
   position: relative;
@@ -63,6 +64,7 @@ header div#header_inner div.menu ul.menu_list li img {
 }
 header div#header_inner div.menu ul.menu_list li.selected {
   color: white;
+  text-shadow: none;
 }
 header div#header_inner div.menu ul.menu_list li.selected img {
   display: block;

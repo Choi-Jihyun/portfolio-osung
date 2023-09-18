@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   window.addEventListener('scroll', highlightSection);
 
   function scrollToTop(event: Event) {
-    event.preventDefault(); // Prevent the default anchor behavior
+    event.preventDefault();
 
     window.scrollTo({
         top: 0,
