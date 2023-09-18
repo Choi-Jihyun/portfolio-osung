@@ -10,28 +10,28 @@ document.addEventListener('DOMContentLoaded', function () {
     //     }
     // });
     // runningTimeline.to('.me', {backgroundPositionX:-3300});
-    gsap.to(runningWrapper, {
-        left: "100vw",
-        scrollTrigger: {
-            trigger: runningWrapper,
-            start: "50% 40%",
-            end: "bottom 10%",
-            toggleActions: 'play reverse play reverse',
-            scrub: true,
-            // markers: true,
-            pin: true
-        }
-    });
-    gsap.to('.me', {
-        backgroundPositionX: '-3300px',
-        scrollTrigger: {
-            trigger: '.me',
-            start: "50% 40%",
-            end: "bottom 10%",
-            toggleActions: 'play reverse play reverse',
-            scrub: 0,
-            // markers: true,
-            pin: true
-        }
-    });
+    // gsap.to(runningWrapper, {
+    //     left:"100vw",
+    //     scrollTrigger:{
+    //         trigger:runningWrapper,
+    //         start:"50% 40%",
+    //         end:"bottom 10%",
+    //         toggleActions: 'play reverse play reverse',
+    //         scrub:true,
+    //         // markers: true,
+    //         pin: true,
+    //     }
+    // });
+    // gsap.to('.me', {
+    //   backgroundPositionX:'-3300px',
+    //   scrollTrigger: {
+    //     trigger:'.me',
+    //     start:"50% 40%",
+    //     end:"bottom 10%",
+    //     toggleActions: 'play reverse play reverse',
+    //     scrub:0,
+    //     // markers: true,
+    //     pin: true,
+    //   }
+    // })
 });
