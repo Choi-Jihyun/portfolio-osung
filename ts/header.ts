@@ -22,14 +22,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   function scrollToSection(event: Event) {
     const targetId = (event.target as HTMLElement).getAttribute('data-target');
+
     if (targetId !== null) {
       const targetSection = document.getElementById(targetId);
       
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
-        menuLists.forEach((menuItem) => {
-            menuItem.classList.remove('selected');
-        });
+        // menuLists.forEach((menuItem) => {
+        //     menuItem.classList.remove('selected');
+        // });
         (event.target as HTMLElement).classList.add('selected');
       }
     }
@@ -40,9 +41,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.clientHeight + 30;
+      const sectionBottom = sectionTop + section.clientHeight;
 
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      if (scrollPosition >= sectionTop - 10 && scrollPosition < sectionBottom) {
         const targetId = section.id;
         menuLists.forEach((menuItem) => {
           if (menuItem.getAttribute('data-target') === targetId) {

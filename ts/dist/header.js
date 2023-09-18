@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
             var targetSection = document.getElementById(targetId);
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
-                menuLists.forEach(function (menuItem) {
-                    menuItem.classList.remove('selected');
-                });
+                // menuLists.forEach((menuItem) => {
+                //     menuItem.classList.remove('selected');
+                // });
                 event.target.classList.add('selected');
             }
         }
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var scrollPosition = window.scrollY;
         sections.forEach(function (section) {
             var sectionTop = section.offsetTop;
-            var sectionBottom = sectionTop + section.clientHeight + 30;
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            var sectionBottom = sectionTop + section.clientHeight;
+            if (scrollPosition >= sectionTop - 10 && scrollPosition < sectionBottom) {
                 var targetId_1 = section.id;
                 menuLists.forEach(function (menuItem) {
                     if (menuItem.getAttribute('data-target') === targetId_1) {
