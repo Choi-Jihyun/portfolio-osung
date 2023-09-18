@@ -33,15 +33,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
     etcSkillLiObserver.observe(item);
   }
 
-  gsap.to(ssSvg, {
+  window.addEventListener('scroll', function() {
+    let svgElement = document.querySelector('.ss_title_svg');
+    let scrollHeight = window.scrollY;
+    let windowHeight = window.innerHeight;
 
-    scrollTrigger: {
-      trigger: ssSvg,
-        start: 'top 45%',
-        scrub: 2, 
-        markers: true,
+    if(svgElement instanceof HTMLElement) {
+      console.log(scrollHeight);
+      if (scrollHeight > 1832) { // 화면의 높이의 45%가 넘었을 때
+          svgElement.classList.add('animate'); // animate 클래스 추가
+      } else {
+          svgElement.classList.remove('animate'); // 그 외 경우 animate 클래스 제거
+      }
     }
-  })
+});
 
 
 })
