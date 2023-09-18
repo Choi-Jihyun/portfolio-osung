@@ -2,16 +2,43 @@ document.addEventListener('DOMContentLoaded', function () {
     var aboutmeSection = document.querySelector('#about_me');
     var awardsList = document.querySelectorAll('#awards_list > li');
     gsap.to(awardsList[0], {
-        x: 0,
-        ease: 'power1.out',
+        left: 0,
         scrollTrigger: {
             trigger: awardsList[0],
             markers: true,
-            start: '0% 60%',
-            end: '30% 60%',
-            toggleActions: 'play reverse',
-            scrub: 1,
-            pin: false
+            start: 'top 70%',
+            end: 'bottom 70%',
+            scrub: 2
+        }
+    });
+    gsap.to(awardsList[1], {
+        left: 0,
+        scrollTrigger: {
+            trigger: awardsList[1],
+            markers: true,
+            start: 'top 65%',
+            end: 'bottom 65%',
+            scrub: 2
+        }
+    });
+    gsap.to(awardsList[2], {
+        left: 0,
+        scrollTrigger: {
+            trigger: awardsList[2],
+            markers: true,
+            start: 'top 60%',
+            end: 'bottom 60%',
+            scrub: 2
+        }
+    });
+    gsap.to(awardsList[3], {
+        left: 0,
+        scrollTrigger: {
+            trigger: awardsList[3],
+            markers: true,
+            start: 'top 55%',
+            end: 'bottom 55%',
+            scrub: 2
         }
     });
 });
