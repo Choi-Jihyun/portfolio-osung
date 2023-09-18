@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var awardsList = document.querySelectorAll('#awards_list > li');
     var certificates = document.querySelector("#certificates");
+    var amSvgLine = document.querySelector(".am_bg_line > svg");
+    window.addEventListener('scroll', animateAmSvgLine);
     gsap.to(awardsList[0], {
         left: 0,
         opacity: 1,
@@ -48,4 +50,20 @@ document.addEventListener('DOMContentLoaded', function () {
             scrub: 2
         }
     });
+    function animateAmSvgLine() {
+        var scrollPosition = window.scrollY;
+        var footer = document.querySelector("footer");
+        if (footer) {
+            var footerTop = footer.offsetTop;
+            var footerBottom = footerTop + footer.clientHeight;
+            if (amSvgLine) {
+                if (scrollPosition >= footerTop - 600) {
+                    amSvgLine.classList.add('selected');
+                }
+                else if (scrollPosition <= footerTop - 1600) {
+                    amSvgLine.classList.remove('selected');
+                }
+            }
+        }
+    }
 });

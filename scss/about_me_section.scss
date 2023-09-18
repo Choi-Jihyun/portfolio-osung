@@ -309,10 +309,13 @@ div.am_bgs {
   }
 }
 
+// line 애니메이션
 .am_bg_svg {
   stroke-dasharray: 5000; 
   stroke-dashoffset: 5000; 
-  animation: am_bg_svg_ani 3s ease-out forwards; 
+  &.selected {
+    animation: am_bg_svg_ani 3s ease-out forwards; 
+  }
   position: relative;
 }
 

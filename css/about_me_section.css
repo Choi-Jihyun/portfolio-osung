@@ -305,8 +305,10 @@ div.am_bgs div.am_bg_circle {
 .am_bg_svg {
   stroke-dasharray: 5000;
   stroke-dashoffset: 5000;
-  animation: am_bg_svg_ani 3s ease-out forwards;
   position: relative;
+}
+.am_bg_svg.selected {
+  animation: am_bg_svg_ani 3s ease-out forwards;
 }
 
 @keyframes am_bg_svg_ani {

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{
   const awardsList = document.querySelectorAll('#awards_list > li');
   const certificates = document.querySelector("#certificates");
+  const amSvgLine = document.querySelector(".am_bg_line > svg");
+  window.addEventListener('scroll', animateAmSvgLine);
 
   gsap.to(awardsList[0], {
     left: 0, 
@@ -49,5 +51,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
         scrub: 2, 
     }
   });
+
+  function animateAmSvgLine() {
+    const scrollPosition = window.scrollY;
+    const footer = document.querySelector("footer");
+    if (footer) {
+      const footerTop = footer.offsetTop;
+      const footerBottom = footerTop + footer.clientHeight;
+      if(amSvgLine) {
+        if (scrollPosition >= footerTop - 600) {
+          amSvgLine.classList.add('selected');
+        } else if (scrollPosition <= footerTop - 1600) {
+          amSvgLine.classList.remove('selected');
+        }
+      }
+    }
+
+  }  
+
 
 })
