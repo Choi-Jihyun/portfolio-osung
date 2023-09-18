@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // runningTimeline.to('.me', {backgroundPositionX:-3300});
 
 
-
-
     // gsap.to(runningWrapper, {
     //     left:"100vw",
     //     scrollTrigger:{

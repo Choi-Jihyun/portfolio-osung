@@ -313,12 +313,17 @@ ul.project_list li:nth-child(6) {
 }
 
 div.list_navigation {
-  width: 100vw;
+  width: 100%;
   height: auto;
   position: absolute;
   left: 0;
   top: 56rem;
   z-index: 10;
+}
+@media screen and (max-width: 1200px) {
+  div.list_navigation {
+    width: 100vw;
+  }
 }
 @media screen and (max-width: 768px) {
   div.list_navigation {
@@ -328,9 +333,14 @@ div.list_navigation {
 div.list_navigation .button-prev {
   height: 5rem;
   position: absolute;
-  left: 30px;
+  left: 250px;
   top: 0;
   z-index: 10;
+}
+@media screen and (max-width: 1800px) {
+  div.list_navigation .button-prev {
+    left: 30px;
+  }
 }
 @media screen and (max-width: 768px) {
   div.list_navigation .button-prev {
@@ -340,9 +350,14 @@ div.list_navigation .button-prev {
 div.list_navigation .button-next {
   height: 5rem;
   position: absolute;
-  right: 40px;
+  right: 250px;
   top: 0;
   z-index: 10;
+}
+@media screen and (max-width: 1800px) {
+  div.list_navigation .button-next {
+    right: 30px;
+  }
 }
 @media screen and (max-width: 768px) {
   div.list_navigation .button-next {

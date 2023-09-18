@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', ()=>{
   const frontSkillLi = document.querySelectorAll(".front_end_skill_list > li");
   const etcSkillLi = document.querySelectorAll(".etc_skill_list > li");
+  const ssSvg = document.querySelector(".ss_title_svg");
 
   let frontSkillLiObserver = new IntersectionObserver((e) => {
     e.forEach((item) => {
@@ -31,6 +32,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
   for (const item of etcSkillLi) {
     etcSkillLiObserver.observe(item);
   }
+
+  gsap.to(ssSvg, {
+
+    scrollTrigger: {
+      trigger: ssSvg,
+        start: 'top 45%',
+        scrub: 2, 
+        markers: true,
+    }
+  })
 
 
 })

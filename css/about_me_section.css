@@ -71,9 +71,14 @@ div.about_me_inner div.categories_wrapper #awards_list {
   position: relative;
 }
 div.about_me_inner div.categories_wrapper #awards_list li {
+  opacity: 0.2;
   position: relative;
   left: 70px;
   top: 0;
+}
+
+#certificates {
+  opacity: 0;
 }
 
 p.am_c_subtitle {

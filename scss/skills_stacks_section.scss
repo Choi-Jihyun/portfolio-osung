@@ -8,6 +8,10 @@ div#skills_and_stacks_wrapper {
     #skill {
       color: black;
     }
+    .ss_title_svg {
+      // transform: scaleX(-1);
+      stroke-dasharray: 30;
+    }
   }
 }
 

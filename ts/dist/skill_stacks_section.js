@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var frontSkillLi = document.querySelectorAll(".front_end_skill_list > li");
     var etcSkillLi = document.querySelectorAll(".etc_skill_list > li");
+    var ssSvg = document.querySelector(".ss_title_svg");
     var frontSkillLiObserver = new IntersectionObserver(function (e) {
         e.forEach(function (item) {
             if (item.target instanceof HTMLElement) {
@@ -33,4 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var item = etcSkillLi_1[_a];
         etcSkillLiObserver.observe(item);
     }
+    gsap.to(ssSvg, {
+        scrollTrigger: {
+            trigger: ssSvg,
+            start: 'top 45%',
+            scrub: 2,
+            markers: true
+        }
+    });
 });

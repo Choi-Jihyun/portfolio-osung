@@ -24,6 +24,9 @@ div#skills_and_stacks_wrapper .title_wrap {
 div#skills_and_stacks_wrapper .title_wrap #skill {
   color: black;
 }
+div#skills_and_stacks_wrapper .title_wrap .ss_title_svg {
+  stroke-dasharray: 30;
+}
 
 p.skill_category {
   color: black;

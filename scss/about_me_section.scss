@@ -55,12 +55,16 @@ div.about_me_inner {
     #awards_list {
       position: relative;
       li {
+        opacity: 0.2;
         position: relative;
         left: 70px;
         top: 0;
       }
     }
   }
+}
+#certificates {
+  opacity: 0;
 }
 
 // 취미 활동
