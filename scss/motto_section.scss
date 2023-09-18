@@ -13,6 +13,8 @@ div#motto_wrapper {
     left: 0;
     top: 24rem;
     z-index: 10;
+    opacity: 0;
+    transition: opacity 2s ease-out;
     p.mt_title {
       color: #F90;
       font: normal 6.25rem "Dela Gothic One";
@@ -29,8 +31,9 @@ div#motto_wrapper {
     left: 0;
     bottom: 23rem;
     z-index: 3;
-
     transform: rotate(-6.547deg);
+    opacity: 0;
+    transition: opacity 2s ease-out;
     p {
       width: 150rem;
       float: left;
@@ -63,10 +66,10 @@ div#motto_wrapper {
     border-radius: 50%;
     position: absolute;
     left: -20rem;
-    bottom: -10rem;
+    bottom: -20rem;// -> -10rem으로 도착
     opacity: 0.2;
     z-index: 1;
-    // margin: 24.5rem auto;
+    transition: all 1s ease-out;
     .l_hole {
         width: 35rem;
         height: 35rem;
@@ -88,10 +91,11 @@ div#motto_wrapper {
     border-radius: 50%;
     opacity: 0.5;
     position: absolute;
-    right: -10rem;
-    bottom: 7rem;
+    right: -10rem; 
+    bottom: -10rem;  // -> 7rem으로 도착
     z-index: 1;
     margin: 14.5rem auto;
+    transition: all 1s ease-out; 
     .r_hole {
         width: 18rem;
         height: 18rem;
@@ -173,7 +177,7 @@ div#motto_wrapper {
       bottom: -10rem;
       opacity: 0.2;
       z-index: 1;
-      // margin: 24.5rem auto;
+      // transition: all 1s ease-out;
       .l_hole {
           width: 35rem;
           height: 35rem;
@@ -182,6 +186,7 @@ div#motto_wrapper {
           position: absolute;
           left: 7rem;
           top: 7rem;
+          // transition: all 0.3s ease-out;
       }
     }
     div.mt_bg_circle_right {

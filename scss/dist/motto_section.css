@@ -14,6 +14,8 @@ div#motto_wrapper div.motto_text {
   left: 0;
   top: 24rem;
   z-index: 10;
+  opacity: 0;
+  transition: opacity 2s ease-out;
 }
 div#motto_wrapper div.motto_text p.mt_title {
   color: #F90;
@@ -30,6 +32,8 @@ div#motto_wrapper div.mt_bg_text {
   bottom: 23rem;
   z-index: 3;
   transform: rotate(-6.547deg);
+  opacity: 0;
+  transition: opacity 2s ease-out;
 }
 div#motto_wrapper div.mt_bg_text p {
   width: 150rem;
@@ -58,9 +62,10 @@ div#motto_wrapper div.mt_bg_circle_left {
   border-radius: 50%;
   position: absolute;
   left: -20rem;
-  bottom: -10rem;
+  bottom: -20rem;
   opacity: 0.2;
   z-index: 1;
+  transition: all 1s ease-out;
 }
 div#motto_wrapper div.mt_bg_circle_left .l_hole {
   width: 35rem;
@@ -83,9 +88,10 @@ div#motto_wrapper div.mt_bg_circle_right {
   opacity: 0.5;
   position: absolute;
   right: -10rem;
-  bottom: 7rem;
+  bottom: -10rem;
   z-index: 1;
   margin: 14.5rem auto;
+  transition: all 1s ease-out;
 }
 div#motto_wrapper div.mt_bg_circle_right .r_hole {
   width: 18rem;
