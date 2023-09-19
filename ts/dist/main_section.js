@@ -6,18 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var lastScrollY = window.scrollY;
     window.addEventListener('scroll', runningOsung);
     function runningOsung() {
-        //   console.log('scroll: ', scrollY);
-        //   backgroundPosition = backgroundPosition - 300;
-        //   if (backgroundPosition < -3300) {
-        //     backgroundPosition = 0;
-        //   }
-        //   imgMovingLeft = imgMovingLeft + 10;
-        //   if (imgMovingLeft > window.innerWidth) {
-        //     imgMovingLeft = -30;
-        //   }
-        //   osung.style.backgroundPositionX = `${backgroundPosition}px`;
-        //   runningWrapper.style.left = `${imgMovingLeft}px`;
-        // }
         var currentScrollY = window.scrollY; // 현재 스크롤 위치
         var runningSpeed = 4620;
         if (window.innerWidth < 1024 && window.innerWidth > 768) {
