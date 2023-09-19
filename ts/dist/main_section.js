@@ -19,16 +19,26 @@ document.addEventListener('DOMContentLoaded', function () {
         //   runningWrapper.style.left = `${imgMovingLeft}px`;
         // }
         var currentScrollY = window.scrollY; // 현재 스크롤 위치
+        var runningSpeed = 4620;
+        if (window.innerWidth < 1024 && window.innerWidth > 768) {
+            runningSpeed = 5;
+        }
+        else if (window.innerWidth <= 768) {
+            runningSpeed = 1;
+        }
+        else {
+            runningSpeed = 10;
+        }
         if (currentScrollY > lastScrollY) { // 아래로 스크롤
             osung.style.transform = 'scaleX(1)';
-            imgMovingLeft += 15;
+            imgMovingLeft += runningSpeed;
             if (imgMovingLeft > window.innerWidth) {
                 imgMovingLeft = -30;
             }
         }
         else if (currentScrollY < lastScrollY) { // 위로 스크롤
             osung.style.transform = 'scaleX(-1)';
-            imgMovingLeft -= 10;
+            imgMovingLeft -= runningSpeed;
             if (imgMovingLeft < 0) {
                 imgMovingLeft = window.innerWidth;
             }
