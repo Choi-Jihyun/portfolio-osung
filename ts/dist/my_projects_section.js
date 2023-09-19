@@ -193,7 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', scrollWindow);
     function scrollWindow() {
         var scrollHeight = window.scrollY;
-        console.log('scrollY: ', scrollY);
         var criterionHeight = 4620;
         if (window.innerWidth < 1024 && window.innerWidth > 768) {
             criterionHeight = 4042;
@@ -205,8 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
             criterionHeight = 4620;
         }
         if (scrollHeight > criterionHeight) {
-            console.log('함수 실행!');
-            console.log('criterionHeight: ', criterionHeight);
             for (var i = 0; i < projectListLis.length; i++) {
                 gsap.to(projectListLis[i], { y: 0, opacity: 1, delay: 0.2 * i, duration: 1, ease: "power1.out" });
             }

@@ -156,7 +156,7 @@ div.ss_bg img.ss_bg_text {
   height: 23.0625rem;
   position: absolute;
   left: 7rem;
-  top: 10rem;
+  top: 50rem;
 }
 @media screen and (max-width: 1600px) {
   div.ss_bg img.ss_bg_text {

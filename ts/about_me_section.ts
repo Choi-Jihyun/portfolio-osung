@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         start: 'top 70%',
         end: 'bottom 70%',
         scrub: 2, 
-    },
-    onComplete: ()=>{
-      gsap.to(certificates, {opacity: 1, duration: 0.3, ease: "power1.out"})
     }
   });
   gsap.to(awardsList[1], {
@@ -49,6 +46,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
         start: 'top 55%',
         end: 'bottom 55%',
         scrub: 2, 
+    }
+  });
+  gsap.to(certificates, {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: certificates,
+      markers: true,
+      start: 'top 25%',
+      end: '50% 25%',
+      scrub: 2, 
     }
   });
 

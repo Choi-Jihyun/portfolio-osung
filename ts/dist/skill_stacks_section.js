@@ -39,13 +39,21 @@ document.addEventListener('DOMContentLoaded', function () {
         var scrollHeight = window.scrollY;
         var windowHeight = window.innerHeight;
         if (svgElement instanceof HTMLElement) {
-            console.log(scrollHeight);
-            if (scrollHeight > 1832) { // 화면의 높이의 45%가 넘었을 때
-                svgElement.classList.add('animate'); // animate 클래스 추가
+            if (scrollHeight > 1832) {
+                svgElement.classList.add('animate');
             }
             else {
-                svgElement.classList.remove('animate'); // 그 외 경우 animate 클래스 제거
+                svgElement.classList.remove('animate');
             }
+        }
+    });
+    gsap.to('.ss_bg_text', {
+        top: '0rem',
+        scrollTrigger: {
+            trigger: '#skill',
+            start: 'top 85%',
+            end: 'bottom 15%',
+            scrub: 2
         }
     });
 });
