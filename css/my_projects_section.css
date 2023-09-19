@@ -260,6 +260,7 @@ ul.project_list {
   }
 }
 ul.project_list li {
+  transform: translateY(-70px);
   width: 25rem;
   height: 15.45rem;
   border-radius: 25px;
@@ -269,6 +270,7 @@ ul.project_list li {
   opacity: 0.8;
   cursor: pointer;
   transition: all 0.4s ease-out;
+  opacity: 0;
 }
 ul.project_list li:hover {
   box-shadow: 4px 4px 16px 7px rgba(0, 0, 0, 0.3);
