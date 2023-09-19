@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showDetails() {
         showProjectDetail();
         if (body) {
-            body.style.overflowY = 'hidden';
+            body.style.overflow = 'hidden';
         }
         gsap.set(grayLayer, { display: 'block' });
         gsap.to(grayLayer, { opacity: 0.9, duration: 0.5, ease: 'porwer1.out' });
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     grayLayer.style.display = 'none';
                 }
                 if (body) {
-                    body.style.overflowY = 'auto';
+                    body.style.overflow = 'auto';
                 }
             } });
         // if (swiperInner) {
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function showProjectDetail() {
         if (body) {
-            body.style.overflowY = 'hidden';
+            body.style.overflow = 'hidden';
         }
         if (swiperInner) {
             swiperInner.innerHTML = '';

@@ -38,11 +38,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let scrollHeight = window.scrollY;
     let windowHeight = window.innerHeight;
 
+    console.log('scrollHeight: ', scrollHeight);
     if(svgElement instanceof HTMLElement) {
-      if (scrollHeight > 1832) {
-          svgElement.classList.add('animate');
+      
+      if (scrollHeight > 2500) {
+        svgElement.classList.add('animate');
       } else {
+        if(svgElement.className === 'animate'){
           svgElement.classList.remove('animate');
+        }
       }
     }
   });

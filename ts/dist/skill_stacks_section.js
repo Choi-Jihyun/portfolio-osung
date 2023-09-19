@@ -38,12 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var svgElement = document.querySelector('.ss_title_svg');
         var scrollHeight = window.scrollY;
         var windowHeight = window.innerHeight;
+        console.log('scrollHeight: ', scrollHeight);
         if (svgElement instanceof HTMLElement) {
-            if (scrollHeight > 1832) {
+            if (scrollHeight > 2500) {
                 svgElement.classList.add('animate');
             }
             else {
-                svgElement.classList.remove('animate');
+                if (svgElement.className === 'animate') {
+                    svgElement.classList.remove('animate');
+                }
             }
         }
     });
