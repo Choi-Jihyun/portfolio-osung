@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     top: '0rem',
     scrollTrigger: {
       trigger: '#skill',
-      start: 'top 85%',
-      end: 'bottom 15%',
+      start: 'top 55%',
+      end: 'bottom 5%',
       scrub: 3, 
+      markers:true,
     }
   });
 
