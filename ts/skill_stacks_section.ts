@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       trigger: '#skill',
       start: 'top 85%',
       end: 'bottom 15%',
-      scrub: 2, 
+      scrub: 3, 
     }
   });
 

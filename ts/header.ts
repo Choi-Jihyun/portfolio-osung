@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       menuItem.addEventListener('click', scrollToSection);
   });
   window.addEventListener('scroll', highlightSection);
+  window.addEventListener('scroll', runningOsung);
 
   function scrollToTop(event: Event) {
     event.preventDefault();
@@ -55,5 +56,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
       }
     });
   }
+
 
 })

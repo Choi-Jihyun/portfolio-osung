@@ -1,44 +1,27 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-  const runningWrapper = document.querySelector(".running_osung_wrapper");
+  const runningWrapper = document.querySelector(".running_osung_wrapper") as HTMLElement;
+  const osung = document.querySelector(".me") as HTMLElement;
   
+  let backgroundPosition: number = 0;
+  let imgMovingLeft: number = -300;
 
-    // var runningTimeline = gsap.timeline({
-    //     scrollTrigger:{
-    //         trigger:runningWrapper,
-    //         start:"top 0%",
-    //         end:"bottom 100%",
-    //         scrub:true,
-    //         markers: true,
-    //     }
-    // });
+  window.addEventListener('scroll', runningOsung)
 
-    // runningTimeline.to('.me', {backgroundPositionX:-3300});
+  function runningOsung() {
+    console.log('scroll: ', scrollY);
+    backgroundPosition = backgroundPosition - 300;
+    if (backgroundPosition < -3300) {
+      backgroundPosition = 0;
+    }
+    imgMovingLeft = imgMovingLeft + 10;
+    if (imgMovingLeft > window.innerWidth) {
+      imgMovingLeft = 0;
+    }
+  
+    osung.style.backgroundPositionX = `${backgroundPosition}px`;
+    runningWrapper.style.left = `${imgMovingLeft}px`;
+  }
 
 
-    // gsap.to(runningWrapper, {
-    //     left:"100vw",
-    //     scrollTrigger:{
-    //         trigger:runningWrapper,
-    //         start:"50% 40%",
-    //         end:"bottom 10%",
-    //         toggleActions: 'play reverse play reverse',
-    //         scrub:true,
-    //         // markers: true,
-    //         pin: true,
-    //     }
-    // });
-
-    // gsap.to('.me', {
-    //   backgroundPositionX:'-3300px',
-    //   scrollTrigger: {
-    //     trigger:'.me',
-    //     start:"50% 40%",
-    //     end:"bottom 10%",
-    //     toggleActions: 'play reverse play reverse',
-    //     scrub:0,
-    //     // markers: true,
-    //     pin: true,
-    //   }
-    // })
 
   })

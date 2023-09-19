@@ -89,12 +89,12 @@ div#main_wrapper {
 }
 
 div.running_osung_wrapper {
-  position: absolute;
+  position: fixed;
   top: 0rem;
   @media screen and (max-width: 768px) {
     top: 13rem;
   }
-  animation-name: moving;
+  // animation-name: moving;
   animation-duration: 4s;
   @media screen and (max-width: 768px) {
     animation-duration: 2s;
@@ -107,7 +107,7 @@ div.running_osung_wrapper {
   display: block;
   width: 300px;
   height: 500px;
-  animation-name: running;
+  // animation-name: running;
   animation-duration: 1s;
   @media screen and (max-width: 768px) {
     animation-duration: 0.6s;

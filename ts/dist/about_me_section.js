@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
         opacity: 1,
         scrollTrigger: {
             trigger: certificates,
-            markers: true,
             start: 'top 25%',
             end: '50% 25%',
             scrub: 2
