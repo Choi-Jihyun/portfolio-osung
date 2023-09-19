@@ -121,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showDetails() {
-    console.log('showDetails');
     showProjectDetail();
 
     if (body) {
@@ -130,8 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.set(grayLayer, { display:'block' })
     gsap.to(grayLayer,{ opacity: 0.9, duration: 0.5, ease: 'porwer1.out' });
     gsap.set(overLayer, { display: 'block' });
-
-    console.log('slideNum: ', slideNum);
   }
 
   function hideDetails() {

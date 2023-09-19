@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menuItem.addEventListener('click', scrollToSection);
     });
     window.addEventListener('scroll', highlightSection);
-    window.addEventListener('scroll', runningOsung);
+    // window.addEventListener('scroll', runningOsung);
     function scrollToTop(event) {
         event.preventDefault();
         window.scrollTo({
