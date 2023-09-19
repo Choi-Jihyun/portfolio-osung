@@ -13,20 +13,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
       setTimeout(() => { // 지정된 시간 후에 throttle 상태 해제
         isThrottled = false;
         runningOsung(); // 이벤트 핸들러 실행
-      }, 200);
+      }, 100);
     }
   });
 
   function runningOsung() {
     const currentScrollY: number = window.scrollY; // 현재 스크롤 위치
     let runningSpeed: number = 4620;
-    if (window.innerWidth < 1024 && window.innerWidth > 768) {
-      runningSpeed = 5;
-    } else if (window.innerWidth <= 768) {
-      runningSpeed = 1;
-    } else {
-      runningSpeed = 10;
-    }
+    // if (window.innerWidth < 1024 && window.innerWidth > 768) {
+    //   runningSpeed = 5;
+    // } else if (window.innerWidth <= 768) {
+    //   runningSpeed = 1;
+    // } else {
+    //   runningSpeed = 10;
+    // }
+    runningSpeed = 10;
 
     if (currentScrollY > lastScrollY) { // 아래로 스크롤
       osung.style.transform = 'scaleX(1)';

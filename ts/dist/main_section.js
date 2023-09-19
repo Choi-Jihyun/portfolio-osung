@@ -11,21 +11,20 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
                 isThrottled = false;
                 runningOsung(); // 이벤트 핸들러 실행
-            }, 200);
+            }, 100);
         }
     });
     function runningOsung() {
         var currentScrollY = window.scrollY; // 현재 스크롤 위치
         var runningSpeed = 4620;
-        if (window.innerWidth < 1024 && window.innerWidth > 768) {
-            runningSpeed = 5;
-        }
-        else if (window.innerWidth <= 768) {
-            runningSpeed = 1;
-        }
-        else {
-            runningSpeed = 10;
-        }
+        // if (window.innerWidth < 1024 && window.innerWidth > 768) {
+        //   runningSpeed = 5;
+        // } else if (window.innerWidth <= 768) {
+        //   runningSpeed = 1;
+        // } else {
+        //   runningSpeed = 10;
+        // }
+        runningSpeed = 10;
         if (currentScrollY > lastScrollY) { // 아래로 스크롤
             osung.style.transform = 'scaleX(1)';
             imgMovingLeft += runningSpeed;
