@@ -5,8 +5,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
   let backgroundPosition: number = 0;
   let imgMovingLeft: number = 0;
   let lastScrollY: number = window.scrollY;
+  let isThrottled: boolean = false;
 
-  window.addEventListener('scroll', runningOsung)
+  window.addEventListener('scroll', function(event) {
+    if (!isThrottled) { // throttle 상태가 아니라면
+      isThrottled = true; // throttle 상태로 변경
+      setTimeout(() => { // 지정된 시간 후에 throttle 상태 해제
+        isThrottled = false;
+        runningOsung(); // 이벤트 핸들러 실행
+      }, 200);
+    }
+  });
 
   function runningOsung() {
     const currentScrollY: number = window.scrollY; // 현재 스크롤 위치
@@ -41,7 +50,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     runningWrapper.style.left=`${imgMovingLeft}px`;
     lastScrollY=currentScrollY;
   }
-
 
 
 })

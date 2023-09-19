@@ -4,7 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var backgroundPosition = 0;
     var imgMovingLeft = 0;
     var lastScrollY = window.scrollY;
-    window.addEventListener('scroll', runningOsung);
+    var isThrottled = false;
+    window.addEventListener('scroll', function (event) {
+        if (!isThrottled) { // throttle 상태가 아니라면
+            isThrottled = true; // throttle 상태로 변경
+            setTimeout(function () {
+                isThrottled = false;
+                runningOsung(); // 이벤트 핸들러 실행
+            }, 200);
+        }
+    });
     function runningOsung() {
         var currentScrollY = window.scrollY; // 현재 스크롤 위치
         var runningSpeed = 4620;
