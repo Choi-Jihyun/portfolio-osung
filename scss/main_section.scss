@@ -90,10 +90,8 @@ div#main_wrapper {
 
 div.running_osung_wrapper {
   position: fixed;
-  top: 0rem;
-  @media screen and (max-width: 768px) {
-    top: 13rem;
-  }
+  top: 0.4rem;
+  z-index: 20;
   // animation-name: moving;
   animation-duration: 4s;
   @media screen and (max-width: 768px) {
@@ -115,7 +113,10 @@ div.running_osung_wrapper {
   animation-iteration-count: infinite;
   animation-timing-function: steps(1);
   background-position-y: 0;
-  zoom: 0.5;
+  zoom: 0.15;
+  @media screen and (max-width: 768px) {
+    zoom: 0.1;
+  }
   // transition: all 0.5s ease-out;
   // -moz-transform: scale(1.5);
   // transform: scale(1.5);
