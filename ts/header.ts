@@ -23,16 +23,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   function scrollToSection(event: Event) {
     const targetId = (event.target as HTMLElement).getAttribute('data-target');
-
     if (targetId !== null) {
       const targetSection = document.getElementById(targetId);
-      
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
-        // menuLists.forEach((menuItem) => {
-        //     menuItem.classList.remove('selected');
-        // });
-        // (event.target as HTMLElement).classList.add('selected');
       }
     }
   }
