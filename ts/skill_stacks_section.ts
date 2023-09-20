@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const etcSkillLi = document.querySelectorAll(".etc_skill_list > li");
   const ssSvg = document.querySelector(".ss_title_svg");
 
-  let frontSkillLiObserver = new IntersectionObserver((e) => {
+  const frontSkillLiObserver = new IntersectionObserver((e) => {
     e.forEach((item) => {
       if (item.target instanceof HTMLElement) {
         if (item.isIntersecting) {
@@ -14,13 +14,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
       }
     })
   });
-  let etcSkillLiObserver = new IntersectionObserver((e) => {
+  const etcSkillLiObserver = new IntersectionObserver((e) => {
     e.forEach((item) => {
       if (item.target instanceof HTMLElement) {
         if (item.isIntersecting) {
           item.target.style.opacity = '1';
         } else {
           item.target.style.opacity = '0';
+        }
+      }
+    })
+  });
+  const ssSvgObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.target instanceof Element) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.right = '0';
+        } else {
+          entry.target.style.opacity = '0';
+          entry.target.style.right = '-300px';
         }
       }
     })
@@ -32,24 +45,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
   for (const item of etcSkillLi) {
     etcSkillLiObserver.observe(item);
   }
+  if(ssSvg) {
+    ssSvgObserver.observe(ssSvg);
+  }
 
-  window.addEventListener('scroll', function() {
-    let svgElement = document.querySelector('.ss_title_svg');
-    let scrollHeight = window.scrollY;
-    let windowHeight = window.innerHeight;
-
-    console.log('scrollHeight: ', scrollHeight);
-    if(svgElement instanceof HTMLElement) {
-      
-      if (scrollHeight > 2500) {
-        svgElement.classList.add('animate');
-      } else {
-        if(svgElement.className === 'animate'){
-          svgElement.classList.remove('animate');
-        }
-      }
-    }
-  });
 
   gsap.to('.ss_bg_text', {
     top: '6rem',

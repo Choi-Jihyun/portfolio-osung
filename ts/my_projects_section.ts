@@ -9,11 +9,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector('.button-prev');
   const olCloseBtn = document.querySelector("#ol_close_btn");
   const swiperInner = document.querySelector(".axios_swiper_wrapper");
+  const pSvg = document.querySelectorAll(".p_title_svg");
   let slideNum: number = 0
   let previousSlideNum: number | null = null;
   let selectedSlide = projectLi[0];
   let isHoverOnView: boolean = false;
-  
+  const pSvgObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.target instanceof Element) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.left = '0';
+        } else {
+          entry.target.style.opacity = '0';
+          entry.target.style.left = '-200px';
+        }
+      }
+    })
+  });
+  for (const item of pSvg) {
+    pSvgObserver.observe(item);
+  }
   
 
   init();

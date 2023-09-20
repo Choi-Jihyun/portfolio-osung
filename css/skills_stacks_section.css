@@ -27,13 +27,11 @@ div#skills_and_stacks_wrapper .title_wrap #skill {
 }
 
 .ss_title_svg {
+  width: 27rem;
   position: relative;
   right: -300px;
-  transition: right 1s ease-in-out;
-}
-
-.ss_title_svg.animate {
-  right: 0;
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
 }
 
 p.skill_category {

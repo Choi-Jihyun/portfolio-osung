@@ -47,15 +47,28 @@ document.addEventListener('DOMContentLoaded', function () {
             scrub: 2
         }
     });
-    gsap.to(certificates, {
-        opacity: 1,
-        scrollTrigger: {
-            trigger: certificates,
-            start: 'top 25%',
-            end: '50% 25%',
-            scrub: 2
-        }
-    });
+    if (window.innerWidth < 486) {
+        gsap.to(certificates, {
+            opacity: 1,
+            scrollTrigger: {
+                trigger: certificates,
+                start: 'top 65%',
+                end: '50% 65%',
+                scrub: 2
+            }
+        });
+    }
+    else {
+        gsap.to(certificates, {
+            opacity: 1,
+            scrollTrigger: {
+                trigger: certificates,
+                start: 'top 25%',
+                end: '50% 25%',
+                scrub: 2
+            }
+        });
+    }
     function animateAmSvgLine() {
         var scrollPosition = window.scrollY;
         var footer = document.querySelector("footer");

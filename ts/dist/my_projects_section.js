@@ -9,10 +9,29 @@ document.addEventListener("DOMContentLoaded", function () {
     var prevBtn = document.querySelector('.button-prev');
     var olCloseBtn = document.querySelector("#ol_close_btn");
     var swiperInner = document.querySelector(".axios_swiper_wrapper");
+    var pSvg = document.querySelectorAll(".p_title_svg");
     var slideNum = 0;
     var previousSlideNum = null;
     var selectedSlide = projectLi[0];
     var isHoverOnView = false;
+    var pSvgObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.target instanceof Element) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.left = '0';
+                }
+                else {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.left = '-200px';
+                }
+            }
+        });
+    });
+    for (var _i = 0, pSvg_1 = pSvg; _i < pSvg_1.length; _i++) {
+        var item = pSvg_1[_i];
+        pSvgObserver.observe(item);
+    }
     init();
     initEvent();
     function init() {
