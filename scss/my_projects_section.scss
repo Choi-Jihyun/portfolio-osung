@@ -186,29 +186,35 @@ div.project_infos {
         width: auto;
         height: 2.5rem;
         padding: 0 2rem;
-        margin: 0 auto;
+        // margin: 0 auto;
         background: white;
         text-align: center;
         color: black;
         font: normal 1.2rem/2.5rem "Noto sans KR";
         transition: all 0.2s ease-out;
         border-radius: 1rem;
-        i {
-          padding-right: 6px;
+        &:first-child {
+          margin-right: 2rem;
+          @media screen and (max-width: 768px) {
+            margin-right: 1rem; 
+          }
+        }
+        a {
+          transition: all 0.2s ease-out;
+          i {
+            padding-right: 6px;
+          }
+        }
+        &:hover {
+          background: #003CFF;
+          cursor: pointer;
+          transform: scale(1.05);
+          a {
+            color: white;
+          }
         }
       }
-      a:first-child {
-        margin-right: 2rem;
-        @media screen and (max-width: 768px) {
-          margin-right: 1rem; 
-        }
-      }
-      a:hover li {
-        background: #003CFF;
-        cursor: pointer;
-        transform: scale(1.05);
-        color: white;
-      }
+      
     }
   }
 }

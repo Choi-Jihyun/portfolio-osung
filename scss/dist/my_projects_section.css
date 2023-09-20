@@ -222,7 +222,6 @@ div.project_infos div.project_links ul li {
   width: auto;
   height: 2.5rem;
   padding: 0 2rem;
-  margin: 0 auto;
   background: white;
   text-align: center;
   color: black;
@@ -230,21 +229,26 @@ div.project_infos div.project_links ul li {
   transition: all 0.2s ease-out;
   border-radius: 1rem;
 }
-div.project_infos div.project_links ul li i {
-  padding-right: 6px;
-}
-div.project_infos div.project_links ul a:first-child {
+div.project_infos div.project_links ul li:first-child {
   margin-right: 2rem;
 }
 @media screen and (max-width: 768px) {
-  div.project_infos div.project_links ul a:first-child {
+  div.project_infos div.project_links ul li:first-child {
     margin-right: 1rem;
   }
 }
-div.project_infos div.project_links ul a:hover li {
+div.project_infos div.project_links ul li a {
+  transition: all 0.2s ease-out;
+}
+div.project_infos div.project_links ul li a i {
+  padding-right: 6px;
+}
+div.project_infos div.project_links ul li:hover {
   background: #003CFF;
   cursor: pointer;
   transform: scale(1.05);
+}
+div.project_infos div.project_links ul li:hover a {
   color: white;
 }
 
