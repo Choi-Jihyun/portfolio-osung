@@ -191,7 +191,7 @@ div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_up {
   stroke-dashoffset: 950px;
 }
 div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_up.selected {
-  animation: circle_svg_ani 2s ease-out forwards;
+  animation: circle_svg_ani 2.5s ease-out forwards;
 }
 div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_down {
   width: 36rem;
@@ -202,7 +202,7 @@ div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_down {
   stroke-dashoffset: 950px;
 }
 div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_down.selected {
-  animation: circle_svg_down_ani 2s ease-out forwards;
+  animation: circle_svg_down_ani 2s ease alternate-reverse forwards;
 }
 @keyframes circle_svg_ani {
   0% {
@@ -214,10 +214,10 @@ div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_down.selected {
 }
 @keyframes circle_svg_down_ani {
   0% {
-    stroke-dashoffset: -950;
+    stroke-dashoffset: 0;
   }
   100% {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: -950;
   }
 }
 
