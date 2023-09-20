@@ -295,27 +295,27 @@ ul.project_list li.selected {
   opacity: 0;
 }
 ul.project_list li:nth-child(1) {
-  background: url("/images/project_list_01.png") center center no-repeat;
+  background: url("/images/project_list_01.webp") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(2) {
-  background: url("/images/project_list_02.png") center center no-repeat;
+  background: url("/images/project_list_02.webp") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(3) {
-  background: url("/images/project_list_03.png") center center no-repeat;
+  background: url("/images/project_list_03.webp") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(4) {
-  background: url("/images/project_list_04.png") center center no-repeat;
+  background: url("/images/project_list_04.webp") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(5) {
-  background: url("/images/project_list_05.png") center center no-repeat;
+  background: url("/images/project_list_05.webp") center center no-repeat;
   background-size: contain;
 }
 ul.project_list li:nth-child(6) {
-  background: url("/images/project_list_06.png") center center no-repeat;
+  background: url("/images/project_list_06.webp") center center no-repeat;
   background-size: contain;
 }
 
