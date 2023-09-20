@@ -141,8 +141,8 @@ div.ss_bg {
   }
   
   img.ss_bg_circle {
-    width: 41.6875rem;
-    height: 65.5rem;
+    width: 42rem;
+    height: 58rem;
     position: absolute;
   }
   img.ss_bg_text {
@@ -160,9 +160,59 @@ div.ss_bg {
     @media screen and (max-width: 425px) {
       left: 17rem;
     }
-    
+  }
+  .ss_svg_wrapper {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: -1;
+    svg {
+      position: absolute;
+      left: 0rem;
+      top: 0;
+      &.bg_ss_circle_up {
+        width: 36rem;
+        height: 38rem;
+        left: -4rem;
+        top: 13rem;
+        stroke-dasharray: 2px;
+        stroke-dasharray: 950px;
+        stroke-dashoffset: 950px;
+        &.selected {
+          animation: circle_svg_ani 2s ease-out forwards; 
+        }
+      }
+      &.bg_ss_circle_down {
+        width: 36rem;
+        height: 50rem;
+        left: 0rem;
+        top: 16rem;
+        stroke-dasharray: 950px;
+        stroke-dashoffset: 950px;
+        &.selected {
+          animation: circle_svg_down_ani 2s ease-out forwards; 
+        }
+      }
+      @keyframes circle_svg_ani {
+        0% {
+            stroke-dashoffset: 950;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+      }
+      @keyframes circle_svg_down_ani {
+        0% {
+            stroke-dashoffset: -950;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+      }
+    }
   }
 }
+
 
 @media screen and (max-width: 1260px) {
   div#skills_and_stacks_wrapper {

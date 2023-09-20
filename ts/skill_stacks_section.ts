@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const frontSkillLi = document.querySelectorAll(".front_end_skill_list > li");
   const etcSkillLi = document.querySelectorAll(".etc_skill_list > li");
   const ssSvg = document.querySelector(".ss_title_svg");
+  const ssCircleUpSvg = document.querySelector(".bg_ss_circle_up");
+  const ssCircleDownSvg = document.querySelector(".bg_ss_circle_down");
 
   const frontSkillLiObserver = new IntersectionObserver((e) => {
     e.forEach((item) => {
@@ -38,6 +40,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
       }
     })
   });
+  const ssBgCircleSvgObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.target instanceof Element) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('selected');
+        } else {
+          entry.target.classList.remove('selected');
+        }
+      }
+    })
+  });
 
   for (const item of frontSkillLi) {
     frontSkillLiObserver.observe(item);
@@ -47,6 +60,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
   if(ssSvg) {
     ssSvgObserver.observe(ssSvg);
+  }
+  if(ssCircleUpSvg) {
+    ssBgCircleSvgObserver.observe(ssCircleUpSvg);
+  }
+  if(ssCircleDownSvg) {
+    ssBgCircleSvgObserver.observe(ssCircleDownSvg);
   }
 
 

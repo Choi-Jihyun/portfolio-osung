@@ -56,11 +56,11 @@ header {
           z-index: 10;
           transition: all 0.2s ease-out;
           img {
-            display: none;
+            opacity: 0;
             position: absolute;
-            right: 2.5rem;
+            right: 4.5rem;
             top: 0.1rem;
-            z-index: -1;
+            z-index: -10;
             transition: all 0.3s ease-out;
             @media screen and (max-width: 768px) {
               width: 130%;
@@ -73,7 +73,7 @@ header {
             color: white;
             text-shadow: none;
             img {
-              display: block;
+              opacity: 1;
               right: -0.5rem;
             }
           }
@@ -93,7 +93,9 @@ header {
     top: 1rem;
     z-index: 100;
     div#header_inner {
-      width: 100%;
+      @media screen and (max-width: 486px) {
+        width: 100%;
+      }
       height: 2rem;
       margin: 0 auto;
       padding: 0 1rem;

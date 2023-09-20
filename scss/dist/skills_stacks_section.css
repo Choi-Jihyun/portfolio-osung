@@ -144,8 +144,8 @@ div.ss_bg {
   }
 }
 div.ss_bg img.ss_bg_circle {
-  width: 41.6875rem;
-  height: 65.5rem;
+  width: 42rem;
+  height: 58rem;
   position: absolute;
 }
 div.ss_bg img.ss_bg_text {
@@ -168,6 +168,56 @@ div.ss_bg img.ss_bg_text {
 @media screen and (max-width: 425px) {
   div.ss_bg img.ss_bg_text {
     left: 17rem;
+  }
+}
+div.ss_bg .ss_svg_wrapper {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: -1;
+}
+div.ss_bg .ss_svg_wrapper svg {
+  position: absolute;
+  left: 0rem;
+  top: 0;
+}
+div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_up {
+  width: 36rem;
+  height: 38rem;
+  left: -4rem;
+  top: 13rem;
+  stroke-dasharray: 2px;
+  stroke-dasharray: 950px;
+  stroke-dashoffset: 950px;
+}
+div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_up.selected {
+  animation: circle_svg_ani 2s ease-out forwards;
+}
+div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_down {
+  width: 36rem;
+  height: 50rem;
+  left: 0rem;
+  top: 16rem;
+  stroke-dasharray: 950px;
+  stroke-dashoffset: 950px;
+}
+div.ss_bg .ss_svg_wrapper svg.bg_ss_circle_down.selected {
+  animation: circle_svg_down_ani 2s ease-out forwards;
+}
+@keyframes circle_svg_ani {
+  0% {
+    stroke-dashoffset: 950;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes circle_svg_down_ani {
+  0% {
+    stroke-dashoffset: -950;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 

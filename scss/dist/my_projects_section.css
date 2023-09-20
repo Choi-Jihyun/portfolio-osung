@@ -292,7 +292,7 @@ ul.project_list li:hover {
 ul.project_list li.selected {
   box-shadow: 0 0 0 5px #FF9900 inset;
   filter: brightness(1) grayscale(0);
-  opacity: 1;
+  opacity: 0;
 }
 ul.project_list li:nth-child(1) {
   background: url("/images/project_list_01.png") center center no-repeat;
