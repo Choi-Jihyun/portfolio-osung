@@ -52,13 +52,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 
   gsap.to('.ss_bg_text', {
-    top: '0rem',
+    top: '6rem',
     scrollTrigger: {
       trigger: '#skill',
       start: 'top 55%',
-      end: 'bottom 5%',
+      end: 'bottom 0%',
       scrub: 3, 
-      markers:true,
     }
   });
 

@@ -51,13 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     gsap.to('.ss_bg_text', {
-        top: '0rem',
+        top: '6rem',
         scrollTrigger: {
             trigger: '#skill',
             start: 'top 55%',
-            end: 'bottom 5%',
-            scrub: 3,
-            markers: true
+            end: 'bottom 0%',
+            scrub: 3
         }
     });
 });
