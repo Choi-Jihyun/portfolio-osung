@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.set(overLayer, { display: 'block' });
     }
     function hideDetails() {
+        unlockScroll();
         gsap.set(overLayer, { display: 'none' });
         gsap.to(grayLayer, { opacity: 0, duration: .1, ease: 'power1.out', onComplete: function () {
                 if (grayLayer instanceof HTMLElement) {
@@ -153,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 if (body) {
                     body.style.overflow = 'auto';
-                    unlockScroll();
                 }
             } });
         // if (swiperInner) {
@@ -210,8 +210,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("error:", error);
             });
         }
-    }
-    function hideProjectDetail() {
     }
     var projectListLis = document.querySelectorAll('.project_list > li');
     window.addEventListener('scroll', scrollWindow);

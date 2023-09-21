@@ -154,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function hideDetails() {
+    unlockScroll();
     gsap.set(overLayer, {display:'none'});
     gsap.to(grayLayer, {opacity:0, duration:.1, ease:'power1.out', onComplete:()=>{
       if (grayLayer instanceof HTMLElement) {
@@ -161,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (body) {
         body.style.overflow = 'auto';
-        unlockScroll();
       }
     }})
     // if (swiperInner) {
@@ -224,9 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function hideProjectDetail () {
-    
-  }
 
   const projectListLis = document.querySelectorAll('.project_list > li');
 
