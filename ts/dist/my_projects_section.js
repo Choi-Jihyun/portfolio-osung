@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var previousSlideNum = null;
     var selectedSlide = projectLi[0];
     var isHoverOnView = false;
+    var scrollPosition = 0;
     var pSvgObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.target instanceof Element) {
@@ -136,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function showDetails() {
         showProjectDetail();
+        lockScroll();
         if (body) {
             body.style.overflow = 'hidden';
         }
@@ -151,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 if (body) {
                     body.style.overflow = 'auto';
+                    unlockScroll();
                 }
             } });
         // if (swiperInner) {
@@ -181,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     function showProjectDetail() {
+        lockScroll();
         if (body) {
             body.style.overflow = 'hidden';
         }
@@ -228,5 +232,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 gsap.to(projectListLis[i], { y: 0, opacity: 1, delay: 0.2 * i, duration: 1, ease: "power1.out" });
             }
         }
+    }
+    function lockScroll() {
+        scrollPosition = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = "- " + scrollPosition + "px";
+    }
+    function unlockScroll() {
+        document.body.style.removeProperty('overflow');
+        document.body.style.removeProperty('position');
+        document.body.style.removeProperty('top');
+        window.scrollTo(0, scrollPosition);
     }
 });
