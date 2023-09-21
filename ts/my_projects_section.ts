@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function initEvent (): void {
-    projectView?.addEventListener('mouseenter', hoverDetail);
-    projectView?.addEventListener('mouseleave', leaveHoverDetail);
+    // projectView?.addEventListener('mouseenter', hoverDetail);
+    // projectView?.addEventListener('mouseleave', leaveHoverDetail);
     nextBtn?.addEventListener('click', slideNextProject);
     prevBtn?.addEventListener('click', slidePrevProject);
     for (const item of projectLi){
@@ -130,6 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
       axios.get(`./project_content/project_overview0${slideNum + 1}.html`).then((response) => { 
         projectView.innerHTML = response.data;
         previousSlideNum = slideNum;
+
+        const projectMainImg = document.querySelector('.project_main_pic');
+        projectMainImg?.addEventListener('mouseenter', hoverDetail);
+        projectMainImg?.addEventListener('mouseleave', leaveHoverDetail);
       }).catch((error: any) => {
         console.error(`error:`, error);
       });
@@ -167,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mouseoverDiv) {
       mouseoverDiv.addEventListener('click', showDetails)
       isHoverOnView = true;
-      mouseoverDiv.innerHTML = "<img src='/images/more_detail.png' alt='자세히 보기'>";
+      mouseoverDiv.innerHTML = "<img src='/images/more_detail.webp' alt='자세히 보기'>";
       gsap.set(mouseoverDiv, { opacity: 0, display: 'block', onComplete: ()=> { 
         gsap.to(mouseoverDiv, { opacity: 1, duration: 0.3, onComplete: ()=> { 
           isHoverOnView = true;

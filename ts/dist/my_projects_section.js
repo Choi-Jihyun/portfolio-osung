@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { display: 'none', opacity: '0' });
     }
     function initEvent() {
-        projectView === null || projectView === void 0 ? void 0 : projectView.addEventListener('mouseenter', hoverDetail);
-        projectView === null || projectView === void 0 ? void 0 : projectView.addEventListener('mouseleave', leaveHoverDetail);
+        // projectView?.addEventListener('mouseenter', hoverDetail);
+        // projectView?.addEventListener('mouseleave', leaveHoverDetail);
         nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.addEventListener('click', slideNextProject);
         prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.addEventListener('click', slidePrevProject);
         for (var _i = 0, projectLi_1 = projectLi; _i < projectLi_1.length; _i++) {
@@ -126,6 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
             axios.get("./project_content/project_overview0" + (slideNum + 1) + ".html").then(function (response) {
                 projectView.innerHTML = response.data;
                 previousSlideNum = slideNum;
+                var projectMainImg = document.querySelector('.project_main_pic');
+                projectMainImg === null || projectMainImg === void 0 ? void 0 : projectMainImg.addEventListener('mouseenter', hoverDetail);
+                projectMainImg === null || projectMainImg === void 0 ? void 0 : projectMainImg.addEventListener('mouseleave', leaveHoverDetail);
             })["catch"](function (error) {
                 console.error("error:", error);
             });
@@ -159,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (mouseoverDiv) {
             mouseoverDiv.addEventListener('click', showDetails);
             isHoverOnView = true;
-            mouseoverDiv.innerHTML = "<img src='/images/more_detail.png' alt='자세히 보기'>";
+            mouseoverDiv.innerHTML = "<img src='/images/more_detail.webp' alt='자세히 보기'>";
             gsap.set(mouseoverDiv, { opacity: 0, display: 'block', onComplete: function () {
                     gsap.to(mouseoverDiv, { opacity: 1, duration: 0.3, onComplete: function () {
                             isHoverOnView = true;
