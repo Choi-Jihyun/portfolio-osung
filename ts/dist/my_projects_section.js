@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollPosition = window.scrollY;
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
-        // document.body.style.top = `- ${scrollPosition}px`;
+        document.body.style.top = "- " + scrollPosition + "px";
     }
     function unlockScroll() {
         document.body.style.removeProperty('overflow');
