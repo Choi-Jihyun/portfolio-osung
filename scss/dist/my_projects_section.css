@@ -555,7 +555,7 @@ button#ol_close_btn i {
 }
 @media screen and (max-width: 768px) {
   .detail-slider__item {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 .detail-slider__item.swiper-slide-active .detail-slider__img img {
@@ -624,6 +624,7 @@ button#ol_close_btn i {
 }
 @media screen and (max-width: 486px) {
   .detail-slider__img {
+    box-shadow: 4px 13px 10px 1px rgba(56, 82, 252, 0.1);
     height: 250px;
   }
 }

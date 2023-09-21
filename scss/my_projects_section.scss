@@ -532,7 +532,7 @@ button#ol_close_btn {
     align-items: center;
     
     @media screen and (max-width: 768px) {
-      flex-direction: column;
+      flex-direction: row; // 이거 바꿈....
     }
     &.swiper-slide-active {
       .detail-slider__img {
@@ -567,6 +567,7 @@ button#ol_close_btn {
   transform: translateX(0px);
   overflow: hidden;
   @media screen and (max-width: 486px) {
+    box-shadow: 4px 13px 10px 1px rgba(56, 82, 252, 0.1);
     height: 250px;
   }
   
