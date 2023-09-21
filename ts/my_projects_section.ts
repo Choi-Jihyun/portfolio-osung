@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showDetails() {
     showProjectDetail();
 
-    lockScroll();
+    // lockScroll();
     if (body) {
       body.style.overflow = 'hidden'; 
     }
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function hideDetails() {
-    unlockScroll();
+    // unlockScroll();
     gsap.set(overLayer, {display:'none'});
     gsap.to(grayLayer, {opacity:0, duration:.1, ease:'power1.out', onComplete:()=>{
       if (grayLayer instanceof HTMLElement) {
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showProjectDetail () {
-    lockScroll();
+    // lockScroll();
     if (body) {
       body.style.overflow = 'hidden'; 
     }
@@ -247,19 +247,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function lockScroll() {
-    scrollPosition = window.scrollY;
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = `- ${scrollPosition}px`;
-  }
+  // function lockScroll() {
+  //   scrollPosition = window.scrollY;
+  //   document.body.style.overflow = 'hidden';
+  //   document.body.style.position = 'fixed';
+  //   document.body.style.top = `- ${scrollPosition}px`;
+  // }
 
-  function unlockScroll() {
-      document.body.style.removeProperty('overflow');
-      document.body.style.removeProperty('position');
-      document.body.style.removeProperty('top');
-      window.scrollTo(0, scrollPosition);
-  }
+  // function unlockScroll() {
+  //     document.body.style.removeProperty('overflow');
+  //     document.body.style.removeProperty('position');
+  //     document.body.style.removeProperty('top');
+  //     window.scrollTo(0, scrollPosition);
+  // }
 
 
 
