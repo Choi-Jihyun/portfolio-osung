@@ -66,13 +66,15 @@ document.addEventListener("DOMContentLoaded", () => {
       projectLi[slideNum].classList.add('selected')
     }
     if (slideNum == projectLi.length - 1) {
-      gsap.to(nextBtn?.children, {opacity: '0', duration: 0.2})
+      gsap.to(nextBtn?.children, {opacity: '0', duration: 0.2, onComplete: ()=>{
+        gsap.set(nextBtn?.children, {display: 'none'})
+      }})
     }
     showProjectView()
   }
   
   function slidePrevProject () {
-    gsap.set(nextBtn?.children, {color: '#FF9900'})
+    gsap.set(nextBtn?.children, {display: 'block'})
     gsap.to(nextBtn?.children, {opacity: '1'})
     if (slideNum > 0) {
       projectLi[slideNum].classList.remove('selected')
@@ -111,14 +113,19 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.to(projectListWrapper, {left: `-${27 * slideNum}rem`});
     if (slideNum == 0) {
       gsap.to(nextBtn?.children, { opacity: '1', duration: 0.2 })
-      gsap.to(prevBtn?.children, { opacity: '0', duration: 0.2 })
+      gsap.to(prevBtn?.children, { opacity: '0', duration: 0.2, onComplete: ()=>{
+        gsap.set(prevBtn?.children, {display: 'none'})
+      }})
     } else if (slideNum == projectLi.length - 1) {
       gsap.to(prevBtn?.children, { opacity: '1', duration: 0.2 })
-      gsap.to(nextBtn?.children, { opacity: '0', duration: 0.2 })
+      gsap.to(nextBtn?.children, { opacity: '0', duration: 0.2, onComplete: ()=>{
+        gsap.set(nextBtn?.children, {display: 'none'})
+      }})
     } else {
-      gsap.to(nextBtn?.children, { opacity: '1', duration: 0.2 })
       gsap.to(prevBtn?.children, { display: 'block'})
+      gsap.to(nextBtn?.children, { display: 'block'})
       gsap.to(prevBtn?.children, { opacity: '1', duration: 0.2 })
+      gsap.to(nextBtn?.children, { opacity: '1', duration: 0.2 })
     }
   }
 

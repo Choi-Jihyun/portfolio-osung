@@ -64,12 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
             projectLi[slideNum].classList.add('selected');
         }
         if (slideNum == projectLi.length - 1) {
-            gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '0', duration: 0.2 });
+            gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '0', duration: 0.2, onComplete: function () {
+                    gsap.set(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { display: 'none' });
+                } });
         }
         showProjectView();
     }
     function slidePrevProject() {
-        gsap.set(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { color: '#FF9900' });
+        gsap.set(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { display: 'block' });
         gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '1' });
         if (slideNum > 0) {
             projectLi[slideNum].classList.remove('selected');
@@ -106,16 +108,21 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.to(projectListWrapper, { left: "-" + 27 * slideNum + "rem" });
         if (slideNum == 0) {
             gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '1', duration: 0.2 });
-            gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { opacity: '0', duration: 0.2 });
+            gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { opacity: '0', duration: 0.2, onComplete: function () {
+                    gsap.set(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { display: 'none' });
+                } });
         }
         else if (slideNum == projectLi.length - 1) {
             gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { opacity: '1', duration: 0.2 });
-            gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '0', duration: 0.2 });
+            gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '0', duration: 0.2, onComplete: function () {
+                    gsap.set(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { display: 'none' });
+                } });
         }
         else {
-            gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '1', duration: 0.2 });
             gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { display: 'block' });
+            gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { display: 'block' });
             gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { opacity: '1', duration: 0.2 });
+            gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '1', duration: 0.2 });
         }
     }
     function showProjectView() {
