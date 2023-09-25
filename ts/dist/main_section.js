@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var start_img = document.querySelector('.start_osung img');
     var imgDurations = [100, 1800, 500, 500, 500];
     var totalImgDelay = 5500;
-    var movePosition = 0;
     var imgSources = [
         "/images/main/run_start-02.png",
         "/images/main/run_start-03.png",
@@ -87,8 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
             start_img.src = src;
             if (index >= 3) {
-                start_img.style.top = index === 3 ? '-2rem' : '0rem';
-                start_img.style.left = index === 3 ? '30rem' : '100vw';
+                start_img.style.top = index === 3 ? '-2rem' : '-1rem';
+                start_img.style.left = index === 3 ? '50vw' : '100vw';
             }
         }, totalImgDelay);
         totalImgDelay += imgDurations[index];

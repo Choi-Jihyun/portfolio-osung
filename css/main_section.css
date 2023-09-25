@@ -211,11 +211,22 @@ div.running_osung_wrapper .me {
   left: 0;
   top: 0;
 }
+@media screen and (max-width: 768px) {
+  .running_start_wrapper .start_osung {
+    left: -7rem;
+    top: 5rem;
+  }
+}
 .running_start_wrapper .start_osung img {
   width: 170px;
   height: auto;
-  transition: left 1s ease-out;
+  transition: left 0.7s ease-out;
   position: absolute;
   left: 0;
   top: 0;
+}
+@media screen and (max-width: 768px) {
+  .running_start_wrapper .start_osung img {
+    width: 100px;
+  }
 }

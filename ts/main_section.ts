@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // start 달리기
   gsap.to(startOsung, {delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out"})
 
-
-
-
   window.addEventListener('scroll', controlRunningEvent);
 
   function controlRunningEvent() {
@@ -88,7 +85,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   let start_img = document.querySelector('.start_osung img') as HTMLImageElement;
   let imgDurations = [100, 1800, 500, 500, 500];
   let totalImgDelay = 5500;
-  let movePosition = 0;
   let imgSources = [
       "/images/main/run_start-02.png",
       "/images/main/run_start-03.png",
@@ -101,9 +97,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     setTimeout(() => {
       start_img.src = src;
       if (index >= 3) {
-        start_img.style.top = index === 3 ? '-2rem' : '0rem';
-        start_img.style.left = index === 3 ? '30rem' : '100vw';
-
+        start_img.style.top = index === 3 ? '-2rem' : '-1rem';
+        start_img.style.left = index === 3 ? '50vw' : '100vw';
       }
     }, totalImgDelay);
     

@@ -220,13 +220,22 @@ div.running_osung_wrapper {
     position: absolute;
     left: 0;
     top: 0;
+    @media screen and (max-width: 768px) {
+      left: -7rem;
+      top: 5rem;
+    }
+    
     img {
       width: 170px;
       height: auto;
-      transition: left 1s ease-out;
+      transition: left 0.7s ease-out;
       position: absolute;
       left: 0;
       top: 0; 
+      @media screen and (max-width: 768px) {
+        width: 100px;
+      }
+      
     }
   }
 }
