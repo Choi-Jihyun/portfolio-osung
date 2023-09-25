@@ -255,9 +255,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var touchEndX;
     var touchStartY;
     var touchEndY;
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchmove', handleTouchMove, false);
-    document.addEventListener('touchend', handleTouchEnd, false);
+    var mySection = document.querySelector('#projects');
+    // if (mySection) {
+    mySection.addEventListener('touchstart', handleTouchStart, false);
+    mySection.addEventListener('touchmove', handleTouchMove, false);
+    mySection.addEventListener('touchend', handleTouchEnd, false);
+    // }
     function handleTouchStart(event) {
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY; // Y 좌표 저장

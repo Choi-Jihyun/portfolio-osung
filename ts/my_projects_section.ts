@@ -274,10 +274,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let touchEndX: number;
   let touchStartY: number;
   let touchEndY: number;
+  let mySection = document.querySelector('#projects') as HTMLElement;
 
-  document.addEventListener('touchstart', handleTouchStart, false);
-  document.addEventListener('touchmove', handleTouchMove, false);
-  document.addEventListener('touchend', handleTouchEnd, false);
+  // if (mySection) {
+    mySection.addEventListener('touchstart', handleTouchStart, false);
+    mySection.addEventListener('touchmove', handleTouchMove, false);
+    mySection.addEventListener('touchend', handleTouchEnd, false);
+  // }
 
   function handleTouchStart(event: TouchEvent) {
       touchStartX = event.touches[0].clientX;
