@@ -57,8 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function slideNextProject () {
+    mySection.removeEventListener('touchstart', handleTouchStart, false);
+    mySection.removeEventListener('touchmove', handleTouchMove, false);
+    mySection.removeEventListener('touchend', handleTouchEnd, false);
     gsap.set(prevBtn?.children, {display: 'block'})
-    gsap.to(prevBtn?.children, {opacity: '1'})
+    gsap.to(prevBtn?.children, {opacity: '1', onComplete: () => {
+      mySection.addEventListener('touchstart', handleTouchStart, false);
+      mySection.addEventListener('touchmove', handleTouchMove, false);
+      mySection.addEventListener('touchend', handleTouchEnd, false);
+    }})
     if (slideNum < projectLi.length - 1) {
       projectLi[slideNum].classList.remove('selected')
       slideNum ++;
@@ -74,8 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   function slidePrevProject () {
+    mySection.removeEventListener('touchstart', handleTouchStart, false);
+    mySection.removeEventListener('touchmove', handleTouchMove, false);
+    mySection.removeEventListener('touchend', handleTouchEnd, false);
     gsap.set(nextBtn?.children, {display: 'block'})
-    gsap.to(nextBtn?.children, {opacity: '1'})
+    gsap.to(nextBtn?.children, {opacity: '1', onComplete: ()=>{
+      mySection.addEventListener('touchstart', handleTouchStart, false);
+      mySection.addEventListener('touchmove', handleTouchMove, false);
+      mySection.addEventListener('touchend', handleTouchEnd, false);
+    }})
     if (slideNum > 0) {
       projectLi[slideNum].classList.remove('selected')
       slideNum --;
@@ -303,12 +317,12 @@ document.addEventListener("DOMContentLoaded", () => {
       // X축 이동거리가 Y축 이동거리보다 클 때만 스와이프로 판단
       if (diffX > diffY) {
           // 오른쪽으로 스와이프한 경우
-          if (touchEndX - touchStartX > 50) {
+          if (touchEndX - touchStartX > 40) {
             slidePrevProject ()
             console.log('touchEndX - touchStartX: ', touchEndX - touchStartX);
           }
           // 왼쪽으로 스와이프한 경우
-          else if (touchEndX - touchStartX < -50) {
+          else if (touchEndX - touchStartX < -40) {
             slideNextProject ()
             console.log('touchEndX - touchStartX: ', touchEndX - touchStartX);
           }
