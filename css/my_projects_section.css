@@ -687,6 +687,7 @@ button#ol_close_btn i {
   }
 }
 .detail-slider__content {
+  min-height: 13rem;
   padding-right: 25px;
   margin-top: 40px;
 }
@@ -700,6 +701,9 @@ button#ol_close_btn i {
 @media screen and (max-width: 576px) {
   .detail-slider__content {
     padding: 0 0px;
+    min-height: 21rem;
+    border: solid 2px palevioletred;
+    box-sizing: border-box;
   }
 }
 .detail-slider__content > * {

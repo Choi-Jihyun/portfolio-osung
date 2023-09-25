@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   let isThrottled: boolean = false;
 
   // start 달리기
-  gsap.to(startOsung, {delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out"})
+  gsap.to(startOsung, {delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out"});
 
   window.addEventListener('scroll', controlRunningEvent);
 

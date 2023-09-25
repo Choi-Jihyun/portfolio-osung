@@ -622,6 +622,7 @@ button#ol_close_btn {
   }
 
   &__content {
+    min-height: 13rem;
     padding-right: 25px;
     margin-top: 40px;
     @media screen and (max-width: 768px) {
@@ -631,13 +632,14 @@ button#ol_close_btn {
     }
     @media screen and (max-width: 576px) {
       padding: 0 0px;
+      min-height: 21rem;
+      border: solid 2px palevioletred;
+      box-sizing: border-box;
     }
     > * {
       opacity: 0;
       transform: translateY(25px);
       transition: all .4s;
-      
-      
     }
     
   }

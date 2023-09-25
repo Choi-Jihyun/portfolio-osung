@@ -250,4 +250,35 @@ document.addEventListener("DOMContentLoaded", function () {
     //     document.body.style.removeProperty('top');
     //     window.scrollTo(0, scrollPosition);
     // }
+    //터치로 슬라이드 조절할 수 있는 함수
+    var touchStartX;
+    var touchEndX;
+    var touchStartY;
+    var touchEndY;
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
+    function handleTouchStart(event) {
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY; // Y 좌표 저장
+    }
+    function handleTouchMove(event) {
+        touchEndX = event.touches[0].clientX;
+        touchEndY = event.touches[0].clientY; // Y 좌표 저장
+    }
+    function handleTouchEnd() {
+        var diffX = Math.abs(touchEndX - touchStartX);
+        var diffY = Math.abs(touchEndY - touchStartY);
+        // X축 이동거리가 Y축 이동거리보다 클 때만 스와이프로 판단
+        if (diffX > diffY) {
+            // 오른쪽으로 스와이프한 경우
+            if (touchEndX > touchStartX) {
+                slidePrevProject();
+            }
+            // 왼쪽으로 스와이프한 경우
+            else if (touchEndX < touchStartX) {
+                slideNextProject();
+            }
+        }
+    }
 });

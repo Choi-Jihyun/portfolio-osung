@@ -269,5 +269,44 @@ document.addEventListener("DOMContentLoaded", () => {
   // }
 
 
+  //터치로 슬라이드 조절할 수 있는 함수
+  let touchStartX: number;
+  let touchEndX: number;
+  let touchStartY: number;
+  let touchEndY: number;
+
+  document.addEventListener('touchstart', handleTouchStart, false);
+  document.addEventListener('touchmove', handleTouchMove, false);
+  document.addEventListener('touchend', handleTouchEnd, false);
+
+  function handleTouchStart(event: TouchEvent) {
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY; // Y 좌표 저장
+  }
+  
+  function handleTouchMove(event: TouchEvent) {
+      touchEndX = event.touches[0].clientX;
+      touchEndY = event.touches[0].clientY; // Y 좌표 저장
+  }
+  
+  function handleTouchEnd() {
+      let diffX = Math.abs(touchEndX - touchStartX);
+      let diffY = Math.abs(touchEndY - touchStartY);
+  
+      // X축 이동거리가 Y축 이동거리보다 클 때만 스와이프로 판단
+      if (diffX > diffY) {
+          // 오른쪽으로 스와이프한 경우
+          if (touchEndX > touchStartX) {
+            slidePrevProject ()
+          }
+          // 왼쪽으로 스와이프한 경우
+          else if (touchEndX < touchStartX) {
+            slideNextProject ()
+          }
+      }
+  }
+  
+
+
 
 });
