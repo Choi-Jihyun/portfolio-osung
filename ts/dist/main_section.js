@@ -51,12 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
         runningWrapper.style.left = imgMovingLeft + "px";
         lastScrollY = currentScrollY;
     }
-    // 각 p태그 별로 나타나는 시간 및 대기시간 설정
+    // 스타트 하는 오성
     var elements = Array.from(document.querySelectorAll('.rsg'));
     elements.push(document.querySelector('.t_title'));
-    // 각 p태그 별로 나타나는 시간 및 대기시간 설정
-    var durations = [3000, 2000, 3000];
-    var totalDelay = 0;
+    var durations = [1000, 1000, 2000];
+    var totalDelay = 3000;
     elements.forEach(function (element, index) {
         setTimeout(function () {
             element.style.opacity = '1';
@@ -72,5 +71,26 @@ document.addEventListener('DOMContentLoaded', function () {
             }, durations[index]);
         }, totalDelay);
         totalDelay += durations[index] + 1000;
+    });
+    var start_img = document.querySelector('.start_osung img');
+    var imgDurations = [100, 1800, 500, 500, 500];
+    var totalImgDelay = 5500;
+    var movePosition = 0;
+    var imgSources = [
+        "/images/main/run_start-02.png",
+        "/images/main/run_start-03.png",
+        "/images/main/run_start-04.png",
+        "/images/main/run_start-05.png",
+        "/images/main/run_start-06.png"
+    ];
+    imgSources.forEach(function (src, index) {
+        setTimeout(function () {
+            start_img.src = src;
+            if (index >= 3) {
+                start_img.style.top = index === 3 ? '-2rem' : '0rem';
+                start_img.style.left = index === 3 ? '30rem' : '100vw';
+            }
+        }, totalImgDelay);
+        totalImgDelay += imgDurations[index];
     });
 });

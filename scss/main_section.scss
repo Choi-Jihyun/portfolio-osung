@@ -20,7 +20,7 @@ div#main_wrapper {
         position: relative;
         left: -30rem;
         top: 0;
-        transition: all 0.5s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
       &.t_title {
         opacity: 0;
@@ -220,11 +220,13 @@ div.running_osung_wrapper {
     position: absolute;
     left: 0;
     top: 0;
-    border: solid 2px palevioletred;
-    box-sizing: border-box;
     img {
       width: 170px;
       height: auto;
+      transition: left 1s ease-out;
+      position: absolute;
+      left: 0;
+      top: 0; 
     }
   }
 }

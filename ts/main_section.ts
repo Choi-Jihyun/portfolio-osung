@@ -62,30 +62,53 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
 
-
-  // 각 p태그 별로 나타나는 시간 및 대기시간 설정
+  // 스타트 하는 오성
   let elements = Array.from(document.querySelectorAll('.rsg'));
   elements.push(document.querySelector('.t_title') as HTMLElement);
-  
-  // 각 p태그 별로 나타나는 시간 및 대기시간 설정
-  let durations = [3000, 2000, 3000];
-  let totalDelay = 0;
+  let durations = [1000, 1000, 2000];
+  let totalDelay = 3000;
   
   elements.forEach((element, index) => {
+    setTimeout(() => {
+      element.style.opacity = '1';
+      element.style.left = '0';
+      element.style.display = 'block';
       setTimeout(() => {
-          element.style.opacity = '1';
-          element.style.left = '0';
-          element.style.display = 'block';
+        if (index !== elements.length -1) {
+          element.style.opacity = '0';
           setTimeout(() => {
-              if (index !== elements.length -1) {
-                  element.style.opacity = '0';
-                  setTimeout(() => {
-                      element.style.display = 'none';
-                  }, 1000); 
-              }
-          },durations[index]);
-      }, totalDelay);
-      totalDelay += durations[index] + 1000
-    })
+            element.style.display = 'none';
+          }, 1000); 
+        }
+      },durations[index]);
+    }, totalDelay);
+    totalDelay += durations[index] + 1000
+  })
+
+  let start_img = document.querySelector('.start_osung img') as HTMLImageElement;
+  let imgDurations = [100, 1800, 500, 500, 500];
+  let totalImgDelay = 5500;
+  let movePosition = 0;
+  let imgSources = [
+      "/images/main/run_start-02.png",
+      "/images/main/run_start-03.png",
+      "/images/main/run_start-04.png",
+      "/images/main/run_start-05.png",
+      "/images/main/run_start-06.png"
+  ];
+
+  imgSources.forEach((src, index) => {
+    setTimeout(() => {
+      start_img.src = src;
+      if (index >= 3) {
+        start_img.style.top = index === 3 ? '-2rem' : '0rem';
+        start_img.style.left = index === 3 ? '30rem' : '100vw';
+
+      }
+    }, totalImgDelay);
+    
+    totalImgDelay += imgDurations[index];
+  });
+
 
 })
