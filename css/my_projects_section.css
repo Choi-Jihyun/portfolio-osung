@@ -702,8 +702,6 @@ button#ol_close_btn i {
   .detail-slider__content {
     padding: 0 0px;
     min-height: 21rem;
-    border: solid 2px palevioletred;
-    box-sizing: border-box;
   }
 }
 .detail-slider__content > * {

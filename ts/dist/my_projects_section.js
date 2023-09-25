@@ -275,11 +275,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // X축 이동거리가 Y축 이동거리보다 클 때만 스와이프로 판단
         if (diffX > diffY) {
             // 오른쪽으로 스와이프한 경우
-            if (touchEndX > touchStartX) {
+            if (touchEndX - touchStartX > 50) {
                 slidePrevProject();
             }
             // 왼쪽으로 스와이프한 경우
-            else if (touchEndX < touchStartX) {
+            else if (touchEndX - touchStartX < 50) {
                 slideNextProject();
             }
         }
