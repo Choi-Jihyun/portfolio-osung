@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   function scrollToTop(event: Event) {
     event.preventDefault();
-
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth',});
   }
 
   function scrollToSection(event: Event) {

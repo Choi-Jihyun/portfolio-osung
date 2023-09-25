@@ -12,10 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // window.addEventListener('scroll', runningOsung);
     function scrollToTop(event) {
         event.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     function scrollToSection(event) {
         var targetId = event.target.getAttribute('data-target');

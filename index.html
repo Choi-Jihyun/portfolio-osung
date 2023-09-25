@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
 <head>
-  <!-- <meta property="og:image" content="%PUBLIC_URL%/thumbnail.png" /> -->
   <meta property="og:image" content="/images/thumbnail.png" />
   <meta property="og:site_name" content="오성 포트폴리오" />
   <meta property="og:description" content="오성지현의 다양한 프로젝트를 소개하는 포트폴리오 사이트입니다." />
-
   <meta name="Keywords" content="오성지현, 최지현, 포트폴리오, 오성지현 포트폴리오" />
   <meta name="description" content="오성지현의 다양한 프로젝트를 보고 칭찬해주세요." />
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +32,6 @@
   <script src="/ts/dist/my_projects_section.js"></script>
   <script src="/ts/dist/about_me_section.js"></script>
   <script src="/ts/dist/contact_footer.js"></script>
-  <!-- <script src="/ts/dist/scrollbar.js"></script> -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js'></script>
@@ -54,16 +50,15 @@
         </a>
         <div class="menu">
           <ul class="menu_list">
-            <!-- <li data-target="skills_and_stacks">Skills & Stacks<div class="svg_line"></div></li> -->
             <li data-target="skills_and_stacks">Skills & Stacks<img src="/images/header_svg-01.webp" alt="배경이미지"/></li>
             <li data-target="projects">Projects<img src="/images/header_svg-02.webp" alt="배경이미지"/></li>
             <li data-target="about_me">About Me<img src="/images/header_svg-03.webp" alt="배경이미지"/></li>
           </ul>
-          <!-- svg 자리 -->
         </div>
       </div>
     </header>
 
+    <!-- 메인 섹션 -->
     <section id="main">
       <div id="main_wrapper">
         <h2 class="hidden">오성 지현 Main</h2>
@@ -71,7 +66,10 @@
           <div class="me"></div>
         </div>
         <div class="title">
-          <p>OSUNG<br/>JIHYUN</p>
+          <p class="t_ready rsg">READY</p>
+          <p class="t_set rsg">SET</p>
+          <p class="t_go rsg">GO!</p>
+          <p class="t_title">OSUNG<br/>JIHYUN</p>
         </div>
         <div class="bg_blues">
           <svg class="m_svg_1" xmlns="http://www.w3.org/2000/svg" width="364" height="463" viewBox="0 0 364 463" fill="none">
@@ -102,9 +100,15 @@
             </defs>
           </svg>
         </div>
+        <div class="running_start_wrapper">
+          <div class="start_osung">
+            <img src="/images/main/run_start-01.png" alt="스타트 이미지"/>
+          </div>
+        </div>
       </div>
     </section>
   
+    <!-- 모토 섹션 -->
     <section id="motto">
       <div id="motto_wrapper">
         <h2 class="hidden">최지현의 Motto</h2>
@@ -128,6 +132,7 @@
       </div>
     </section>
   
+    <!-- 간단정보 섹션 -->
     <section id="basic_information">
       <div id="basic_information_wrapper">
         <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1185" viewBox="0 0 1920 1185" fill="none">
@@ -191,7 +196,8 @@
         <div class="bi_bg_text_yellow"><p>GO GETTER</p></div>
       </div>
     </section>
-  
+
+    <!-- 스킬 섹션 -->
     <section id="skills_and_stacks">
       <div id="skills_and_stacks_wrapper">
         <h2 class="hidden">오성 지현 Skills and Stacks</h2>
@@ -259,9 +265,8 @@
         </div>
       </div>
     </section>
-  
 
-    
+    <!-- 프로젝트 섹션 -->
     <section id="projects">
       <div id="projects_wrapper">
         <h2 class="hidden">오성 지현의 Projects</h2>
@@ -329,7 +334,8 @@
         </div>
       </div>
     </section>
-  
+
+    <!-- 추가 정보 섹션 -->
     <section id="about_me">
       <div id="about_me_wrapper">
         <h2 class="hidden">최지현 어떤 사람일까?</h2>
