@@ -281,10 +281,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // 오른쪽으로 스와이프한 경우
             if (touchEndX - touchStartX > 50) {
                 slidePrevProject();
+                console.log('touchEndX - touchStartX: ', touchEndX - touchStartX);
             }
             // 왼쪽으로 스와이프한 경우
-            else if (touchEndX - touchStartX < 50) {
+            else if (touchEndX - touchStartX < -50) {
                 slideNextProject();
+                console.log('touchEndX - touchStartX: ', touchEndX - touchStartX);
             }
         }
     }
