@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var imgMovingLeft = 0;
     var lastScrollY = window.scrollY;
     var isThrottled = false;
-    // start 달리기
-    gsap.to(startOsung, { delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out" });
     window.addEventListener('scroll', controlRunningEvent);
     function controlRunningEvent() {
         if (!isThrottled) { // throttle 상태가 아니라면
@@ -72,22 +70,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }, totalDelay);
         totalDelay += durations[index] + 1000;
     });
+    // start 달리기
+    gsap.to(startOsung, { delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out" });
     var start_img = document.querySelector('.start_osung img');
-    var imgDurations = [100, 1800, 500, 500, 500];
+    var imgDurations = [100, 1200, 300, 300, 300, 500, 500];
     var totalImgDelay = 5500;
     var imgSources = [
-        "/images/main/run_start-02.png",
-        "/images/main/run_start-03.png",
-        "/images/main/run_start-04.png",
-        "/images/main/run_start-05.png",
-        "/images/main/run_start-06.png"
+        "/images/main/run_start-02.webp",
+        "/images/main/run_start-03.webp",
+        "/images/main/run_start-04.webp",
+        "/images/main/run_start-05.webp",
+        "/images/main/run_start-06.webp",
+        "/images/main/run_start-07.webp",
+        "/images/main/run_start-08.webp",
     ];
     imgSources.forEach(function (src, index) {
         setTimeout(function () {
             start_img.src = src;
             if (index >= 3) {
                 start_img.style.top = index === 3 ? '-2rem' : '-1rem';
-                start_img.style.left = index === 3 ? '50vw' : '100vw';
+                switch (index) {
+                    case 3:
+                        start_img.style.left = '25vw';
+                        break;
+                    case 4:
+                        start_img.style.left = '50vw';
+                        break;
+                    case 5:
+                        start_img.style.left = '75vw';
+                        break;
+                    case 6:
+                        start_img.style.left = '100vw';
+                        break;
+                    case 7:
+                    default:
+                        start_img.style.left = '100vw';
+                        break;
+                }
             }
         }, totalImgDelay);
         totalImgDelay += imgDurations[index];
