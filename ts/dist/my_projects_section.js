@@ -153,6 +153,9 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.set(overLayer, { display: 'block' });
     }
     function hideDetails() {
+        mySection.addEventListener('touchstart', handleTouchStart, false);
+        mySection.addEventListener('touchmove', handleTouchMove, false);
+        mySection.addEventListener('touchend', handleTouchEnd, false);
         // unlockScroll();
         gsap.set(overLayer, { display: 'none' });
         gsap.to(grayLayer, { opacity: 0, duration: .1, ease: 'power1.out', onComplete: function () {
@@ -192,6 +195,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function showProjectDetail() {
         // lockScroll();
+        mySection.removeEventListener('touchstart', handleTouchStart, false);
+        mySection.removeEventListener('touchmove', handleTouchMove, false);
+        mySection.removeEventListener('touchend', handleTouchEnd, false);
         if (body) {
             body.style.overflow = 'hidden';
         }
@@ -256,18 +262,16 @@ document.addEventListener("DOMContentLoaded", function () {
     var touchStartY;
     var touchEndY;
     var mySection = document.querySelector('#projects');
-    // if (mySection) {
     mySection.addEventListener('touchstart', handleTouchStart, false);
     mySection.addEventListener('touchmove', handleTouchMove, false);
     mySection.addEventListener('touchend', handleTouchEnd, false);
-    // }
     function handleTouchStart(event) {
         touchStartX = event.touches[0].clientX;
-        touchStartY = event.touches[0].clientY; // Y 좌표 저장
+        touchStartY = event.touches[0].clientY;
     }
     function handleTouchMove(event) {
         touchEndX = event.touches[0].clientX;
-        touchEndY = event.touches[0].clientY; // Y 좌표 저장
+        touchEndY = event.touches[0].clientY;
     }
     function handleTouchEnd() {
         var diffX = Math.abs(touchEndX - touchStartX);
