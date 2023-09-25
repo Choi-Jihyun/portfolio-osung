@@ -182,10 +182,14 @@ div.project_infos .p_name {
   color: white;
   font: bold 1.875rem "Noto sans KR";
 }
+div.project_infos .p_term {
+  color: white;
+  font: bold 1rem "Noto sans KR";
+}
 div.project_infos .p_bodytext {
   color: white;
   font: bold 1rem "Noto sans KR";
-  margin-top: 1.3rem;
+  margin-top: 1rem;
   text-align: justify;
 }
 div.project_infos div.projects_skill ul {
@@ -277,7 +281,7 @@ div.projects_list_wrapper div.projects_list_container {
 }
 
 ul.project_list {
-  width: 162rem;
+  width: 189rem;
   height: 30rem;
   margin-top: 4.5rem;
   position: relative;
@@ -338,6 +342,10 @@ ul.project_list li:nth-child(5) {
 }
 ul.project_list li:nth-child(6) {
   background: url("/images/project_list_06.webp") center center no-repeat;
+  background-size: contain;
+}
+ul.project_list li:nth-child(7) {
+  background: url("/images/project_list_07.webp") center center no-repeat;
   background-size: contain;
 }
 
