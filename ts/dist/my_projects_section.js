@@ -55,15 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } });
     }
     function slideNextProject() {
-        mySection.removeEventListener('touchstart', handleTouchStart, false);
-        mySection.removeEventListener('touchmove', handleTouchMove, false);
-        mySection.removeEventListener('touchend', handleTouchEnd, false);
         gsap.set(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { display: 'block' });
-        gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { opacity: '1', onComplete: function () {
-                mySection.addEventListener('touchstart', handleTouchStart, false);
-                mySection.addEventListener('touchmove', handleTouchMove, false);
-                mySection.addEventListener('touchend', handleTouchEnd, false);
-            } });
+        gsap.to(prevBtn === null || prevBtn === void 0 ? void 0 : prevBtn.children, { opacity: '1' });
         if (slideNum < projectLi.length - 1) {
             projectLi[slideNum].classList.remove('selected');
             slideNum++;
@@ -78,15 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
         showProjectView();
     }
     function slidePrevProject() {
-        mySection.removeEventListener('touchstart', handleTouchStart, false);
-        mySection.removeEventListener('touchmove', handleTouchMove, false);
-        mySection.removeEventListener('touchend', handleTouchEnd, false);
         gsap.set(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { display: 'block' });
-        gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '1', onComplete: function () {
-                mySection.addEventListener('touchstart', handleTouchStart, false);
-                mySection.addEventListener('touchmove', handleTouchMove, false);
-                mySection.addEventListener('touchend', handleTouchEnd, false);
-            } });
+        gsap.to(nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.children, { opacity: '1' });
         if (slideNum > 0) {
             projectLi[slideNum].classList.remove('selected');
             slideNum--;

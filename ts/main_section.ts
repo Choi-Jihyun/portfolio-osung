@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   window.addEventListener('scroll', controlRunningEvent);
 
   function controlRunningEvent() {
+    osung.style.opacity = '1';
     if (!isThrottled) { // throttle 상태가 아니라면
       isThrottled = true; // throttle 상태로 변경
       setTimeout(() => { // 지정된 시간 후에 throttle 상태 해제
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
 
-  // 스타트 하는 오성
+  // 스타트 글씨
   let elements = Array.from(document.querySelectorAll('.rsg'));
   elements.push(document.querySelector('.t_title') as HTMLElement);
   let durations = [1000, 1000, 2000];
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     totalDelay += durations[index] + 1000
   })
 
-    // start 달리기
+    // start하는 오성
   gsap.to(startOsung, {delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out"});
   let start_img = document.querySelector('.start_osung img') as HTMLImageElement;
   let imgDurations = [100, 1200, 300, 300, 300, 500, 500];

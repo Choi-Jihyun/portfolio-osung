@@ -110,6 +110,8 @@ div.running_osung_wrapper {
   }
 }
 div.running_osung_wrapper .me {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
   background-image: url("/images/running.webp");
   background-repeat: no-repeat;
   display: block;
@@ -201,6 +203,11 @@ div.running_osung_wrapper .me {
   position: absolute;
   left: 10rem;
   top: 11rem;
+}
+@media screen and (max-width: 768px) {
+  .running_start_wrapper {
+    display: none;
+  }
 }
 .running_start_wrapper .start_osung {
   display: none;

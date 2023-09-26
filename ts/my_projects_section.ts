@@ -57,15 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function slideNextProject () {
-    mySection.removeEventListener('touchstart', handleTouchStart, false);
-    mySection.removeEventListener('touchmove', handleTouchMove, false);
-    mySection.removeEventListener('touchend', handleTouchEnd, false);
     gsap.set(prevBtn?.children, {display: 'block'})
-    gsap.to(prevBtn?.children, {opacity: '1', onComplete: () => {
-      mySection.addEventListener('touchstart', handleTouchStart, false);
-      mySection.addEventListener('touchmove', handleTouchMove, false);
-      mySection.addEventListener('touchend', handleTouchEnd, false);
-    }})
+    gsap.to(prevBtn?.children, {opacity: '1'})
     if (slideNum < projectLi.length - 1) {
       projectLi[slideNum].classList.remove('selected')
       slideNum ++;
@@ -81,15 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   function slidePrevProject () {
-    mySection.removeEventListener('touchstart', handleTouchStart, false);
-    mySection.removeEventListener('touchmove', handleTouchMove, false);
-    mySection.removeEventListener('touchend', handleTouchEnd, false);
     gsap.set(nextBtn?.children, {display: 'block'})
-    gsap.to(nextBtn?.children, {opacity: '1', onComplete: ()=>{
-      mySection.addEventListener('touchstart', handleTouchStart, false);
-      mySection.addEventListener('touchmove', handleTouchMove, false);
-      mySection.addEventListener('touchend', handleTouchEnd, false);
-    }})
+    gsap.to(nextBtn?.children, {opacity: '1'})
     if (slideNum > 0) {
       projectLi[slideNum].classList.remove('selected')
       slideNum --;

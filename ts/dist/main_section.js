@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var isThrottled = false;
     window.addEventListener('scroll', controlRunningEvent);
     function controlRunningEvent() {
+        osung.style.opacity = '1';
         if (!isThrottled) { // throttle 상태가 아니라면
             isThrottled = true; // throttle 상태로 변경
             setTimeout(function () {
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         runningWrapper.style.left = imgMovingLeft + "px";
         lastScrollY = currentScrollY;
     }
-    // 스타트 하는 오성
+    // 스타트 글씨
     var elements = Array.from(document.querySelectorAll('.rsg'));
     elements.push(document.querySelector('.t_title'));
     var durations = [1000, 1000, 2000];
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, totalDelay);
         totalDelay += durations[index] + 1000;
     });
-    // start 달리기
+    // start하는 오성
     gsap.to(startOsung, { delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out" });
     var start_img = document.querySelector('.start_osung img');
     var imgDurations = [100, 1200, 300, 300, 300, 500, 500];

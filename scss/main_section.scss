@@ -112,6 +112,8 @@ div.running_osung_wrapper {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   .me {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
     background-image: url('/images/running.webp');
     background-repeat: no-repeat;
     display: block;
@@ -212,6 +214,10 @@ div.running_osung_wrapper {
   position: absolute;
   left: 10rem;
   top: 11rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  
   .start_osung {
     display: none;
     opacity: 0;
