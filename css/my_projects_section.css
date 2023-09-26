@@ -377,6 +377,7 @@ div.list_navigation .button-prev {
   left: 250px;
   top: 0;
   z-index: 10;
+  padding: 10px;
 }
 @media screen and (max-width: 1800px) {
   div.list_navigation .button-prev {
@@ -394,6 +395,7 @@ div.list_navigation .button-next {
   right: 250px;
   top: 0;
   z-index: 10;
+  padding: 10px;
 }
 @media screen and (max-width: 1800px) {
   div.list_navigation .button-next {
