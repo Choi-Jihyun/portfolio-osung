@@ -23,7 +23,7 @@ div#main_wrapper {
         transition: all 0.3s ease-in-out;
       }
       &.t_title {
-        opacity: 0;
+        opacity: 1;
         transition: opacity 1s ease-in-out;
       }
     }

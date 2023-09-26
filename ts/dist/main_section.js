@@ -50,66 +50,66 @@ document.addEventListener('DOMContentLoaded', function () {
         runningWrapper.style.left = imgMovingLeft + "px";
         lastScrollY = currentScrollY;
     }
-    // 스타트 글씨
-    var elements = Array.from(document.querySelectorAll('.rsg'));
-    elements.push(document.querySelector('.t_title'));
-    var durations = [1000, 1000, 2000];
-    var totalDelay = 3000;
-    elements.forEach(function (element, index) {
-        setTimeout(function () {
-            element.style.opacity = '1';
-            element.style.left = '0';
-            element.style.display = 'block';
-            setTimeout(function () {
-                if (index !== elements.length - 1) {
-                    element.style.opacity = '0';
-                    setTimeout(function () {
-                        element.style.display = 'none';
-                    }, 1000);
-                }
-            }, durations[index]);
-        }, totalDelay);
-        totalDelay += durations[index] + 1000;
-    });
-    // start하는 오성
-    gsap.to(startOsung, { delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out" });
-    var start_img = document.querySelector('.start_osung img');
-    var imgDurations = [100, 1200, 300, 300, 300, 500, 500];
-    var totalImgDelay = 5500;
-    var imgSources = [
-        "/images/main/run_start-02.webp",
-        "/images/main/run_start-03.webp",
-        "/images/main/run_start-04.webp",
-        "/images/main/run_start-05.webp",
-        "/images/main/run_start-06.webp",
-        "/images/main/run_start-07.webp",
-        "/images/main/run_start-08.webp",
-    ];
-    imgSources.forEach(function (src, index) {
-        setTimeout(function () {
-            start_img.src = src;
-            if (index >= 3) {
-                start_img.style.top = index === 3 ? '-2rem' : '-1rem';
-                switch (index) {
-                    case 3:
-                        start_img.style.left = '25vw';
-                        break;
-                    case 4:
-                        start_img.style.left = '50vw';
-                        break;
-                    case 5:
-                        start_img.style.left = '75vw';
-                        break;
-                    case 6:
-                        start_img.style.left = '100vw';
-                        break;
-                    case 7:
-                    default:
-                        start_img.style.left = '100vw';
-                        break;
-                }
-            }
-        }, totalImgDelay);
-        totalImgDelay += imgDurations[index];
-    });
+    // // 스타트 글씨
+    // let elements = Array.from(document.querySelectorAll('.rsg'));
+    // elements.push(document.querySelector('.t_title') as HTMLElement);
+    // let durations = [1000, 1000, 2000];
+    // let totalDelay = 3000;
+    // elements.forEach((element, index) => {
+    //   setTimeout(() => {
+    //     element.style.opacity = '1';
+    //     element.style.left = '0';
+    //     element.style.display = 'block';
+    //     setTimeout(() => {
+    //       if (index !== elements.length -1) {
+    //         element.style.opacity = '0';
+    //         setTimeout(() => {
+    //           element.style.display = 'none';
+    //         }, 1000); 
+    //       }
+    //     },durations[index]);
+    //   }, totalDelay);
+    //   totalDelay += durations[index] + 1000
+    // })
+    //   // start하는 오성
+    // gsap.to(startOsung, {delay: 1.5, display: 'block', opacity: 1, duration: 2, ease: "power1.out"});
+    // let start_img = document.querySelector('.start_osung img') as HTMLImageElement;
+    // let imgDurations = [100, 1200, 300, 300, 300, 500, 500];
+    // let totalImgDelay = 5500;
+    // let imgSources = [
+    //     "/images/main/run_start-02.webp",
+    //     "/images/main/run_start-03.webp",
+    //     "/images/main/run_start-04.webp",
+    //     "/images/main/run_start-05.webp",
+    //     "/images/main/run_start-06.webp",
+    //     "/images/main/run_start-07.webp",
+    //     "/images/main/run_start-08.webp",
+    // ];
+    // imgSources.forEach((src, index) => {
+    //   setTimeout(() => {
+    //     start_img.src = src;
+    //     if (index >= 3) {
+    //       start_img.style.top = index === 3 ? '-2rem' : '-1rem';
+    //       switch(index) {
+    //         case 3:
+    //             start_img.style.left = '25vw';
+    //             break;
+    //         case 4:
+    //             start_img.style.left = '50vw';
+    //             break;
+    //         case 5:
+    //             start_img.style.left = '75vw';
+    //             break;
+    //         case 6:
+    //             start_img.style.left = '100vw';
+    //             break;
+    //         case 7:
+    //           default:  
+    //             start_img.style.left ='100vw'; 
+    //             break;   
+    //     }
+    //     }
+    //   }, totalImgDelay);
+    //   totalImgDelay += imgDurations[index];
+    // });
 });

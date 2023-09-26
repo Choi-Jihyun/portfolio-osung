@@ -26,7 +26,7 @@ div#main_wrapper .title p.rsg {
   transition: all 0.3s ease-in-out;
 }
 div#main_wrapper .title p.t_title {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s ease-in-out;
 }
 div#main_wrapper div.bg_blues {
