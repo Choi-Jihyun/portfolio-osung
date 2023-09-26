@@ -313,8 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleTouchEnd() {
       let diffX = Math.abs(touchEndX - touchStartX);
       let diffY = Math.abs(touchEndY - touchStartY);
-  
-      // X축 이동거리가 Y축 이동거리보다 클 때만 스와이프로 판단
+
       if (diffX > diffY) {
           // 오른쪽으로 스와이프
           if (touchEndX - touchStartX > 40) {
